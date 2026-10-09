@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cInspBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080f22" />
+      <stop offset="100%" stop-color="#0e1b38" />
+    </linearGradient>
+    <linearGradient id="prismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1000" height="500" fill="url(#cInspBg)" />
+  
+  <!-- Subtle minimal concentric geometric rings -->
+  <g transform="translate(500, 240)">
+    <polygon points="0,-140 121,-70 121,70 0,140 -121,70 -121,-70" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5" />
+    <polygon points="0,-100 86,-50 86,50 0,100 -86,50 -86,-50" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.5" />
+    <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" fill="none" stroke="#a855f7" stroke-opacity="0.4" stroke-width="1.5" />
+    
+    <circle cx="0" cy="0" r="12" fill="#ffffff" />
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-dasharray="3 3" />
+    
+    <!-- Light ray lines passing through -->
+    <line x1="-350" y1="0" x2="-24" y2="0" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2" />
+    <line x1="24" y1="-8" x2="350" y2="-90" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.8" />
+    <line x1="24" y1="0" x2="350" y2="0" stroke="#a855f7" stroke-width="2" stroke-opacity="0.8" />
+    <line x1="24" y1="8" x2="350" y2="90" stroke="#f43f5e" stroke-width="2" stroke-opacity="0.8" />
+  </g>
+  
+  <text x="500" y="440" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" letter-spacing="3" font-weight="400">CONCEPT INSPIRATION // DISPERSION OF COMPLEXITY</text>
+</svg>

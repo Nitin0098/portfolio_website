@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       PERSISTENT NAVIGATION BAR (Outer element remains same across all views)
+       Buttons: projects, concepts, contact
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="nav-container">
+      <button id="brand-btn" class="brand-btn" aria-label="Go to Home / Hero page">
+        <span class="brand-dot"></span>
+        <span>Portfolio</span>
+      </button>
+
+      <nav class="nav-buttons">
+        <button id="nav-projects-btn" class="nav-btn">projects</button>
+        <button id="nav-concepts-btn" class="nav-btn">concepts</button>
+        <button id="nav-contact-btn" class="nav-btn">contact</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT SECTION (Changes dynamically while outer things remain same)
+       ========================================================================= -->
+  <main id="main-content" class="main-content">
+
+    <!-- -----------------------------------------------------------------------
+         2. HERO PAGE (Landing page / Homepage)
+         Features engaging interactive mini-game
+         ----------------------------------------------------------------------- -->
+    <section id="view-hero" class="view-section active-view">
+      <div class="hero-wrapper">
+        <div class="hero-intro">
+          <span class="hero-tag">Personal Portfolio</span>
+          <h1 class="hero-title">Minimalist Portfolio</h1>
+          <p class="hero-description">
+            A focused exploration of digital systems, architecture, and conceptual design. Uncluttered, intentional, and responsive.
+          </p>
+        </div>
+
+        <!-- Interactive Engagement Game -->
+        <div class="hero-game-card">
+          <div class="game-header">
+            <div class="game-title-badge">
+              <span class="game-indicator"></span>
+              <h3>Pulse Drift</h3>
+            </div>
+            <div class="game-stats">
+              <div class="game-stat-item">Score: <span id="game-score">0</span></div>
+              <div class="game-stat-item">Best: <span id="game-best-score">0</span></div>
+            </div>
+          </div>
+
+          <div class="game-canvas-container">
+            <canvas id="game-canvas"></canvas>
+
+            <div id="game-overlay" class="game-overlay">
+              <h2 id="game-overlay-title" class="game-overlay-title">Pulse Drift</h2>
+              <p id="game-overlay-subtitle" class="game-overlay-subtitle">
+                Guide your energy core with the cursor or arrow keys. Collect glowing cyan pulses and dodge the red hazard anomalies.
+              </p>
+              <button id="game-start-btn" class="game-btn">Start Game</button>
+            </div>
+          </div>
+
+          <div class="game-controls-bar">
+            <div class="game-instructions">
+              <span>Controls: Mouse / Touch / Arrow Keys</span>
+            </div>
+            <div class="game-secondary-actions">
+              <button id="game-pause-btn" class="game-action-btn">Pause</button>
+              <button id="game-reset-btn" class="game-action-btn">Reset</button>
+              <button id="game-sound-btn" class="game-action-btn">Sound: On</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         3. PROJECTS SECTION (Subpage)
+         Projects displayed in cards one by one scrollable
+         ----------------------------------------------------------------------- -->
+    <section id="view-projects" class="view-section">
+      <div class="section-header">
+        <span class="section-label">Subpage</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-hint">Scroll through projects one by one. Select any card to open its dedicated page.</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div id="projects-cards-track" class="cards-track">
+          <!-- Dynamically populated via js/app.js -->
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-indicators">
+            <span class="indicator-dot active"></span>
+            <span class="indicator-dot"></span>
+          </div>
+          <div class="carousel-nav-btns">
+            <button id="proj-prev-btn" class="carousel-arrow" aria-label="Previous Project">&larr;</button>
+            <button id="proj-next-btn" class="carousel-arrow" aria-label="Next Project">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         4. PROJECT PAGE (Sub sub page)
+         Opened when clicked on a project card.
+         Contains exact requested structure:
+         1. Image of project
+         2. Name in large text
+         3. Introduction
+         4. Inspiration { Text, Image, Text }
+         5. More text
+         6. References and links
+         7. Contact details (write your thoughts)
+         ----------------------------------------------------------------------- -->
+    <section id="view-project-detail" class="view-section">
+      <div class="detail-view">
+        <div class="detail-back-bar">
+          <button class="back-btn" onclick="navigateTo('projects')">&larr; Back to Projects</button>
+        </div>
+
+        <div id="project-detail-content">
+          <!-- Populated dynamically matching the 7 structural items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         5. CONCEPTS SECTION (Subpage)
+         Same structure for concepts: cards one by one scrollable
+         ----------------------------------------------------------------------- -->
+    <section id="view-concepts" class="view-section">
+      <div class="section-header">
+        <span class="section-label">Subpage</span>
+        <h2 class="section-title">Concepts</h2>
+        <p class="section-hint">Scroll through concepts one by one. Select any card to open its dedicated page.</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div id="concepts-cards-track" class="cards-track">
+          <!-- Dynamically populated via js/app.js -->
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-indicators">
+            <span class="indicator-dot active"></span>
+            <span class="indicator-dot"></span>
+          </div>
+          <div class="carousel-nav-btns">
+            <button id="concept-prev-btn" class="carousel-arrow" aria-label="Previous Concept">&larr;</button>
+            <button id="concept-next-btn" class="carousel-arrow" aria-label="Next Concept">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         5 & 6. CONCEPT PAGE (Sub sub page)
+         Placeholder concept included.
+         Same structure as project page.
+         ----------------------------------------------------------------------- -->
+    <section id="view-concept-detail" class="view-section">
+      <div class="detail-view">
+        <div class="detail-back-bar">
+          <button class="back-btn" onclick="navigateTo('concepts')">&larr; Back to Concepts</button>
+        </div>
+
+        <div id="concept-detail-content">
+          <!-- Populated dynamically matching the 7 structural items -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         CONTACT SECTION (Reached via navbar button "contact")
+         Contact details (write your thoughts)
+         ----------------------------------------------------------------------- -->
+    <section id="view-contact" class="view-section">
+      <div class="detail-view">
+        <div class="section-header">
+          <span class="section-label">Communication</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+
+        <div class="detail-contact-section" style="margin-top: 0;">
+          <h3 class="contact-section-title">Contact Details</h3>
+          <p class="contact-section-subtitle">Send a direct message or share your thoughts below.</p>
+          
+          <div class="contact-info-strip">
+            <div class="contact-info-item">
+              <span class="contact-info-label">Direct Email</span>
+              <span class="contact-info-value">portfolio.contact@domain.com</span>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label">Response Time</span>
+              <span class="contact-info-value">Within 24–48 hours</span>
+            </div>
+          </div>
+
+          <form class="thoughts-form" onsubmit="handleThoughtsSubmit(event, this)">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" required class="form-input" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Your Contact / Email</label>
+              <input type="email" required class="form-input" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Write Your Thoughts</label>
+              <textarea required class="form-textarea" placeholder="Write your thoughts here..."></textarea>
+            </div>
+            <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
+            <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       PERSISTENT FOOTER (Outer element remains same)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <p>Personal Portfolio &bull; Minimalist Design</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

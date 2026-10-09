@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept 01: Cognitive Architecture - Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Go to Home / Hero page">
+        <span class="brand-dot"></span>
+        <span>Portfolio</span>
+      </a>
+
+      <nav class="nav-buttons">
+        <a href="projects.html" class="nav-btn">projects</a>
+        <a href="concepts.html" class="nav-btn active">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section: Changes while outer things remain same -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="concepts.html" class="back-btn">&larr; Back to Concepts</a>
+      </div>
+
+      <!-- 1. Image of the concept -->
+      <div class="detail-main-image-container">
+        <img src="../images/concept-placeholder-hero.svg" alt="Concept 01: Cognitive Architecture" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the concept in large text -->
+      <h1 class="detail-title">Concept 01: Cognitive Architecture</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-block">
+        <p class="detail-intro-text">
+          Cognitive Architecture posits that human-computer interaction should mirror internal cognitive flow: reducing sensory distraction and highlighting pure conceptual relationships.
+        </p>
+      </div>
+
+      <!-- 4. Inspiration { Text, Image, Text } -->
+      <div class="detail-inspiration-section">
+        <h2 class="inspiration-heading">Inspiration</h2>
+        <p class="inspiration-text-top">
+          Inspired by neural network topologies and natural constellation dynamics, Concept 01 removes the artificial fragmentation of menus in favor of unified relational networks.
+        </p>
+        <div class="inspiration-image-container">
+          <img src="../images/concept-inspiration.svg" alt="Concept Inspiration Diagram" class="inspiration-image">
+        </div>
+        <p class="inspiration-text-bottom">
+          Observing how the human mind associates nodes through spatial intuition led directly to the concentric focus model demonstrated here.
+        </p>
+      </div>
+
+      <!-- 5. More text -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Conceptual Depth &amp; Implications</h2>
+        <p class="detail-more-text">
+          In practice, this mental model replaces deep hierarchical silos with fluid contextual layers. Information is surfaced only when intentional focus is applied, maintaining an uncluttered cognitive workspace.
+        </p>
+      </div>
+
+      <!-- 6. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <a href="#" class="reference-link" target="_blank" rel="noopener noreferrer">Cognitive Load Theory and Minimalist Information Design &rarr;</a>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <a href="#" class="reference-link" target="_blank" rel="noopener noreferrer">Relational Graph Interfaces in Ambient Computing &rarr;</a>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <a href="#" class="reference-link" target="_blank" rel="noopener noreferrer">Human Factors &amp; Intentional User Experience Studies &rarr;</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 7. Contact details (write your thoughts) -->
+      <div class="detail-contact-section">
+        <h2 class="contact-section-title">Contact Details</h2>
+        <p class="contact-section-subtitle">Interested in discussing or refining this concept? Write your thoughts below.</p>
+        
+        <div class="contact-info-strip">
+          <div class="contact-info-item">
+            <span class="contact-info-label">Direct Email</span>
+            <span class="contact-info-value">portfolio.contact@domain.com</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Dialogue Status</span>
+            <span class="contact-info-value">Active research &amp; inquiry</span>
+          </div>
+        </div>
+
+        <form class="thoughts-form" onsubmit="event.preventDefault(); this.querySelector('.form-success-banner').style.display='block'; this.reset();">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" required class="form-input" placeholder="e.g. Robin Lee">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Contact / Email</label>
+            <input type="email" required class="form-input" placeholder="e.g. robin@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Write Your Thoughts</label>
+            <textarea required class="form-textarea" placeholder="Write your thoughts, suggestions, or perspective..."></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
+          <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Personal Portfolio &bull; Minimalist Design</p>
+  </footer>
+
+</body>
+</html>

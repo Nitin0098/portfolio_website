@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Go to Home / Hero page">
+        <span class="brand-dot"></span>
+        <span>Portfolio</span>
+      </a>
+
+      <nav class="nav-buttons">
+        <a href="projects.html" class="nav-btn">projects</a>
+        <a href="concepts.html" class="nav-btn">concepts</a>
+        <a href="contact.html" class="nav-btn active">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      <div class="section-header">
+        <span class="section-label">Communication</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+
+      <div class="detail-contact-section" style="margin-top: 0;">
+        <h3 class="contact-section-title">Contact Details</h3>
+        <p class="contact-section-subtitle">Send a direct message or share your thoughts below.</p>
+        
+        <div class="contact-info-strip">
+          <div class="contact-info-item">
+            <span class="contact-info-label">Direct Email</span>
+            <span class="contact-info-value">portfolio.contact@domain.com</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Response Time</span>
+            <span class="contact-info-value">Within 24–48 hours</span>
+          </div>
+        </div>
+
+        <form class="thoughts-form" onsubmit="event.preventDefault(); this.querySelector('.form-success-banner').style.display='block'; this.reset();">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" required class="form-input" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Contact / Email</label>
+            <input type="email" required class="form-input" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Write Your Thoughts</label>
+            <textarea required class="form-textarea" placeholder="Write your thoughts here..."></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
+          <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Personal Portfolio &bull; Minimalist Design</p>
+  </footer>
+
+</body>
+</html>

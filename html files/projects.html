@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Go to Home / Hero page">
+        <span class="brand-dot"></span>
+        <span>Portfolio</span>
+      </a>
+
+      <nav class="nav-buttons">
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <section class="view-section active-view">
+      <div class="section-header">
+        <span class="section-label">Subpage</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-hint">Scroll through projects one by one. Select any card to open its dedicated page.</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div id="projects-cards-track" class="cards-track">
+          
+          <!-- Project 01 Card (Placeholder) -->
+          <article class="content-card" onclick="window.location.href='project-placeholder.html'">
+            <div class="card-media">
+              <img src="../images/project-placeholder-hero.svg" alt="Project Alpha // Autonomous Minimal Engine">
+            </div>
+            <div class="card-content">
+              <span class="card-tag">System Architecture</span>
+              <h3 class="card-title">Project Alpha // Autonomous Minimal Engine</h3>
+              <p class="card-summary">A minimalist computing canvas built for zero-latency visual interactions and high-performance agentic workflows.</p>
+              <div class="card-cta">
+                <span>Explore Dedicated Page</span>
+                <span>&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02 Card -->
+          <article class="content-card" onclick="window.location.href='project-placeholder.html'">
+            <div class="card-media">
+              <img src="../images/project-2.svg" alt="Project Beta // Geometric Interface Sandbox">
+            </div>
+            <div class="card-content">
+              <span class="card-tag">Interactive System</span>
+              <h3 class="card-title">Project Beta // Geometric Interface Sandbox</h3>
+              <p class="card-summary">An isometric exploration playground analyzing user responsiveness through minimal geometric spatial cues.</p>
+              <div class="card-cta">
+                <span>Explore Dedicated Page</span>
+                <span>&rarr;</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-indicators">
+            <span class="indicator-dot active"></span>
+            <span class="indicator-dot"></span>
+          </div>
+          <div class="carousel-nav-btns">
+            <button class="carousel-arrow" onclick="document.getElementById('projects-cards-track').scrollBy({left: -480, behavior: 'smooth'})" aria-label="Previous">&larr;</button>
+            <button class="carousel-arrow" onclick="document.getElementById('projects-cards-track').scrollBy({left: 480, behavior: 'smooth'})" aria-label="Next">&rarr;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Personal Portfolio &bull; Minimalist Design</p>
+  </footer>
+
+</body>
+</html>

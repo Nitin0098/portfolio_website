@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Alpha: Autonomous Minimal Engine - Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Go to Home / Hero page">
+        <span class="brand-dot"></span>
+        <span>Portfolio</span>
+      </a>
+
+      <nav class="nav-buttons">
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section: Changes while outer things remain same -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+      </div>
+
+      <!-- 1. Image of the project -->
+      <div class="detail-main-image-container">
+        <img src="../images/project-placeholder-hero.svg" alt="Project Alpha: Autonomous Minimal Engine" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the project in large text -->
+      <h1 class="detail-title">Project Alpha: Autonomous Minimal Engine</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-block">
+        <p class="detail-intro-text">
+          Project Alpha explores the boundary between ultra-lightweight web primitives and high-responsiveness interaction paradigms. Created with a strict focus on minimalism, it eliminates framework overhead to deliver an uncompromised user experience.
+        </p>
+      </div>
+
+      <!-- 4. Inspiration { Text, Image, Text } -->
+      <div class="detail-inspiration-section">
+        <h2 class="inspiration-heading">Inspiration</h2>
+        <p class="inspiration-text-top">
+          The motivation for Project Alpha originated from the growing weight and unnecessary complexity found across modern digital software. Inspired by Swiss graphic design traditions and early computing consoles, the goal was to strip away every non-essential layer and elevate raw clarity.
+        </p>
+        <div class="inspiration-image-container">
+          <img src="../images/project-inspiration.svg" alt="Project Alpha Inspiration Architecture" class="inspiration-image">
+        </div>
+        <p class="inspiration-text-bottom">
+          By harmonizing mathematical geometry with purposeful negative space, the interface achieves structural tranquility while maintaining immediate tactile feedback on every interaction.
+        </p>
+      </div>
+
+      <!-- 5. More text -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Approach</h2>
+        <p class="detail-more-text">
+          Architecturally, the engine operates on native browser primitives without external dependencies. State transitions are coordinated through declarative hash routing and hardware-accelerated transforms, guaranteeing instantaneous frame dispatch and zero runtime overhead.
+        </p>
+      </div>
+
+      <!-- 6. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <a href="#" class="reference-link" target="_blank" rel="noopener noreferrer">Minimalist Interface Principles &amp; System Guidelines &rarr;</a>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <a href="#" class="reference-link" target="_blank" rel="noopener noreferrer">W3C Web Standards &amp; High Frame-Rate Rendering &rarr;</a>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <a href="#" class="reference-link" target="_blank" rel="noopener noreferrer">Repository &amp; Architecture Documentation &rarr;</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 7. Contact details (write your thoughts) -->
+      <div class="detail-contact-section">
+        <h2 class="contact-section-title">Contact Details</h2>
+        <p class="contact-section-subtitle">Have inquiries or feedback about this project? Share your thoughts below.</p>
+        
+        <div class="contact-info-strip">
+          <div class="contact-info-item">
+            <span class="contact-info-label">Direct Email</span>
+            <span class="contact-info-value">portfolio.contact@domain.com</span>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-info-label">Status</span>
+            <span class="contact-info-value">Open to collaborations &amp; ideas</span>
+          </div>
+        </div>
+
+        <form class="thoughts-form" onsubmit="event.preventDefault(); this.querySelector('.form-success-banner').style.display='block'; this.reset();">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" required class="form-input" placeholder="e.g. Alex Morgan">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Contact / Email</label>
+            <input type="email" required class="form-input" placeholder="e.g. alex@example.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Write Your Thoughts</label>
+            <textarea required class="form-textarea" placeholder="Write your thoughts, feedback, or ideas here..."></textarea>
+          </div>
+          <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
+          <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Personal Portfolio &bull; Minimalist Design</p>
+  </footer>
+
+</body>
+</html>

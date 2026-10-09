@@ -1,0 +1,965 @@
+/* ==========================================================================
+   MINIMALIST PERSONAL PORTFOLIO - DARK NAVY BLUE THEME
+   ========================================================================== */
+
+:root {
+  --bg-navy-deep: #060c1a;
+  --bg-navy-main: #0a1329;
+  --bg-navy-card: rgba(14, 25, 52, 0.7);
+  --bg-navy-card-hover: rgba(18, 33, 68, 0.9);
+  --bg-navy-glass: rgba(10, 19, 41, 0.85);
+  
+  --text-white: #ffffff;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  
+  --accent-cyan: #38bdf8;
+  --accent-cyan-glow: rgba(56, 189, 248, 0.2);
+  --accent-indigo: #818cf8;
+  --accent-danger: #f43f5e;
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(56, 189, 248, 0.4);
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+/* CSS Reset & Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-navy-deep);
+  color: var(--text-white);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-navy-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.4);
+}
+
+/* ==========================================================================
+   NAVIGATION BAR (Outer persistent element)
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-navy-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  color: var(--text-white);
+  transition: opacity var(--transition-fast);
+}
+
+.brand-btn:hover {
+  opacity: 0.85;
+}
+
+.brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-btn {
+  background-color: transparent;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-btn:hover {
+  color: var(--text-white);
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-color);
+}
+
+.nav-btn.active {
+  color: var(--text-white);
+  background-color: rgba(56, 189, 248, 0.1);
+  border-color: var(--border-active);
+}
+
+/* ==========================================================================
+   MAIN CONTENT WRAPPER
+   ========================================================================== */
+
+.main-content {
+  min-height: calc(100vh - 130px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-section {
+  display: none;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.view-section.active-view {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   2. HERO PAGE (Landing page / Homepage)
+   ========================================================================== */
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-intro {
+  text-align: left;
+  padding-top: 1.5rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 1.2rem;
+  color: var(--text-white);
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 680px;
+}
+
+/* Hero Mini-Game Container */
+.hero-game-card {
+  background: var(--bg-navy-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.game-title-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.game-title-badge h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.game-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  animation: pulseLight 2s infinite ease-in-out;
+}
+
+@keyframes pulseLight {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; filter: drop-shadow(0 0 6px var(--accent-cyan)); }
+}
+
+.game-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+}
+
+.game-stat-item {
+  color: var(--text-muted);
+}
+
+.game-stat-item span {
+  color: var(--text-white);
+  font-weight: 600;
+  margin-left: 0.3rem;
+}
+
+.game-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-color: var(--bg-navy-deep);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  touch-action: none;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 12, 26, 0.82);
+  backdrop-filter: blur(4px);
+  padding: 1.5rem;
+  text-align: center;
+  transition: opacity 0.25s ease;
+}
+
+.game-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.game-overlay-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+}
+
+.game-overlay-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.game-btn {
+  background-color: var(--accent-cyan);
+  color: var(--bg-navy-deep);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.65rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  letter-spacing: 0.3px;
+}
+
+.game-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 16px var(--accent-cyan-glow);
+}
+
+.game-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.game-instructions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.game-secondary-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.game-action-btn {
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+
+.game-action-btn:hover {
+  color: var(--text-white);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================================
+   3 & 5. PROJECTS & CONCEPTS SECTIONS (Subpages with Scrollable Cards)
+   ========================================================================== */
+
+.section-header {
+  margin-bottom: 2.2rem;
+}
+
+.section-label {
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-white);
+}
+
+.section-hint {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+/* Cards Carousel Layout (One by one scrollable) */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.cards-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.2rem 2rem 0.2rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cards-track::-webkit-scrollbar {
+  height: 6px;
+}
+.cards-track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+/* Individual Card */
+.content-card {
+  flex: 0 0 calc(100% - 20px);
+  max-width: 540px;
+  scroll-snap-align: center;
+  background: var(--bg-navy-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .content-card {
+    flex: 0 0 480px;
+  }
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-active);
+  background: var(--bg-navy-card-hover);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.card-media {
+  width: 100%;
+  height: 270px;
+  background-color: var(--bg-navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.content-card:hover .card-media img {
+  transform: scale(1.02);
+}
+
+.card-content {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-tag {
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-white);
+  line-height: 1.3;
+}
+
+.card-summary {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-top: auto;
+  transition: gap var(--transition-fast);
+}
+
+.content-card:hover .card-cta {
+  gap: 0.75rem;
+}
+
+/* Carousel Navigation Controls */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0 0.5rem;
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.indicator-dot {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: background var(--transition-fast);
+}
+
+.indicator-dot.active {
+  background: var(--accent-cyan);
+}
+
+.carousel-nav-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-navy-card);
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  font-size: 1.1rem;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   4 & 5. DEDICATED SUB-SUB PAGES (Project Page & Concept Page)
+   Required Structure:
+   1. Image of the project/concept
+   2. Name in large text
+   3. Introduction
+   4. Inspiration { Text, Image, Text }
+   5. More text
+   6. References and links
+   7. Contact details (write your thoughts)
+   ========================================================================== */
+
+.detail-view {
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.detail-back-bar {
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.back-btn:hover {
+  color: var(--text-white);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* 1. Main Banner Image */
+.detail-main-image-container {
+  width: 100%;
+  max-height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-navy-card);
+  margin-bottom: 2.5rem;
+}
+
+.detail-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2. Name in large text */
+.detail-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  line-height: 1.15;
+  color: var(--text-white);
+  margin-bottom: 1.5rem;
+}
+
+/* 3. Introduction */
+.detail-intro-block {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detail-intro-text {
+  font-size: 1.22rem;
+  line-height: 1.75;
+  color: var(--text-white);
+  opacity: 0.92;
+}
+
+/* 4. Inspiration Section { Text, Image, Text } */
+.detail-inspiration-section {
+  background: var(--bg-navy-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.inspiration-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.inspiration-heading::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1.2rem;
+  background-color: var(--accent-cyan);
+  border-radius: 2px;
+}
+
+.inspiration-text-top {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.inspiration-image-container {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 2rem;
+  background: var(--bg-navy-deep);
+}
+
+.inspiration-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inspiration-text-bottom {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* 5. More Text Section */
+.detail-more-text-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-subheading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--text-white);
+}
+
+.detail-more-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* 6. References and links */
+.detail-references-section {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.references-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.reference-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.reference-link {
+  color: var(--accent-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity var(--transition-fast);
+}
+
+.reference-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* 7. Contact Details (Write your thoughts) */
+.detail-contact-section {
+  background: var(--bg-navy-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-top: 2rem;
+}
+
+.contact-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+}
+
+.contact-section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.contact-info-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contact-info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-subtle);
+}
+
+.contact-info-value {
+  font-size: 0.95rem;
+  color: var(--text-white);
+}
+
+/* Thoughts Form */
+.thoughts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background: var(--bg-navy-deep);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  color: var(--text-white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px var(--accent-cyan-glow);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  align-self: flex-start;
+  background-color: var(--accent-cyan);
+  color: var(--bg-navy-deep);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  margin-top: 0.5rem;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+  box-shadow: 0 4px 16px var(--accent-cyan-glow);
+}
+
+.form-success-banner {
+  display: none;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* ==========================================================================
+   FOOTER (Minimal outer framing)
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  background-color: var(--bg-navy-deep);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem 1.2rem;
+  }
+  .nav-buttons {
+    gap: 0.4rem;
+  }
+  .nav-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .game-canvas-container {
+    height: 300px;
+  }
+  .detail-title {
+    font-size: 2.1rem;
+  }
+  .detail-inspiration-section,
+  .detail-contact-section {
+    padding: 1.5rem;
+  }
+  .main-content {
+    padding: 1.5rem 1.2rem 3rem;
+  }
+}

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p2Bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081023" />
+      <stop offset="50%" stop-color="#0e1a38" />
+      <stop offset="100%" stop-color="#050b17" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="675" fill="url(#p2Bg)" />
+  
+  <!-- Subtle minimal radial rings -->
+  <circle cx="600" cy="337" r="220" fill="none" stroke="#38bdf8" stroke-opacity="0.15" stroke-width="1.5" />
+  <circle cx="600" cy="337" r="140" fill="none" stroke="#34d399" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="8 8" />
+  <circle cx="600" cy="337" r="60" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2" />
+  
+  <!-- Isometric cube wireframe -->
+  <g transform="translate(600, 337)">
+    <!-- Top face -->
+    <polygon points="0,-70 60,-35 0,0 -60,-35" fill="#38bdf8" fill-opacity="0.1" stroke="#38bdf8" stroke-width="2" />
+    <!-- Left face -->
+    <polygon points="-60,-35 0,0 0,70 -60,35" fill="#0f2444" fill-opacity="0.5" stroke="#38bdf8" stroke-width="2" />
+    <!-- Right face -->
+    <polygon points="0,0 60,-35 60,35 0,70" fill="#15335e" fill-opacity="0.5" stroke="#38bdf8" stroke-width="2" />
+    
+    <circle cx="0" cy="0" r="5" fill="#ffffff" />
+  </g>
+  
+  <!-- Horizontal minimal telemetry lines -->
+  <line x1="200" y1="337" x2="480" y2="337" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" />
+  <line x1="720" y1="337" x2="1000" y2="337" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" />
+  <circle cx="200" cy="337" r="4" fill="#38bdf8" />
+  <circle cx="1000" cy="337" r="4" fill="#34d399" />
+
+  <text x="600" y="600" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" letter-spacing="4" font-weight="500">PROJECT BETA // INTERFACE EXPERIMENTS</text>
+</svg>
