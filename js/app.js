@@ -9,20 +9,13 @@ const portfolioData = {
   projects: [
     {
       id: 'placeholder-project',
-      tag: 'System Architecture',
-      name: 'Project Alpha // Autonomous Minimal Engine',
-      summary: 'A minimalist computing canvas built for zero-latency visual interactions and high-performance agentic workflows.',
+      name: 'Project Alpha',
       cardImage: 'images/project-placeholder-hero.svg',
       detail: {
         image: 'images/project-placeholder-hero.svg',
-        name: 'Project Alpha: Autonomous Minimal Engine',
-        introduction: 'Project Alpha explores the boundary between ultra-lightweight web primitives and high-responsiveness interaction paradigms. Created with a strict focus on minimalism, it eliminates framework overhead to deliver an uncompromised user experience.',
-        inspiration: {
-          textTop: 'The motivation for Project Alpha originated from the growing weight and unnecessary complexity found across modern digital software. Inspired by Swiss graphic design traditions and early computing consoles, the goal was to strip away every non-essential layer and elevate raw clarity.',
-          image: 'images/project-inspiration.svg',
-          textBottom: 'By harmonizing mathematical geometry with purposeful negative space, the interface achieves structural tranquility while maintaining immediate tactile feedback on every interaction.'
-        },
-        moreText: 'Architecturally, the engine operates on native browser primitives without external dependencies. State transitions are coordinated through declarative hash routing and hardware-accelerated transforms, guaranteeing instantaneous frame dispatch and zero runtime overhead.',
+        name: 'Project Alpha',
+        introduction: 'A minimalist architecture engineered for instantaneous feedback and lightweight execution.',
+        moreText: 'The system operates on native browser primitives without external dependencies. State transitions are coordinated through declarative hash routing and hardware-accelerated transforms to ensure fluid high-framerate execution.',
         references: [
           { title: 'Minimalist Interface Principles & System Guidelines', url: '#' },
           { title: 'W3C Web Standards & High Frame-Rate Rendering', url: '#' },
@@ -32,20 +25,13 @@ const portfolioData = {
     },
     {
       id: 'project-beta',
-      tag: 'Interactive System',
-      name: 'Project Beta // Geometric Interface Sandbox',
-      summary: 'An isometric exploration playground analyzing user responsiveness through minimal geometric spatial cues.',
+      name: 'Project Beta',
       cardImage: 'images/project-2.svg',
       detail: {
         image: 'images/project-2.svg',
-        name: 'Project Beta: Geometric Interface Sandbox',
-        introduction: 'Project Beta investigates procedural spatial projection inside standard viewport constraints, offering a tactile playground for minimalist data navigation.',
-        inspiration: {
-          textTop: 'Drawing inspiration from isometric drafting and architectural axonometrics, this project seeks to represent multidimensional hierarchies with clean vector silhouettes.',
-          image: 'images/project-inspiration.svg',
-          textBottom: 'The result is an organic bridge between digital abstractions and clean, physical intuition.'
-        },
-        moreText: 'Through continuous micro-benchmarking, the system renders thousands of coordinates effortlessly, ensuring buttery 60 FPS feedback across all display devices.',
+        name: 'Project Beta',
+        introduction: 'An exploration of spatial coordinate projection and minimal geometric silhouettes.',
+        moreText: 'Coordinate calculations are evaluated directly within the viewport canvas, maintaining zero layout recalculation overhead and fluid responsiveness across displays.',
         references: [
           { title: 'Axonometric Projections in Modern Web Interfaces', url: '#' },
           { title: 'Interactive Vector Kinematics Case Study', url: '#' }
@@ -57,20 +43,18 @@ const portfolioData = {
   concepts: [
     {
       id: 'placeholder-concept',
-      tag: 'Mental Model',
-      name: 'Concept 01 // Cognitive Architecture',
-      summary: 'A conceptual framework mapping interconnected thought models to clean spatial interfaces.',
+      name: 'Concept 01: Cognitive Architecture',
       cardImage: 'images/concept-placeholder-hero.svg',
       detail: {
         image: 'images/concept-placeholder-hero.svg',
         name: 'Concept 01: Cognitive Architecture',
-        introduction: 'Cognitive Architecture posits that human-computer interaction should mirror internal cognitive flow: reducing sensory distraction and highlighting pure conceptual relationships.',
+        introduction: 'An examination of spatial mental models that prioritize visual focus and relational clarity.',
         inspiration: {
-          textTop: 'Inspired by neural network topologies and natural constellation dynamics, Concept 01 removes the artificial fragmentation of menus in favor of unified relational networks.',
+          textTop: 'Inspired by neural network topologies and natural constellation dynamics, exploring unified relational networks.',
           image: 'images/concept-inspiration.svg',
-          textBottom: 'Observing how the human mind associates nodes through spatial intuition led directly to the concentric focus model demonstrated here.'
+          textBottom: 'Associating nodes through spatial intuition replaces artificial fragmentation with continuous structural harmony.'
         },
-        moreText: 'In practice, this mental model replaces deep hierarchical silos with fluid contextual layers. Information is surfaced only when intentional focus is applied, maintaining an uncluttered cognitive workspace.',
+        moreText: 'Contextual layers expand upon intentional interaction, maintaining an uncluttered cognitive workspace while preserving immediate access to core functions.',
         references: [
           { title: 'Cognitive Load Theory and Minimalist Information Design', url: '#' },
           { title: 'Relational Graph Interfaces in Ambient Computing', url: '#' },
@@ -80,20 +64,18 @@ const portfolioData = {
     },
     {
       id: 'concept-harmonics',
-      tag: 'Wave Theory',
-      name: 'Concept 02 // Waveform Harmonics',
-      summary: 'Investigating rhythmic visual cadences and frequency modulation in user interface timing.',
+      name: 'Concept 02: Waveform Harmonics',
       cardImage: 'images/concept-2.svg',
       detail: {
         image: 'images/concept-2.svg',
         name: 'Concept 02: Waveform Harmonics',
-        introduction: 'This concept applies harmonic wave equations to interface state transitions, yielding motion curves that feel physically authentic and effortless.',
+        introduction: 'Applying harmonic wave equations to visual interaction rhythms and cadence.',
         inspiration: {
-          textTop: 'Inspired by acoustic standing waves and electromagnetic oscillations, this study investigates how natural frequencies foster intuitive user resonance.',
+          textTop: 'Drawing from acoustic standing waves and electromagnetic oscillations to study how natural frequencies foster intuitive interaction.',
           image: 'images/concept-inspiration.svg',
-          textBottom: 'Applying trigonometric damping to layout dynamics eliminates the artificial stiffness typical of standard ease transitions.'
+          textBottom: 'Applying trigonometric damping to layout dynamics eliminates artificial stiffness across state transitions.'
         },
-        moreText: 'Harmonic physics calculations are applied directly via requestAnimationFrame, allowing micro-interactions to naturally adapt to the user’s gesture velocity.',
+        moreText: 'Kinetic calculations run directly within the browser frame cycle, adapting micro-interactions naturally to user input velocity.',
         references: [
           { title: 'Principles of Wave Dynamics & Harmonic Motion', url: '#' },
           { title: 'Kinetic Ergonomics in Modern Software Design', url: '#' }
@@ -164,6 +146,7 @@ function switchView(viewName, dataId = null) {
 }
 
 // Render Dedicated Project Page (Sub sub page)
+// 1. Image, 2. Name in large text, 3. Introduction, 4. Technical Details & Approach, 5. References & Links
 function renderProjectDetail(projectId) {
   const project = portfolioData.projects.find(p => p.id === projectId) || portfolioData.projects[0];
   const container = document.getElementById('project-detail-content');
@@ -181,27 +164,18 @@ function renderProjectDetail(projectId) {
     <h1 class="detail-title">${d.name}</h1>
 
     <!-- 3. Introduction -->
-    <div class="detail-intro-block">
-      <p class="detail-intro-text">${d.introduction}</p>
+    <div class="detail-intro-section">
+      <h2 class="section-subheading">Introduction</h2>
+      <p class="detail-text">${d.introduction}</p>
     </div>
 
-    <!-- 4. Inspiration { Text, Image, Text } -->
-    <div class="detail-inspiration-section">
-      <h2 class="inspiration-heading">Inspiration</h2>
-      <p class="inspiration-text-top">${d.inspiration.textTop}</p>
-      <div class="inspiration-image-container">
-        <img src="${d.inspiration.image}" alt="Inspiration Diagram" class="inspiration-image">
-      </div>
-      <p class="inspiration-text-bottom">${d.inspiration.textBottom}</p>
-    </div>
-
-    <!-- 5. More text -->
+    <!-- 4. Technical Details & Approach -->
     <div class="detail-more-text-section">
       <h2 class="section-subheading">Technical Details &amp; Approach</h2>
       <p class="detail-more-text">${d.moreText}</p>
     </div>
 
-    <!-- 6. References and links -->
+    <!-- 5. References and links -->
     <div class="detail-references-section">
       <h2 class="section-subheading">References &amp; Links</h2>
       <ul class="references-list">
@@ -213,44 +187,11 @@ function renderProjectDetail(projectId) {
         `).join('')}
       </ul>
     </div>
-
-    <!-- 7. Contact details (write your thoughts) -->
-    <div class="detail-contact-section">
-      <h2 class="contact-section-title">Contact Details</h2>
-      <p class="contact-section-subtitle">Have inquiries or feedback about this project? Share your thoughts below.</p>
-      
-      <div class="contact-info-strip">
-        <div class="contact-info-item">
-          <span class="contact-info-label">Direct Email</span>
-          <span class="contact-info-value">portfolio.contact@domain.com</span>
-        </div>
-        <div class="contact-info-item">
-          <span class="contact-info-label">Status</span>
-          <span class="contact-info-value">Open to collaborations &amp; ideas</span>
-        </div>
-      </div>
-
-      <form class="thoughts-form" onsubmit="handleThoughtsSubmit(event, this)">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input type="text" required class="form-input" placeholder="e.g. Alex Morgan">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Your Contact / Email</label>
-          <input type="email" required class="form-input" placeholder="e.g. alex@example.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Write Your Thoughts</label>
-          <textarea required class="form-textarea" placeholder="Write your thoughts, feedback, or ideas here..."></textarea>
-        </div>
-        <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
-        <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
-      </form>
-    </div>
   `;
 }
 
 // Render Dedicated Concept Page (Sub sub page)
+// 1. Image, 2. Name in large text, 3. Introduction, 4. Inspiration, 5. Technical Details & Approach, 6. References & Links
 function renderConceptDetail(conceptId) {
   const concept = portfolioData.concepts.find(c => c.id === conceptId) || portfolioData.concepts[0];
   const container = document.getElementById('concept-detail-content');
@@ -268,13 +209,14 @@ function renderConceptDetail(conceptId) {
     <h1 class="detail-title">${d.name}</h1>
 
     <!-- 3. Introduction -->
-    <div class="detail-intro-block">
-      <p class="detail-intro-text">${d.introduction}</p>
+    <div class="detail-intro-section">
+      <h2 class="section-subheading">Introduction</h2>
+      <p class="detail-text">${d.introduction}</p>
     </div>
 
-    <!-- 4. Inspiration { Text, Image, Text } -->
+    <!-- 4. Inspiration -->
     <div class="detail-inspiration-section">
-      <h2 class="inspiration-heading">Inspiration</h2>
+      <h2 class="section-subheading">Inspiration</h2>
       <p class="inspiration-text-top">${d.inspiration.textTop}</p>
       <div class="inspiration-image-container">
         <img src="${d.inspiration.image}" alt="Concept Inspiration Diagram" class="inspiration-image">
@@ -282,9 +224,9 @@ function renderConceptDetail(conceptId) {
       <p class="inspiration-text-bottom">${d.inspiration.textBottom}</p>
     </div>
 
-    <!-- 5. More text -->
+    <!-- 5. Technical Details & Approach -->
     <div class="detail-more-text-section">
-      <h2 class="section-subheading">Conceptual Depth &amp; Implications</h2>
+      <h2 class="section-subheading">Technical Details &amp; Approach</h2>
       <p class="detail-more-text">${d.moreText}</p>
     </div>
 
@@ -300,40 +242,6 @@ function renderConceptDetail(conceptId) {
         `).join('')}
       </ul>
     </div>
-
-    <!-- 7. Contact details (write your thoughts) -->
-    <div class="detail-contact-section">
-      <h2 class="contact-section-title">Contact Details</h2>
-      <p class="contact-section-subtitle">Interested in discussing or refining this concept? Write your thoughts below.</p>
-      
-      <div class="contact-info-strip">
-        <div class="contact-info-item">
-          <span class="contact-info-label">Direct Email</span>
-          <span class="contact-info-value">portfolio.contact@domain.com</span>
-        </div>
-        <div class="contact-info-item">
-          <span class="contact-info-label">Dialogue Status</span>
-          <span class="contact-info-value">Active research &amp; inquiry</span>
-        </div>
-      </div>
-
-      <form class="thoughts-form" onsubmit="handleThoughtsSubmit(event, this)">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input type="text" required class="form-input" placeholder="e.g. Robin Lee">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Your Contact / Email</label>
-          <input type="email" required class="form-input" placeholder="e.g. robin@example.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Write Your Thoughts</label>
-          <textarea required class="form-textarea" placeholder="Write your thoughts, suggestions, or perspective..."></textarea>
-        </div>
-        <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
-        <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
-      </form>
-    </div>
   `;
 }
 
@@ -348,11 +256,9 @@ function renderProjectCards() {
         <img src="${proj.cardImage}" alt="${proj.name}" loading="lazy">
       </div>
       <div class="card-content">
-        <span class="card-tag">${proj.tag}</span>
         <h3 class="card-title">${proj.name}</h3>
-        <p class="card-summary">${proj.summary}</p>
         <div class="card-cta">
-          <span>Explore Dedicated Page</span>
+          <span>explore more</span>
           <span>&rarr;</span>
         </div>
       </div>
@@ -371,11 +277,9 @@ function renderConceptCards() {
         <img src="${concept.cardImage}" alt="${concept.name}" loading="lazy">
       </div>
       <div class="card-content">
-        <span class="card-tag">${concept.tag}</span>
         <h3 class="card-title">${concept.name}</h3>
-        <p class="card-summary">${concept.summary}</p>
         <div class="card-cta">
-          <span>Explore Dedicated Page</span>
+          <span>explore more</span>
           <span>&rarr;</span>
         </div>
       </div>

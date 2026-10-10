@@ -123,12 +123,11 @@ img {
   opacity: 0.85;
 }
 
-.brand-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--accent-cyan);
-  box-shadow: 0 0 10px var(--accent-cyan);
+.site-logo {
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav-buttons {
@@ -507,35 +506,18 @@ img {
 }
 
 .card-content {
-  padding: 1.8rem;
+  padding: 1.5rem 1.8rem 1.7rem;
   display: flex;
   flex-direction: column;
+  gap: 1.1rem;
   flex-grow: 1;
-}
-
-.card-tag {
-  font-size: 0.78rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--accent-cyan);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
 }
 
 .card-title {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
   color: var(--text-white);
-  line-height: 1.3;
-}
-
-.card-summary {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
+  line-height: 1.35;
 }
 
 .card-cta {
@@ -673,53 +655,31 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/* 3. Introduction */
-.detail-intro-block {
-  margin-bottom: 3rem;
-  padding-bottom: 2.5rem;
+/* Detail Content Sections */
+.detail-intro-section,
+.detail-inspiration-section,
+.detail-more-text-section,
+.detail-references-section {
+  margin-bottom: 2.8rem;
+  padding-bottom: 2.2rem;
   border-bottom: 1px solid var(--border-color);
 }
 
-.detail-intro-text {
-  font-size: 1.22rem;
-  line-height: 1.75;
-  color: var(--text-white);
-  opacity: 0.92;
-}
-
-/* 4. Inspiration Section { Text, Image, Text } */
-.detail-inspiration-section {
-  background: var(--bg-navy-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-.inspiration-heading {
+.section-subheading {
   font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   color: var(--text-white);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
 }
 
-.inspiration-heading::before {
-  content: "";
-  display: inline-block;
-  width: 4px;
-  height: 1.2rem;
-  background-color: var(--accent-cyan);
-  border-radius: 2px;
-}
-
-.inspiration-text-top {
+.detail-text,
+.detail-more-text,
+.detail-intro-text,
+.inspiration-text-top,
+.inspiration-text-bottom {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-muted);
-  margin-bottom: 2rem;
 }
 
 .inspiration-image-container {
@@ -727,7 +687,7 @@ img {
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
   background: var(--bg-navy-deep);
 }
 
@@ -735,12 +695,6 @@ img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.inspiration-text-bottom {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text-muted);
 }
 
 /* 5. More Text Section */

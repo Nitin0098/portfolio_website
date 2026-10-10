@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +16,7 @@
   <header class="site-header">
     <div class="nav-container">
       <button id="brand-btn" class="brand-btn" aria-label="Go to Home / Hero page">
-        <span class="brand-dot"></span>
+        <img src="images/logo.svg" alt="Logo" class="site-logo">
         <span>Portfolio</span>
       </button>
 
@@ -86,14 +87,12 @@
     </section>
 
     <!-- -----------------------------------------------------------------------
-         3. PROJECTS SECTION (Subpage)
+         3. PROJECTS SECTION
          Projects displayed in cards one by one scrollable
          ----------------------------------------------------------------------- -->
     <section id="view-projects" class="view-section">
       <div class="section-header">
-        <span class="section-label">Subpage</span>
         <h2 class="section-title">Projects</h2>
-        <p class="section-hint">Scroll through projects one by one. Select any card to open its dedicated page.</p>
       </div>
 
       <div class="carousel-wrapper">
@@ -115,16 +114,8 @@
     </section>
 
     <!-- -----------------------------------------------------------------------
-         4. PROJECT PAGE (Sub sub page)
+         4. PROJECT PAGE (Dedicated Page)
          Opened when clicked on a project card.
-         Contains exact requested structure:
-         1. Image of project
-         2. Name in large text
-         3. Introduction
-         4. Inspiration { Text, Image, Text }
-         5. More text
-         6. References and links
-         7. Contact details (write your thoughts)
          ----------------------------------------------------------------------- -->
     <section id="view-project-detail" class="view-section">
       <div class="detail-view">
@@ -133,20 +124,18 @@
         </div>
 
         <div id="project-detail-content">
-          <!-- Populated dynamically matching the 7 structural items -->
+          <!-- Populated dynamically via js/app.js -->
         </div>
       </div>
     </section>
 
     <!-- -----------------------------------------------------------------------
-         5. CONCEPTS SECTION (Subpage)
-         Same structure for concepts: cards one by one scrollable
+         5. CONCEPTS SECTION
+         Concepts displayed in cards one by one scrollable
          ----------------------------------------------------------------------- -->
     <section id="view-concepts" class="view-section">
       <div class="section-header">
-        <span class="section-label">Subpage</span>
         <h2 class="section-title">Concepts</h2>
-        <p class="section-hint">Scroll through concepts one by one. Select any card to open its dedicated page.</p>
       </div>
 
       <div class="carousel-wrapper">
@@ -168,9 +157,7 @@
     </section>
 
     <!-- -----------------------------------------------------------------------
-         5 & 6. CONCEPT PAGE (Sub sub page)
-         Placeholder concept included.
-         Same structure as project page.
+         5 & 6. CONCEPT PAGE (Dedicated Page)
          ----------------------------------------------------------------------- -->
     <section id="view-concept-detail" class="view-section">
       <div class="detail-view">
@@ -179,7 +166,7 @@
         </div>
 
         <div id="concept-detail-content">
-          <!-- Populated dynamically matching the 7 structural items -->
+          <!-- Populated dynamically via js/app.js -->
         </div>
       </div>
     </section>
@@ -191,7 +178,6 @@
     <section id="view-contact" class="view-section">
       <div class="detail-view">
         <div class="section-header">
-          <span class="section-label">Communication</span>
           <h2 class="section-title">Contact</h2>
         </div>
 
