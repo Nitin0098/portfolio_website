@@ -67,32 +67,151 @@
       <!-- 5. Technical Details & Approach -->
       <div class="detail-more-text-section">
         <h2 class="section-subheading">Technical Details &amp; Approach</h2>
-        <p class="detail-more-text" style="margin-bottom: 1.2rem;">
-          <strong>Here are the problems and how I solved it</strong>
-        </p>
-        <p class="detail-more-text" style="margin-bottom: 1.2rem;">
-          <strong>1. Critical mass</strong><br>
-          Naturally neutrons leak out of the nuclear core, and  in traditional fission reactors we use heavy reflectors and use nuclear fuel of mass greater than critical mass, if it is lower than critical mass, the neutron multiplication factor drops below 1 and the reactor cannot sustain the chain reaction.
-        </p>
-        <p class="detail-more-text" style="margin-bottom: 1.2rem;">
-          <strong>How CIRs solve this,</strong><br>
-          Since CIRs fundamentally don't rely on chain reaction, in fact the neutron multiplication factor less than one is intentional, the size of the nuclear fuel is free from critical Mass constraints, allowing us to design the nuclear fuel small  as per our needs.
-        </p>
-        <p class="detail-more-text" style="margin-bottom: 1.2rem;">
-          <strong>2. One of the most important factor is safety and here's how this design fixed it.</strong>
-        </p>
-        <p class="detail-more-text" style="margin-bottom: 1.2rem;">
-          Now this design that I created is comparatively much smaller then traditional Nuclear fission reactor, it can be portable and transported by truck to the places where it is needed, It has potential to power entire building or a group of house in a town using nothing but depleted uranium fuel or other transuranium fuel.
-        </p>
-        <p class="detail-more-text" style="margin-bottom: 1.2rem;">
-          While everyone is chasing nuclear fusion, I believe we gravely neglect nuclear fission and it's capabilities, ADS is something we already have and it's just the leap of engineering that is needed to convert them into small(the size of 2-3 SUVs), decentralised , portable, and safe to be set up in towns, buildings without needing multi-million dollars setup or a 50 persons crew just to maintain, now it's obvious the power output will be significantly lower than traditional fission power plants and the power output should be scalable with size as per my calculations.
-        </p>
-        <p class="detail-more-text" style="margin-bottom: 1.2rem;">
-          Comparison of CIRs with traditional Nuclear fission reactors
-        </p>
-        <p class="detail-more-text">
-          Deep overview of the construction:
-        </p>
+        <div class="detail-more-text">
+          <p><strong>Here are the problems and how I solved it</strong></p>
+
+          <p>
+            <strong>1. Critical mass</strong><br>
+            Naturally neutrons leak out of the nuclear core, and  in traditional fission reactors we use heavy reflectors and use nuclear fuel of mass greater than critical mass, if it is lower than critical mass, the neutron multiplication factor drops below 1 and the reactor cannot sustain the chain reaction.
+          </p>
+          <p>
+            <strong>How CIRs solve this,</strong><br>
+            Since CIRs fundamentally don't rely on chain reaction, in fact the neutron multiplication factor less than one is intentional, the size of the nuclear fuel is free from critical Mass constraints, allowing us to design the nuclear fuel small  as per our needs.
+          </p>
+
+          <p><strong>2. One of the most important factor is safety and here's how this design fixed it.</strong></p>
+          <p>
+            A traditional reactor always holds more than a critical mass of fuel, so it is constantly balanced on a knife-edge using mechanical control rods. If the rods jam, or the coolant pumps lose power, the result can be a runaway power spike or a meltdown, exactly what happened at Chernobyl and Fukushima. Even after shutdown, the fission products keep producing decay heat (about 7% of full power), and in a dense core that heat alone is enough to melt the fuel if cooling is lost.
+          </p>
+          <p>
+            <strong>How CIRs solve this,</strong><br>
+            The CIR core is subcritical (k<sub>eff</sub> &lt; 1), the fuel by itself is physically incapable of sustaining a chain reaction. Fission only happens while the particle beam is hitting the fuel. Earthquake, blackout or equipment failure, the accelerator simply switches off and every fission reaction stops in less than a microsecond. There are no control rods to jam, the power is regulated electrically by adjusting the beam current. And because the fuel in the Type-2 design is spread over a thin outer ring with a huge surface area, the decay heat per square meter is tiny, so even with all pumps dead, natural air circulation and radiation are enough to carry it away. The fuel never melts, the reactor is fail-safe by the laws of physics, true walk-away passive safety.
+          </p>
+
+          <p>
+            <strong>3. Fuel scarcity and enrichment</strong><br>
+            Natural uranium is only 0.72% U-235, the remaining 99.27% is U-238 which cannot sustain a thermal chain reaction. So uranium has to be enriched in multi-million dollar facilities, and the leftover depleted uranium just piles up as radioactive waste.
+          </p>
+          <p>
+            <strong>How CIRs solve this,</strong><br>
+            CIRs don't need fissile fuel at all, they fission fertile isotopes directly: U-238, Thorium-232 (three to four times more abundant than uranium on Earth) and the depleted uranium stockpiles we already have. No enrichment plant needed, and centuries of energy are unlocked from material we currently call waste.
+          </p>
+
+          <p>
+            <strong>4. Bulky moderators and reflectors</strong><br>
+            U-235 splits most easily with slow (thermal) neutrons, so traditional reactors are packed with huge volumes of water or graphite to slow neutrons down, and wrapped in thick reflectors to bounce escaping neutrons back in, adding massive volume and high-pressure plumbing.
+          </p>
+          <p>
+            <strong>How CIRs solve this,</strong><br>
+            U-238 in a CIR is split by fast neutrons, so slowing them down is completely unnecessary, and since neutron leakage doesn't kill the reaction, reflectors aren't needed either, standard shielding is enough. Throwing away the moderator tanks, pipes and reflectors drastically cuts the size, weight and complexity of the reactor.
+          </p>
+
+          <p>
+            Now this design that I created is comparatively much smaller then traditional Nuclear fission reactor, it can be portable and transported by truck to the places where it is needed, It has potential to power entire building or a group of house in a town using nothing but depleted uranium fuel or other transuranium fuel.
+          </p>
+          <p>
+            While everyone is chasing nuclear fusion, I believe we gravely neglect nuclear fission and it's capabilities, ADS is something we already have and it's just the leap of engineering that is needed to convert them into small(the size of 2-3 SUVs), decentralised , portable, and safe to be set up in towns, buildings without needing multi-million dollars setup or a 50 persons crew just to maintain, now it's obvious the power output will be significantly lower than traditional fission power plants and the power output should be scalable with size as per my calculations.
+          </p>
+
+          <h3 class="detail-subheading">Comparison of CIRs with traditional Nuclear fission reactors</h3>
+          <p>
+            I call traditional reactors CDRs (Chain Reaction Dependent Reactors), because their power depends entirely on a self-sustaining chain reaction. Here is how the two classes compare:
+          </p>
+          <div class="table-scroll">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Traditional reactor (CDR)</th>
+                  <th>CIR</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th>Criticality</th><td>Critical (k<sub>eff</sub> = 1), self-multiplying</td><td>Subcritical (k<sub>eff</sub> &lt; 1), driven by an external particle beam</td></tr>
+                <tr><th>Fuel</th><td>Fissile U-235 / Pu-239, needs enrichment</td><td>Fertile U-238, Th-232, depleted uranium</td></tr>
+                <tr><th>Core size</th><td>Must exceed critical mass</td><td>No critical mass limit, size chosen freely for heat removal</td></tr>
+                <tr><th>Moderator</th><td>Compulsory (water, graphite)</td><td>Eliminated, fast-spectrum reaction</td></tr>
+                <tr><th>Reflectors</th><td>Mandatory to stop neutron leakage</td><td>Unnecessary, standard shielding is enough</td></tr>
+                <tr><th>Power control</th><td>Mechanical control rods, chemical poisons</td><td>Electrical adjustment of the beam current</td></tr>
+                <tr><th>Passive safety</th><td>Vulnerable to power spikes if controls fail</td><td>Fail-safe, reaction stops instantly when the beam cuts out</td></tr>
+                <tr><th>Fuel abundance</th><td>Scarce (0.72% of natural uranium)</td><td>Abundant (99.27% of natural uranium, 100% of thorium)</td></tr>
+                <tr><th>Waste</th><td>Produces long-lived transuranic waste</td><td>Can burn depleted uranium and fertile actinide waste</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="detail-subheading">Deep overview of the construction:</h3>
+
+          <p>
+            <strong>The accelerator, a toroid.</strong><br>
+            The heart of a CIR is a particle accelerator built into a hollow, ring-shaped (toroidal) vacuum chamber. Protons, taken from hydrogen gas, are fed into the chamber and accelerated along circular paths. A charged particle moving through a magnetic field bends into a circle of radius:
+          </p>
+          <div class="detail-formula">r = m·v / (q·B)</div>
+          <p>
+            So as the particle speeds up, its orbit naturally wants to grow. The image at the top of this page shows the coil arrangement and the path the particles follow.
+          </p>
+          <ul class="detail-list">
+            <li><strong>Coil-2 (acceleration coils):</strong> placed all along the ring, they switch polarity in a fast, timed rhythm, pulling and pushing the particle forward at every station. Every lap adds more kinetic energy until the particle reaches the target speed.</li>
+            <li><strong>Coil-1 (guidance coils):</strong> generate the main magnetic field that provides the centripetal force, keeping the particles inside the vacuum channel instead of crashing into the walls.</li>
+          </ul>
+
+          <p>
+            <strong>Type-1 vs Type-2.</strong><br>
+            Depending on where the fuel core sits, I worked out two layouts. In <strong>Type-1 (inward spiral)</strong> the core is at the centre and particles are injected at the outer edge, then forced to spiral inward. This fights against physics: the faster the particle gets, the more it wants to move outward, so the central coils need extremely intense, rapidly pulsing fields, wasting huge amounts of power, and all the heat gets concentrated in a tiny central spot that is hard to cool.
+          </p>
+          <p>
+            In <strong>Type-2 (outward spiral)</strong> the particles are injected near the centre and the fuel forms a ring around the outer edge. As they accelerate, they naturally spiral outward until they hit the outer core. This is the design I chose:
+          </p>
+          <div class="table-scroll">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Type-1 (inward spiral)</th>
+                  <th>Type-2 (outward spiral)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th>Particle orbit</th><td>Outer edge toward centre</td><td>Centre toward outer ring</td></tr>
+                <tr><th>Magnetic field</th><td>Rapidly pulsing, high power</td><td>Constant, permanent magnets can be used</td></tr>
+                <tr><th>Magnet energy use</th><td>High, fights centrifugal force</td><td>Zero to minimal, works with natural orbit growth</td></tr>
+                <tr><th>Core location</th><td>Compact core at the centre</td><td>Wide ring on the outer perimeter</td></tr>
+                <tr><th>Cooling area</th><td>Very small</td><td>Very large</td></tr>
+                <tr><th>Heat extraction</th><td>Difficult, concentrated hot spot</td><td>Easy and uniform</td></tr>
+                <tr><th>Hitting the target</th><td>Needs complex steering inward</td><td>Happens naturally at the outer radius</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            <strong>The Coulomb barrier problem.</strong><br>
+            My original idea was to smash protons directly into U-238. But a proton (+1) and a uranium nucleus (+92) repel each other strongly, a proton needs about 14.7 MeV just to touch the nucleus. Worse, solid uranium is full of electrons, and a fast proton collides with millions of them long before it ever meets a nucleus, losing almost all its energy as useless heat. The accelerator would consume far more power than the occasional fission could ever produce.
+          </p>
+          <p>
+            <strong>The solution, a lead spallation mantle.</strong><br>
+            I placed an intermediate layer of lead on the inner side of the outer fuel ring. The reaction then happens in three stages:
+          </p>
+          <ul class="detail-list">
+            <li><strong>Stage 1:</strong> accelerated protons hit the lead layer instead of the uranium.</li>
+            <li><strong>Stage 2:</strong> each high-energy proton shatters a lead nucleus (spallation), releasing a shower of fast neutrons.</li>
+            <li><strong>Stage 3:</strong> neutrons have zero charge, so they feel zero Coulomb repulsion and pass straight into the U-238 fuel.</li>
+          </ul>
+          <p>
+            When a neutron with more than about 1.1 MeV strikes U-238, it causes fast fission, releasing around 200 MeV per split. Since one proton produces multiple neutrons, and each neutron can split a different uranium atom, the nuclear energy released is far greater than the electrical energy spent accelerating the proton, giving a real net energy gain.
+          </p>
+
+          <p>
+            <strong>Cooling and heat extraction.</strong><br>
+            The heat transfer area of a cylindrical core is A = 2&pi;RH. Because the Type-2 fuel ring has a much larger radius than a conventional compact core, its cooling surface is roughly 5 to 10 times larger, which lowers the heat flux, prevents hot spots and reduces strain on the fuel. The heat is carried away by a coolant such as liquid lead-bismuth, helium gas or molten salt, and used to run a turbine for electricity.
+          </p>
+
+          <p><strong>Practical engineering considerations</strong></p>
+          <ul class="detail-list">
+            <li><strong>Vacuum:</strong> the toroidal chamber must hold a high vacuum so the particles don't collide with air molecules.</li>
+            <li><strong>Liquid metal target:</strong> using liquid lead-bismuth eutectic (LBE) as the converter layer avoids radiation damage and cracking, and it doubles as an excellent coolant.</li>
+            <li><strong>Permanent magnets:</strong> in Type-2, permanent magnet arrays can provide the guiding field, removing the electrical cost of running magnet coils continuously.</li>
+          </ul>
+        </div>
       </div>
 
       <!-- 6. References and links -->

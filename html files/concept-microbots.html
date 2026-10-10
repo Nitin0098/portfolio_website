@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microbots - Self-Assembling Cubic Micro-Robots - Nitin Vishwakarma</title>
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn">projects</a>
+        <a href="concepts.html" class="nav-btn active">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="concepts.html" class="back-btn">&larr; Back to Concepts</a>
+      </div>
+
+      <!-- 1. Image of the concept -->
+      <div class="detail-main-image-container">
+        <img src="../images/microbots.png" alt="Microbots - Self-Assembling Cubic Micro-Robots" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the concept in large text -->
+      <h1 class="detail-title">Microbots - Self-Assembling Cubic Micro-Robots</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          Microbots is a theoretical concept for autonomous, microscopic cubic robots that can move on command, communicate with one another, share energy, and bond electromagnetically to assemble into dynamic three-dimensional structures.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          I originally conceived the foundation of this idea during 12th grade in high school, driven by the desire to test the physical feasibility of programmable matter. Rather than relying on rigid, pre-assembled machinery, this project explores a future where millions of microscopic building blocks act as collective voxels, reconfiguring their physical geometry to form any tool, mechanism, or structure on demand.
+        </p>
+      </div>
+
+      <!-- 4. Inspiration -->
+      <div class="detail-inspiration-section">
+        <h2 class="section-subheading">Inspiration</h2>
+        <p class="inspiration-text-top">
+          Growing up, I was deeply captivated by science fiction and how imaginative technology can inspire real-world engineering. One of the biggest creative catalysts for this project was Disney's <em>Big Hero 6</em>, specifically Hiro Hamada's microbots—swarms of tiny magnetic links controlled through a neural headband that could instantly rise into soaring towers, dynamic bridges, and intricate moving machinery.
+        </p>
+        <div class="inspiration-image-container">
+          <img src="../images/microbots_inspiration.png" alt="Big Hero 6 Microbots Inspiration" class="inspiration-image">
+        </div>
+        <p class="inspiration-text-bottom">
+          While sci-fi portrays micro-assembly effortlessly, making it physically viable requires tackling steep real-world challenges: extreme electromagnetic force decay at micro scales, severe Joule heating in microscopic coils, energy density ceilings, and eliminating onboard batteries altogether.
+        </p>
+      </div>
+
+      <!-- 5. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Approach</h2>
+        <div class="detail-more-text">
+          <p>
+            <strong>The Design Journey: Why the Cube?</strong><br>
+            My earliest design was an elongated diamond with rounded edges that resembled a smooth cylinder. However, early geometric analysis forced me to discard it for three reasons: it offered at most two connection joints, it was exceptionally difficult to organize into dense 3D volumes, and its asymmetry made microscopic lithography impractical.
+          </p>
+          <p>
+            To build true programmable matter, the geometry needed complete 3-axis symmetry, the ability to pack into space without gaps (tessellation), maximum bonding faces, and compatibility with planar manufacturing. The <strong>cube</strong> was the ideal solution. It tessellates 3D space with zero empty voids, provides 6 symmetrical bonding faces, and is ideally suited for layered lithographic fabrication.
+          </p>
+
+          <h3 class="detail-subheading">Core Architecture &amp; Anatomy</h3>
+          <p>
+            Each microbot is a microscopic cube (engineered around 100&nbsp;&micro;m to 500&nbsp;&micro;m in size) consisting of four integrated subsystems:
+          </p>
+          <ul class="detail-list">
+            <li>
+              <strong>Face-Mounted Electromagnetic Coils (6 Faces):</strong> A planar circular copper coil is fabricated onto each face. These coils serve a dual purpose: passing controllable current produces a magnetic dipole to attract, repel, and move adjacent bots, while unactuated coils wirelessly harvest ambient power from an external oscillating magnetic field.
+            </li>
+            <li>
+              <strong>Edge Communication &amp; Power Pads:</strong> Four conductive copper contact pads sit on the edges and corners of each face. When bots latch together, these pads form an electrical bus that transmits commands across the swarm and routes energy from exterior bots to central bots supporting high structural loads.
+            </li>
+            <li>
+              <strong>Internal Supercapacitor Energy Buffer:</strong> Instead of chemical batteries, an internal electrostatic storage element buffers energy harvested from the environment for high-current actuation bursts.
+            </li>
+            <li>
+              <strong>On-Board Micro-Controller:</strong> A microscopic CMOS logic circuit or microcontroller etched into the core coordinates local timing, communication packets, and coil polarities. When linked together, the swarm can operate as a massively distributed computing processor.
+            </li>
+          </ul>
+
+          <h3 class="detail-subheading">Powering the Swarm: The Harvest-Use Cycle ("Dual-Plexing")</h3>
+          <p>
+            At the micro-scale, conventional chemical batteries are completely impractical due to volume constraints, weight, and cycle degradation. Microbots carry no internal batteries. Instead, they operate completely battery-free by drawing energy from an external oscillating magnetic field via electromagnetic induction.
+          </p>
+          <p>
+            To prevent interference between power reception and mechanical bonding, the system uses a synchronized control strategy called <strong>dual-plexing</strong>:
+          </p>
+          <ul class="detail-list">
+            <li><strong>Harvest Phase:</strong> For the majority of each cycle, the coils act as passive inductive pickups, capturing energy from the external magnetic field and storing it into the internal capacitor.</li>
+            <li><strong>Actuation Phase:</strong> In brief, millisecond bursts, stored energy discharges into selected coils to generate controlled magnetic attraction or repulsion, repositioning bots and locking bonds.</li>
+          </ul>
+
+          <h3 class="detail-subheading">Overcoming Energy Limits: The Supercapacitor Breakthrough</h3>
+          <p>
+            In my initial design version, I calculated the energy storage of a conventional parallel-plate capacitor with high-permittivity barium titanate (BaTiO<sub>3</sub>, &epsilon;<sub>r</sub> = 10,000). At microscopic dimensions (0.5&nbsp;mm cube), the capacitance was just 44.25&nbsp;pF. Even assuming an extreme voltage of 200&nbsp;V—which would cause electric arcing and dielectric breakdown at this scale—the stored energy was only ~885&nbsp;nJ, which is far too low to power actuation coils.
+          </p>
+          <p>
+            To solve this critical bottleneck, I upgraded the internal storage model to <strong>porous activated-carbon supercapacitor technology</strong> (electric double-layer capacitor). With porous carbon electrodes offering huge surface areas (~100–200&nbsp;F/g):
+          </p>
+          <div class="detail-formula">
+            C = 100 F/g &times; 12.5 &micro;g = 1.25 mF &emsp;&rArr;&emsp; E = &frac12; C V<sup>2</sup> = &frac12; (1.25 &times; 10<sup>&minus;3</sup>) &times; (2.7)<sup>2</sup> &approx; 4.56 mJ
+          </div>
+          <p>
+            This increases stored energy by over <strong>4,000&times;</strong> (from nanojoules to 4.56&nbsp;mJ) while operating at a safe, realistic voltage of just 2.7&nbsp;V, completely eliminating the need for high-voltage hazards and making electromagnetic actuation physically viable.
+          </p>
+
+          <h3 class="detail-subheading">Preliminary Feasibility Numbers</h3>
+          <div class="table-scroll">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Physical Parameter</th>
+                  <th>Calculated Value</th>
+                  <th>Engineering Significance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Cube Edge &amp; Mass</th>
+                  <td>100 &micro;m edge, ~8.96 &micro;g</td>
+                  <td>Microscopic scale with negligible gravitational inertia</td>
+                </tr>
+                <tr>
+                  <th>Coil Resistance</th>
+                  <td>~75.3 m&Omega;</td>
+                  <td>Low resistive loss through optimized conductor cross-section</td>
+                </tr>
+                <tr>
+                  <th>Thermal Current Limit</th>
+                  <td>62.7 mA (at 0.1 s pulse)</td>
+                  <td>Constrained to a safe &Delta;T of 10&deg;C to prevent thermal breakdown</td>
+                </tr>
+                <tr>
+                  <th>Coil Core Magnetic Field</th>
+                  <td>~1.2 &times; 10<sup>&minus;3</sup> T (1.2 mT)</td>
+                  <td>Localized field generated per activated face</td>
+                </tr>
+                <tr>
+                  <th>Attractive Force (at 20 &micro;m)</th>
+                  <td>~1.25 &times; 10<sup>&minus;10</sup> N</td>
+                  <td>Produces an acceleration of ~1.4 m/s&sup2;, enabling deliberate motion</td>
+                </tr>
+                <tr>
+                  <th>Supercapacitor Energy</th>
+                  <td>~4.56 mJ (at 2.7 V)</td>
+                  <td>High energy density buffer for multi-millisecond actuation pulses</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="detail-subheading">Potential Applications</h3>
+          <p>
+            Because microbots act as modular building blocks, the range of potential applications spans several frontiers:
+          </p>
+          <ul class="detail-list">
+            <li><strong>Medical Nanorobotics:</strong> Targeted micro-scale drug delivery to diseased cells, non-invasive biopsies, and microsurgical intervention through capillary pathways without open incisions.</li>
+            <li><strong>Environmental Remediation:</strong> Dispersible swarms for breaking down micro-pollutants and targeted oil spill absorption in marine environments.</li>
+            <li><strong>Precision Micro-Manufacturing:</strong> High-precision pick-and-place assembly of micro-optics and semiconductor packages beyond traditional robotic reach.</li>
+            <li><strong>Dynamic Programmable Matter:</strong> Reconfigurable tools and rapid prototyping where material geometry adapts in real time to mechanical demands.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 6. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Research paper DOI and formal publication link will be updated soon.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma &bull; Minimalist Design</p>
+  </footer>
+
+</body>
+</html>

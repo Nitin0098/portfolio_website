@@ -684,6 +684,15 @@ img {
   display: block;
 }
 
+/* Desktop only: keep the same 480px banner frame, but fit the whole image
+   inside it instead of cropping (mobile view is left unchanged). */
+@media (min-width: 769px) {
+  .detail-main-image {
+    height: 480px;
+    object-fit: contain;
+  }
+}
+
 /* 2. Name in large text */
 .detail-title {
   font-size: 2.8rem;
@@ -753,6 +762,96 @@ img {
 .detail-more-text {
   font-size: 1.05rem;
   line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* Long-form technical content helpers */
+.detail-more-text p {
+  margin-bottom: 1.2rem;
+}
+
+.detail-more-text strong {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.detail-subheading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin: 2rem 0 0.9rem;
+}
+
+.detail-list {
+  margin: 0 0 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-list li::marker {
+  color: var(--accent-cyan);
+}
+
+.detail-formula {
+  font-family: var(--font-mono);
+  font-size: 0.98rem;
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  margin: 0 0 1.2rem;
+  text-align: center;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.comparison-table th,
+.comparison-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table thead th {
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.comparison-table tbody th {
+  color: var(--text-white);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.comparison-table tbody tr:last-child th,
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Card variant: show the whole image instead of cropping it */
+.card-media.card-media--contain img {
+  object-fit: contain;
+}
+
+.reference-text {
   color: var(--text-muted);
 }
 
