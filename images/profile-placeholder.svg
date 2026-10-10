@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="photoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f3d" />
+      <stop offset="50%" stop-color="#091326" />
+      <stop offset="100%" stop-color="#050a14" />
+    </linearGradient>
+    <linearGradient id="photoBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.2" />
+    </linearGradient>
+    <radialGradient id="avatarGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0a1428" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background container -->
+  <rect width="400" height="400" rx="20" fill="url(#photoBg)" stroke="url(#photoBorder)" stroke-width="2" />
+  <circle cx="200" cy="170" r="130" fill="url(#avatarGlow)" />
+
+  <!-- Minimalist Geometric Portrait Silhouette -->
+  <!-- Head -->
+  <circle cx="200" cy="155" r="58" fill="#13274f" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.4" />
+  <circle cx="200" cy="155" r="50" fill="#0d1b38" />
+
+  <!-- Shoulders / Torso -->
+  <path d="M 110 320 C 110 245, 150 235, 200 235 C 250 235, 290 245, 290 320 Z" fill="#13274f" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.4" />
+  <path d="M 118 320 C 118 253, 154 243, 200 243 C 246 243, 282 253, 282 320 Z" fill="#0d1b38" />
+
+  <!-- Subtle camera/photo placeholder icon indicator -->
+  <g transform="translate(200, 355)" stroke="#38bdf8" stroke-opacity="0.5" fill="none" stroke-width="1.5">
+    <circle cx="0" cy="0" r="14" fill="#0a1428" />
+    <!-- Camera glyph -->
+    <path d="M -6 3 L -6 -2 L -4 -4 L 4 -4 L 6 -2 L 6 3 Z" />
+    <circle cx="0" cy="0" r="2.5" />
+  </g>
+</svg>

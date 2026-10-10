@@ -97,6 +97,7 @@ const views = {
 
 const navBtns = {
   brand: document.getElementById('brand-btn'),
+  home: document.getElementById('nav-home-btn'),
   projects: document.getElementById('nav-projects-btn'),
   concepts: document.getElementById('nav-concepts-btn'),
   contact: document.getElementById('nav-contact-btn')
@@ -107,7 +108,9 @@ function switchView(viewName, dataId = null) {
   // Update persistent Navigation active states
   Object.values(navBtns).forEach(btn => btn && btn.classList.remove('active'));
 
-  if (viewName === 'projects' || viewName === 'projectDetail') {
+  if (viewName === 'hero') {
+    if (navBtns.home) navBtns.home.classList.add('active');
+  } else if (viewName === 'projects' || viewName === 'projectDetail') {
     if (navBtns.projects) navBtns.projects.classList.add('active');
   } else if (viewName === 'concepts' || viewName === 'conceptDetail') {
     if (navBtns.concepts) navBtns.concepts.classList.add('active');
@@ -361,7 +364,10 @@ window.handleThoughtsSubmit = function (e, form) {
 document.addEventListener('DOMContentLoaded', () => {
   // Setup Navbar Button Handlers
   if (navBtns.brand) {
-    navBtns.brand.addEventListener('click', () => navigateTo('hero'));
+    navBtns.brand.addEventListener('click', () => navigateTo('home'));
+  }
+  if (navBtns.home) {
+    navBtns.home.addEventListener('click', () => navigateTo('home'));
   }
   if (navBtns.projects) {
     navBtns.projects.addEventListener('click', () => navigateTo('projects'));
