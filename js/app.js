@@ -42,23 +42,21 @@ const portfolioData = {
 
   concepts: [
     {
-      id: 'placeholder-concept',
-      name: 'Concept 01: Cognitive Architecture',
-      cardImage: 'images/concept-placeholder-hero.svg',
+      id: 'cir-nuclear-fission',
+      name: 'CIR - Chain Reaction Independent Nuclear Fission Reactors',
+      cardImage: 'images/path_of_particles.png',
       detail: {
-        image: 'images/concept-placeholder-hero.svg',
-        name: 'Concept 01: Cognitive Architecture',
-        introduction: 'An examination of spatial mental models that prioritize visual focus and relational clarity.',
+        image: 'images/path_of_particles.png',
+        name: 'CIR - Chain Reaction Independent Nuclear Fission Reactors',
+        introduction: `This is CIR (chain reaction independent nuclear fission reactors), one of the most ambitious project  I ever worked on, I designed this back in the year 2024 in the gap between high school and engineering college. <br><br>This is not just a concept it's my vision of how I imagine the future of  decentralised, small scale , high energy density and safe nuclear power generators`,
         inspiration: {
-          textTop: 'Inspired by neural network topologies and natural constellation dynamics, exploring unified relational networks.',
-          image: 'images/concept-inspiration.svg',
-          textBottom: 'Associating nodes through spatial intuition replaces artificial fragmentation with continuous structural harmony.'
+          textTop: `I was(and still am) deeply fascinated by science fiction and the tech shown in these kind of movies/shows, one of my favourite is Iron Man movie series , that series of movies blurred The line between science fiction and reality seamlessly, I was deeply fascinated about The arc reactor, and  after months of designing and redesigning I designed CIRs , they are smaller in size(when compared to traditional Nuclear reactors), inherently safe, capable of utilising a variety of fuels that is mostly neglected by nuclear industry(U-238, etc) , CIRs are very similar to ADS (Accelerator driven systems) , it's basically a cyclotron and ADS combined into a single unit to solve problems in nuclear physics that troubled humans for centuries.`,
+          image: 'images/arc_reactor_inspiration.jpeg',
+          textBottom: ''
         },
-        moreText: 'Contextual layers expand upon intentional interaction, maintaining an uncluttered cognitive workspace while preserving immediate access to core functions.',
+        moreText: `<p style="margin-bottom: 1.2rem;"><strong>Here are the problems and how I solved it</strong></p><p style="margin-bottom: 1.2rem;"><strong>1. Critical mass</strong><br>Naturally neutrons leak out of the nuclear core, and  in traditional fission reactors we use heavy reflectors and use nuclear fuel of mass greater than critical mass, if it is lower than critical mass, the neutron multiplication factor drops below 1 and the reactor cannot sustain the chain reaction.</p><p style="margin-bottom: 1.2rem;"><strong>How CIRs solve this,</strong><br>Since CIRs fundamentally don't rely on chain reaction, in fact the neutron multiplication factor less than one is intentional, the size of the nuclear fuel is free from critical Mass constraints, allowing us to design the nuclear fuel small  as per our needs.</p><p style="margin-bottom: 1.2rem;"><strong>2. One of the most important factor is safety and here's how this design fixed it.</strong></p><p style="margin-bottom: 1.2rem;">Now this design that I created is comparatively much smaller then traditional Nuclear fission reactor, it can be portable and transported by truck to the places where it is needed, It has potential to power entire building or a group of house in a town using nothing but depleted uranium fuel or other transuranium fuel.</p><p style="margin-bottom: 1.2rem;">While everyone is chasing nuclear fusion, I believe we gravely neglect nuclear fission and it's capabilities, ADS is something we already have and it's just the leap of engineering that is needed to convert them into small(the size of 2-3 SUVs), decentralised , portable, and safe to be set up in towns, buildings without needing multi-million dollars setup or a 50 persons crew just to maintain, now it's obvious the power output will be significantly lower than traditional fission power plants and the power output should be scalable with size as per my calculations.</p><p style="margin-bottom: 1.2rem;">Comparison of CIRs with traditional Nuclear fission reactors</p><p style="margin-bottom: 1.2rem;">Deep overview of the construction:</p>`,
         references: [
-          { title: 'Cognitive Load Theory and Minimalist Information Design', url: '#' },
-          { title: 'Relational Graph Interfaces in Ambient Computing', url: '#' },
-          { title: 'Human Factors & Intentional User Experience Studies', url: '#' }
+          { title: 'https://doi.org/10.5281/zenodo.23281205', url: 'https://doi.org/10.5281/zenodo.23281205' }
         ]
       }
     },
@@ -224,7 +222,7 @@ function renderConceptDetail(conceptId) {
       <div class="inspiration-image-container">
         <img src="${d.inspiration.image}" alt="Concept Inspiration Diagram" class="inspiration-image">
       </div>
-      <p class="inspiration-text-bottom">${d.inspiration.textBottom}</p>
+      ${d.inspiration.textBottom ? `<p class="inspiration-text-bottom">${d.inspiration.textBottom}</p>` : ''}
     </div>
 
     <!-- 5. Technical Details & Approach -->
