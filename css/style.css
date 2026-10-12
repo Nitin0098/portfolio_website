@@ -518,26 +518,25 @@ img {
   margin-top: 0.4rem;
 }
 
-/* Cards Vertical Layout (Arrayed vertically, downward scrolling for all views) */
+/* Cards Vertical Layout (2 columns on desktop, 1 column on mobile) */
 .carousel-wrapper {
   position: relative;
   width: 100%;
 }
 
 .cards-track {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
   width: 100%;
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0.5rem 0 2.5rem 0;
+  padding: 0.5rem 0 3rem 0;
 }
 
 /* Individual Content Card */
 .content-card {
   width: 100%;
-  max-width: 100%;
   background: var(--bg-navy-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -557,7 +556,7 @@ img {
 
 .card-media {
   width: 100%;
-  height: 360px;
+  height: 270px;
   background-color: var(--bg-navy-deep);
   position: relative;
   overflow: hidden;
@@ -583,7 +582,7 @@ img {
 }
 
 .card-content {
-  padding: 1.6rem 2rem 1.8rem;
+  padding: 1.5rem 1.8rem 1.7rem;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
@@ -591,7 +590,7 @@ img {
 }
 
 .card-title {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: var(--text-white);
   line-height: 1.35;
@@ -601,7 +600,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--accent-cyan);
   margin-top: auto;
@@ -612,7 +611,7 @@ img {
   gap: 0.75rem;
 }
 
-/* Carousel controls hidden (All views scroll vertically down) */
+/* Carousel controls hidden (Down direction scrollable) */
 .carousel-controls {
   display: none !important;
 }
@@ -1077,6 +1076,7 @@ img {
     color: var(--accent-cyan);
   }
   .cards-track {
+    grid-template-columns: 1fr;
     gap: 1.8rem;
   }
   .card-media {
