@@ -170,25 +170,24 @@ const portfolioData = {
 <h3 class="detail-subheading">Core Architecture &amp; Anatomy</h3>
 <p>Each microbot is a microscopic cube (engineered around 100&nbsp;&micro;m to 500&nbsp;&micro;m in size) consisting of four integrated subsystems:</p>
 <ul class="detail-list">
-  <li><strong>Face-Mounted Electromagnetic Coils (6 Faces):</strong> A planar circular copper coil is fabricated onto each face. These coils serve a dual purpose: passing controllable current produces a magnetic dipole to attract, repel, and move adjacent bots, while unactuated coils wirelessly harvest ambient power from an external oscillating magnetic field.</li>
-  <li><strong>Edge Communication &amp; Power Pads:</strong> Four conductive copper contact pads sit on the edges and corners of each face. When bots latch together, these pads form an electrical bus that transmits commands across the swarm and routes energy from exterior bots to central bots supporting high structural loads.</li>
+  <li><strong>Face-Mounted Electromagnetic Coils (6 Faces):</strong> A planar circular copper coil is fabricated onto each face. These coils serve a dual purpose: passing controllable current produces a magnetic dipole to attract, repel, and move adjacent bots, while coils that are not used for bonding, wirelessly harvest ambient power from an external oscillating magnetic field.</li>
+  <li><strong>Edge Communication &amp; Power Pads:</strong> Four conductive copper contact pads sit on the edges and corners of each face. When bots latch together, these pads form an electrical bus that transmits commands across the swarm and routes energy from exterior bots to central bots which require more energy to support high structural loads.</li>
   <li><strong>Internal Supercapacitor Energy Buffer:</strong> Instead of chemical batteries, an internal electrostatic storage element buffers energy harvested from the environment for high-current actuation bursts.</li>
   <li><strong>On-Board Micro-Controller:</strong> A microscopic CMOS logic circuit or microcontroller etched into the core coordinates local timing, communication packets, and coil polarities. When linked together, the swarm can operate as a massively distributed computing processor.</li>
 </ul>
 
-<h3 class="detail-subheading">Powering the Swarm: The Harvest-Use Cycle ("Dual-Plexing")</h3>
+<h3 class="detail-subheading">Powering the Swarm: Dual-Plexing</h3>
 <p>At the micro-scale, conventional chemical batteries are completely impractical due to volume constraints, weight, and cycle degradation. Microbots carry no internal batteries. Instead, they operate completely battery-free by drawing energy from an external oscillating magnetic field via electromagnetic induction.</p>
-<p>To prevent interference between power reception and mechanical bonding, the system uses a synchronized control strategy called <strong>dual-plexing</strong>:</p>
+<p>To prevent interference between power reception and mechanical bonding, the system uses a synchronized control strategy called <strong>dual-plexing</strong>(this is still very imature and needs further development):</p>
 <ul class="detail-list">
-  <li><strong>Harvest Phase:</strong> For the majority of each cycle, the coils act as passive inductive pickups, capturing energy from the external magnetic field and storing it into the internal capacitor.</li>
-  <li><strong>Actuation Phase:</strong> In brief, millisecond bursts, stored energy discharges into selected coils to generate controlled magnetic attraction or repulsion, repositioning bots and locking bonds.</li>
+  <li>For most structure lets say a triangular plate made by these microbots, It is not necessary every bot has to participate in structure formation. microbots use turn based mechanism, first a group of few bots disengage their actuation to harvest energy, while the other bots hold the structure together, then the bots swap, In this way bots act in unison to keep the structure stable, and as for bots that are in critical positions that they cannot disengage their actuation, other bots can simply supply their energy to these bots via communication pads.</li>
 </ul>
 
 <h3 class="detail-subheading">Overcoming Energy Limits: The Supercapacitor Breakthrough</h3>
-<p>In my initial design version, I calculated the energy storage of a conventional parallel-plate capacitor with high-permittivity barium titanate (BaTiO<sub>3</sub>, &epsilon;<sub>r</sub> = 10,000). At microscopic dimensions (0.5&nbsp;mm cube), the capacitance was just 44.25&nbsp;pF. Even assuming an extreme voltage of 200&nbsp;V—which would cause electric arcing and dielectric breakdown at this scale—the stored energy was only ~885&nbsp;nJ, which is far too low to power actuation coils.</p>
+<p>In my initial design version, I calculated the energy storage of a conventional parallel-plate capacitor with high-permittivity barium titanate (BaTiO<sub>3</sub>, &epsilon;<sub>r</sub> = 10,000). At microscopic dimensions (0.5&nbsp;mm cube), the capacitance was just 44.25&nbsp;pF. Even assuming an extreme voltage of 200&nbsp;V—which I think will certainly cause electric arcing and dielectric breakdown at this scale—the stored energy was only ~885&nbsp;nJ, which is far too low to power actuation coils.</p>
 <p>To solve this critical bottleneck, I upgraded the internal storage model to <strong>porous activated-carbon supercapacitor technology</strong> (electric double-layer capacitor). With porous carbon electrodes offering huge surface areas (~100–200&nbsp;F/g):</p>
 <div class="detail-formula">C = 100 F/g &times; 12.5 &micro;g = 1.25 mF &emsp;&rArr;&emsp; E = &frac12; C V<sup>2</sup> = &frac12; (1.25 &times; 10<sup>&minus;3</sup>) &times; (2.7)<sup>2</sup> &approx; 4.56 mJ</div>
-<p>This increases stored energy by over <strong>4,000&times;</strong> (from nanojoules to 4.56&nbsp;mJ) while operating at a safe, realistic voltage of just 2.7&nbsp;V, completely eliminating the need for high-voltage hazards and making electromagnetic actuation physically viable.</p>
+<p>This increases stored energy by over <strong>4,000&times;</strong> (from nanojoules to 4.56&nbsp;mJ) while operating at a safe, realistic voltage of just 2.7&nbsp;V, completely eliminating the need for high-voltage hazards and making electromagnetic actuation physically viable, This was the second breakthrough I made in this project.</p>
 
 <h3 class="detail-subheading">Preliminary Feasibility Numbers</h3>
 <div class="table-scroll">
@@ -206,13 +205,13 @@ const portfolioData = {
       <tr><th>Thermal Current Limit</th><td>62.7 mA (at 0.1 s pulse)</td><td>Constrained to a safe &Delta;T of 10&deg;C to prevent thermal breakdown</td></tr>
       <tr><th>Coil Core Magnetic Field</th><td>~1.2 &times; 10<sup>&minus;3</sup> T (1.2 mT)</td><td>Localized field generated per activated face</td></tr>
       <tr><th>Attractive Force (at 20 &micro;m)</th><td>~1.25 &times; 10<sup>&minus;10</sup> N</td><td>Produces an acceleration of ~1.4 m/s&sup2;, enabling deliberate motion</td></tr>
-      <tr><th>Supercapacitor Energy</th><td>~4.56 mJ (at 2.7 V)</td><td>High energy density buffer for multi-millisecond actuation pulses</td></tr>
+      <tr><th>Supercapacitor Energy</th><td>~4.56 mJ (at 2.7 V)</td><td>High energy density buffer for longer actuation pulses</td></tr>
     </tbody>
   </table>
 </div>
 
 <h3 class="detail-subheading">Potential Applications</h3>
-<p>Because microbots act as modular building blocks, the range of potential applications spans several frontiers:</p>
+<p>Because microbots act as modular building blocks, the range of potential applications spans several sectors:</p>
 <ul class="detail-list">
   <li><strong>Medical Nanorobotics:</strong> Targeted micro-scale drug delivery to diseased cells, non-invasive biopsies, and microsurgical intervention through capillary pathways without open incisions.</li>
   <li><strong>Environmental Remediation:</strong> Dispersible swarms for breaking down micro-pollutants and targeted oil spill absorption in marine environments.</li>
@@ -220,7 +219,7 @@ const portfolioData = {
   <li><strong>Dynamic Programmable Matter:</strong> Reconfigurable tools and rapid prototyping where material geometry adapts in real time to mechanical demands.</li>
 </ul>`,
         references: [
-          { title: 'Research paper DOI and formal publication link will be updated soon', url: '#' }
+          { title: 'https://doi.org/10.13140/RG.2.2.32520.58885', url: 'https://doi.org/10.13140/RG.2.2.32520.58885' }
         ]
       }
     }

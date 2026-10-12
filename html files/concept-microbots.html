@@ -49,7 +49,7 @@
           Microbots is a theoretical concept for autonomous, microscopic cubic robots that can move on command, communicate with one another, share energy, and bond electromagnetically to assemble into dynamic three-dimensional structures.
         </p>
         <p class="detail-text" style="margin-top: 1rem;">
-          I originally conceived the foundation of this idea during 12th grade in high school, driven by the desire to test the physical feasibility of programmable matter. Rather than relying on rigid, pre-assembled machinery, this project explores a future where millions of microscopic building blocks act as collective voxels, reconfiguring their physical geometry to form any tool, mechanism, or structure on demand.
+          I originally conceived the foundation of this idea during 12th grade in high school, driven by the desire to make something similar and useful to things shown in Sci-Fi movies. Rather than relying on rigid, pre-assembled machinery, this project explores a idea inwhich millions of microscopic building blocks(called as microbots) act together to be useful, reconfiguring their physical geometry to form any object, mechanism, or structure on demand.
         </p>
       </div>
 
@@ -57,13 +57,13 @@
       <div class="detail-inspiration-section">
         <h2 class="section-subheading">Inspiration</h2>
         <p class="inspiration-text-top">
-          Growing up, I was deeply captivated by science fiction and how imaginative technology can inspire real-world engineering. One of the biggest creative catalysts for this project was Disney's <em>Big Hero 6</em>, specifically Hiro Hamada's microbots—swarms of tiny magnetic links controlled through a neural headband that could instantly rise into soaring towers, dynamic bridges, and intricate moving machinery.
+          Growing up, I was deeply captivated by science fiction. One of the biggest creative catalysts for this project was Disney's <em>Big Hero 6</em>, specifically Hiro Hamada's microbots swarm robots, I was trying to create something similar, something small yet capable to bond with others, communicate with others send data or energy when required.
         </p>
         <div class="inspiration-image-container">
           <img src="../images/microbots_inspiration.png" alt="Big Hero 6 Microbots Inspiration" class="inspiration-image">
         </div>
         <p class="inspiration-text-bottom">
-          While sci-fi portrays micro-assembly effortlessly, making it physically viable requires tackling steep real-world challenges: extreme electromagnetic force decay at micro scales, severe Joule heating in microscopic coils, energy density ceilings, and eliminating onboard batteries altogether.
+          While sci-fi displays micro-robotics effortlessly, making it physically viable requires dealing with steep real-world challenges: extreme electromagnetic force decay at micro scales, severe Joule heating in microscopic coils, energy requirements issues and figuring out how to power such small robots.
         </p>
       </div>
 
@@ -73,11 +73,10 @@
         <div class="detail-more-text">
           <p>
             <strong>The Design Journey: Why the Cube?</strong><br>
-            My earliest design was an elongated diamond with rounded edges that resembled a smooth cylinder. However, early geometric analysis forced me to discard it for three reasons: it offered at most two connection joints, it was exceptionally difficult to organize into dense 3D volumes, and its asymmetry made microscopic lithography impractical.
+            My first design was an elongated diamond with rounded edges that resembled something like a smooth cylinder. However, early geometric analysis forced me to scrap this design it for three reasons: it offered at most two connection joints, it was very difficult to organize into dense 3D volumes, and its asymmetry made microscopic lithography impractical.
           </p>
           <p>
-            To build true programmable matter, the geometry needed complete 3-axis symmetry, the ability to pack into space without gaps (tessellation), maximum bonding faces, and compatibility with planar manufacturing. The <strong>cube</strong> was the ideal solution. It tessellates 3D space with zero empty voids, provides 6 symmetrical bonding faces, and is ideally suited for layered lithographic fabrication.
-          </p>
+            To build true programmable matter, i needed a geometry that had most axis of symettry, enough area for the coils placement and something that was fundamentally stable when used to build structures, then few days later in bathroom I had my eureka moment, with 6 faces (bonding sites), area sufficient for coils placement and a design that was much stable than the diamond design, I realised a cube was the perfect answer I was looking for.
 
           <h3 class="detail-subheading">Core Architecture &amp; Anatomy</h3>
           <p>
@@ -85,10 +84,10 @@
           </p>
           <ul class="detail-list">
             <li>
-              <strong>Face-Mounted Electromagnetic Coils (6 Faces):</strong> A planar circular copper coil is fabricated onto each face. These coils serve a dual purpose: passing controllable current produces a magnetic dipole to attract, repel, and move adjacent bots, while unactuated coils wirelessly harvest ambient power from an external oscillating magnetic field.
+              <strong>Face-Mounted Electromagnetic Coils (6 Faces):</strong> A planar circular copper coil is fabricated onto each face. These coils serve a dual purpose: passing controllable current produces a magnetic dipole to attract, repel, and move adjacent bots, while coils that are not used for bonding, wirelessly harvest ambient power from an external oscillating magnetic field.
             </li>
             <li>
-              <strong>Edge Communication &amp; Power Pads:</strong> Four conductive copper contact pads sit on the edges and corners of each face. When bots latch together, these pads form an electrical bus that transmits commands across the swarm and routes energy from exterior bots to central bots supporting high structural loads.
+              <strong>Edge Communication &amp; Power Pads:</strong> Four conductive copper contact pads sit on the edges and corners of each face. When bots latch together, these pads form an electrical bus that transmits commands across the swarm and routes energy from exterior bots to central bots which require more energy to support high structural loads.
             </li>
             <li>
               <strong>Internal Supercapacitor Energy Buffer:</strong> Instead of chemical batteries, an internal electrostatic storage element buffers energy harvested from the environment for high-current actuation bursts.
@@ -98,21 +97,20 @@
             </li>
           </ul>
 
-          <h3 class="detail-subheading">Powering the Swarm: The Harvest-Use Cycle ("Dual-Plexing")</h3>
+          <h3 class="detail-subheading">Powering the Swarm: Dual-Plexing</h3>
           <p>
             At the micro-scale, conventional chemical batteries are completely impractical due to volume constraints, weight, and cycle degradation. Microbots carry no internal batteries. Instead, they operate completely battery-free by drawing energy from an external oscillating magnetic field via electromagnetic induction.
           </p>
           <p>
-            To prevent interference between power reception and mechanical bonding, the system uses a synchronized control strategy called <strong>dual-plexing</strong>:
+            To prevent interference between power reception and mechanical bonding, the system uses a synchronized control strategy called <strong>dual-plexing</strong>(this is still very imature and needs further development):
           </p>
           <ul class="detail-list">
-            <li><strong>Harvest Phase:</strong> For the majority of each cycle, the coils act as passive inductive pickups, capturing energy from the external magnetic field and storing it into the internal capacitor.</li>
-            <li><strong>Actuation Phase:</strong> In brief, millisecond bursts, stored energy discharges into selected coils to generate controlled magnetic attraction or repulsion, repositioning bots and locking bonds.</li>
+            <li><strong></strong> For most structure lets say a triangular plate made by these microbots, It is not necessary every bot has to participate in structure formation. microbots use turn based mechanism, first a group of few bots disengage their actuation to harvest energy, while the other bots hold the structure together, then the bots swap, In this way bots act in unison to keep the structure stable, and as for bots that are in critical positions that they cannot disengage their actuation, other bots can simply supply their energy to these bots via communication pads.  </li>
           </ul>
 
           <h3 class="detail-subheading">Overcoming Energy Limits: The Supercapacitor Breakthrough</h3>
           <p>
-            In my initial design version, I calculated the energy storage of a conventional parallel-plate capacitor with high-permittivity barium titanate (BaTiO<sub>3</sub>, &epsilon;<sub>r</sub> = 10,000). At microscopic dimensions (0.5&nbsp;mm cube), the capacitance was just 44.25&nbsp;pF. Even assuming an extreme voltage of 200&nbsp;V—which would cause electric arcing and dielectric breakdown at this scale—the stored energy was only ~885&nbsp;nJ, which is far too low to power actuation coils.
+            In my initial design version, I calculated the energy storage of a conventional parallel-plate capacitor with high-permittivity barium titanate (BaTiO<sub>3</sub>, &epsilon;<sub>r</sub> = 10,000). At microscopic dimensions (0.5&nbsp;mm cube), the capacitance was just 44.25&nbsp;pF. Even assuming an extreme voltage of 200&nbsp;V—which I think will certainly cause electric arcing and dielectric breakdown at this scale—the stored energy was only ~885&nbsp;nJ, which is far too low to power actuation coils.
           </p>
           <p>
             To solve this critical bottleneck, I upgraded the internal storage model to <strong>porous activated-carbon supercapacitor technology</strong> (electric double-layer capacitor). With porous carbon electrodes offering huge surface areas (~100–200&nbsp;F/g):
@@ -121,7 +119,7 @@
             C = 100 F/g &times; 12.5 &micro;g = 1.25 mF &emsp;&rArr;&emsp; E = &frac12; C V<sup>2</sup> = &frac12; (1.25 &times; 10<sup>&minus;3</sup>) &times; (2.7)<sup>2</sup> &approx; 4.56 mJ
           </div>
           <p>
-            This increases stored energy by over <strong>4,000&times;</strong> (from nanojoules to 4.56&nbsp;mJ) while operating at a safe, realistic voltage of just 2.7&nbsp;V, completely eliminating the need for high-voltage hazards and making electromagnetic actuation physically viable.
+            This increases stored energy by over <strong>4,000&times;</strong> (from nanojoules to 4.56&nbsp;mJ) while operating at a safe, realistic voltage of just 2.7&nbsp;V, completely eliminating the need for high-voltage hazards and making electromagnetic actuation physically viable, This was the second breakthrough I made in this project.
           </p>
 
           <h3 class="detail-subheading">Preliminary Feasibility Numbers</h3>
@@ -163,7 +161,7 @@
                 <tr>
                   <th>Supercapacitor Energy</th>
                   <td>~4.56 mJ (at 2.7 V)</td>
-                  <td>High energy density buffer for multi-millisecond actuation pulses</td>
+                  <td>High energy density buffer for longer actuation pulses</td>
                 </tr>
               </tbody>
             </table>
@@ -171,7 +169,7 @@
 
           <h3 class="detail-subheading">Potential Applications</h3>
           <p>
-            Because microbots act as modular building blocks, the range of potential applications spans several frontiers:
+            Because microbots act as modular building blocks, the range of potential applications spans several sectors:
           </p>
           <ul class="detail-list">
             <li><strong>Medical Nanorobotics:</strong> Targeted micro-scale drug delivery to diseased cells, non-invasive biopsies, and microsurgical intervention through capillary pathways without open incisions.</li>
@@ -188,7 +186,7 @@
         <ul class="references-list">
           <li class="reference-item">
             <span style="color: var(--accent-cyan);">&#8250;</span>
-            <span class="reference-text">Research paper DOI and formal publication link will be updated soon.</span>
+            <a href="https://doi.org/10.13140/RG.2.2.32520.58885" class="reference-link" target="_blank" rel="noopener noreferrer">https://doi.org/10.13140/RG.2.2.32520.58885 &rarr;</a>
           </li>
         </ul>
       </div>
