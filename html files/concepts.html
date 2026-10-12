@@ -17,6 +17,12 @@
         <span>Nitin Vishwakarma</span>
       </a>
 
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
       <nav class="nav-buttons">
         <a href="../index.html" class="nav-btn">home</a>
         <a href="projects.html" class="nav-btn">projects</a>
@@ -65,17 +71,6 @@
           </article>
 
         </div>
-
-        <div class="carousel-controls">
-          <div class="carousel-indicators">
-            <span class="indicator-dot active"></span>
-            <span class="indicator-dot"></span>
-          </div>
-          <div class="carousel-nav-btns">
-            <button class="carousel-arrow" onclick="document.getElementById('concepts-cards-track').scrollBy({left: -480, behavior: 'smooth'})" aria-label="Previous">&larr;</button>
-            <button class="carousel-arrow" onclick="document.getElementById('concepts-cards-track').scrollBy({left: 480, behavior: 'smooth'})" aria-label="Next">&rarr;</button>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -84,5 +79,6 @@
     <p>Nitin Vishwakarma &bull; Minimalist Design</p>
   </footer>
 
+  <script src="../js/nav.js?v=3"></script>
 </body>
 </html>

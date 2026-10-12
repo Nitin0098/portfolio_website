@@ -20,7 +20,13 @@
         <span>Nitin Vishwakarma</span>
       </button>
 
-      <nav class="nav-buttons">
+      <button id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-buttons">
         <button id="nav-home-btn" class="nav-btn active">home</button>
         <button id="nav-projects-btn" class="nav-btn">projects</button>
         <button id="nav-concepts-btn" class="nav-btn">concepts</button>
@@ -122,17 +128,6 @@
         <div id="projects-cards-track" class="cards-track">
           <!-- Dynamically populated via js/app.js -->
         </div>
-
-        <div class="carousel-controls">
-          <div class="carousel-indicators">
-            <span class="indicator-dot active"></span>
-            <span class="indicator-dot"></span>
-          </div>
-          <div class="carousel-nav-btns">
-            <button id="proj-prev-btn" class="carousel-arrow" aria-label="Previous Project">&larr;</button>
-            <button id="proj-next-btn" class="carousel-arrow" aria-label="Next Project">&rarr;</button>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -162,17 +157,6 @@
       <div class="carousel-wrapper">
         <div id="concepts-cards-track" class="cards-track">
           <!-- Dynamically populated via js/app.js -->
-        </div>
-
-        <div class="carousel-controls">
-          <div class="carousel-indicators">
-            <span class="indicator-dot active"></span>
-            <span class="indicator-dot"></span>
-          </div>
-          <div class="carousel-nav-btns">
-            <button id="concept-prev-btn" class="carousel-arrow" aria-label="Previous Concept">&larr;</button>
-            <button id="concept-next-btn" class="carousel-arrow" aria-label="Next Concept">&rarr;</button>
-          </div>
         </div>
       </div>
     </section>
@@ -246,6 +230,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/nav.js?v=3"></script>
   <script src="js/game.js?v=2"></script>
   <script src="js/app.js?v=2"></script>
 </body>
