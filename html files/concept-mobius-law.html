@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Möbius Law - Nitin Vishwakarma</title>
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn">projects</a>
+        <a href="concepts.html" class="nav-btn active">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="concepts.html" class="back-btn">&larr; Back to Concepts</a>
+      </div>
+
+      <!-- 1. Image of the concept -->
+      <div class="detail-main-image-container">
+        <img src="../images/mobius_law_diagram.jpeg" alt="The Möbius Law Diagram" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the concept in large text -->
+      <h1 class="detail-title">The M&ouml;bius Law: Phase-Difference Framing of Multi-Twisted Strips</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          The M&ouml;bius Law is a personal topological discovery framing the behavior of multi-twisted strips under centerline cutting through phase differences (<em>n&pi;</em>).
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          While experimenting hands-on with paper strips twisted by multiples of &pi; before joining their ends into closed bands, I noticed a striking, strict parity rule governing what happens when you cut the loop down its centerline. Framing the physical half-twists as a phase difference between the same plane at each end transformed an otherwise confusing geometric puzzle into an elegant, memorable mathematical principle.
+        </p>
+      </div>
+
+      <!-- 4. Inspiration -->
+      <div class="detail-inspiration-section">
+        <h2 class="section-subheading">Inspiration</h2>
+        <p class="inspiration-text-top">
+          This concept emerged from tactile mathematical curiosity&mdash;taking scissors, paper, and tape to explore spatial topology from first principles. I wanted to see what happens when you generalize beyond the classic single-twist M&ouml;bius strip into arbitrary multi-twist loops, cataloging the resulting topologies systematically.
+        </p>
+        <div class="inspiration-image-container">
+          <img src="../images/mobius_law_diagram.jpeg" alt="The Möbius Law Cut Parity Diagram" class="inspiration-image">
+        </div>
+        <p class="inspiration-text-bottom">
+          By tracing centerline paths with a pencil before cutting, a profound topological truth revealed itself: one-sided surfaces possess a single continuous boundary curve of double length, whereas two-sided surfaces possess two distinct boundaries. The physical cut simply exposes the underlying boundary geometry.
+        </p>
+      </div>
+
+      <!-- 5. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Approach</h2>
+        <div class="detail-more-text">
+          <h3 class="detail-subheading">Setup and Definitions</h3>
+          <p>
+            Consider a continuous strip of paper. Before joining its two ends into a closed band, rotate one end by an angle that is an integer multiple of &pi; (180&deg;):
+          </p>
+          <ul class="detail-list">
+            <li>Define this rotation as the <strong>phase difference</strong>, <em>n&pi;</em>, where <em>n</em> is a non-negative integer representing the number of half-twists.</li>
+            <li><em>n</em> = 0 corresponds to an ordinary, untwisted cylindrical loop.</li>
+            <li><em>n</em> = 1 corresponds to the canonical M&ouml;bius strip (single half-twist, phase &pi;).</li>
+            <li>Glue the ends together to form a closed band, and execute a continuous longitudinal cut along its exact centerline.</li>
+          </ul>
+
+          <h3 class="detail-subheading">Statement of the Law</h3>
+          <p>
+            Given a closed band formed with phase difference <em>n&pi;</em>, cutting it along its centerline produces:
+          </p>
+          <div class="detail-formula">
+            If n is even &rArr; 2 separate strips, each with phase difference n&pi;, linked together (interlocked n/2 times)<br><br>
+            If n is odd &rArr; 1 single strip, twice the original length, with phase difference 2(n + 1)&pi;
+          </div>
+
+          <h3 class="detail-subheading">Worked Examples Across Parities</h3>
+          <div class="table-scroll">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>n (Before Cut)</th>
+                  <th>Twist Phase</th>
+                  <th>Parity</th>
+                  <th>Topological Result After Centerline Cut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td>&pi; (Standard M&ouml;bius)</td>
+                  <td>Odd</td>
+                  <td>1 single strip, double length, phase 2(1 + 1)&pi; = <strong>4&pi;</strong></td>
+                </tr>
+                <tr>
+                  <th>2</th>
+                  <td>2&pi; (Full twist)</td>
+                  <td>Even</td>
+                  <td>2 linked separate strips, each phase <strong>2&pi;</strong>, linked 1 time</td>
+                </tr>
+                <tr>
+                  <th>3</th>
+                  <td>3&pi; (Triple half-twist)</td>
+                  <td>Odd</td>
+                  <td>1 single strip, double length, phase 2(3 + 1)&pi; = <strong>8&pi;</strong></td>
+                </tr>
+                <tr>
+                  <th>4</th>
+                  <td>4&pi; (Double twist)</td>
+                  <td>Even</td>
+                  <td>2 linked separate strips, each phase <strong>4&pi;</strong>, linked 2 times</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="detail-subheading">The Core Insight</h3>
+          <p>
+            The fundamental symmetry breaking behind this law can be stated succinctly:
+          </p>
+          <blockquote style="border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem; margin: 1.5rem 0; color: var(--accent-cyan); font-size: 1.15rem; font-style: italic;">
+            &ldquo;Even the strip doesn't want its offspring to be odd.&rdquo;
+          </blockquote>
+          <p>
+            No matter what phase difference you begin with, cutting a band along its centerline <em>never produces an odd-phase result</em>. An odd-phase input (<em>n</em> odd) collapses into a single strip whose new phase, 2(<em>n</em>&nbsp;+&nbsp;1)&pi;, is strictly even. An even-phase input (<em>n</em> even) bifurcates into two distinct strips that each preserve the original even phase.
+          </p>
+          <p>
+            Consequently, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.
+          </p>
+
+          <h3 class="detail-subheading">Topological Mechanism</h3>
+          <p>
+            This behavior is governed by the boundary structure of the strip prior to cutting:
+          </p>
+          <ul class="detail-list">
+            <li><strong>Odd n (non-orientable):</strong> An odd-twist band is one-sided and bounded by a single continuous closed curve that winds twice around the core before closing. Cutting down the centerline is geometrically equivalent to tracing parallel to this solitary edge, resulting in one continuous ribbon of double length.</li>
+            <li><strong>Even n (orientable):</strong> An even-twist band is two-sided and possesses two distinct, independent boundary edges. Cutting along the centerline cleanly partitions the two boundaries into two separate bands, linked together due to the initial spatial rotation.</li>
+          </ul>
+
+          <h3 class="detail-subheading">Relationship to Established Mathematics</h3>
+          <p>
+            This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>). While conventional literature frames the theorem in terms of half-twists <em>N</em>, formulating it in terms of continuous phase difference <em>n&pi;</em> offers an intuitive wave-phase perspective discovered through independent physical experimentation.
+          </p>
+
+          <h3 class="detail-subheading">Further Explorations</h3>
+          <ul class="detail-list">
+            <li><strong>Off-Center Cuts:</strong> Cutting at a fractional width (e.g., 1/3 from an edge) creates interlocking rings of unequal widths and distinct twist configurations.</li>
+            <li><strong>Recursive Cutting:</strong> Applying the transformation recursively across consecutive generations to map branching topological trees.</li>
+            <li><strong>Linking Numbers in Knot Theory:</strong> Rigorously formalizing the Gauss linking integral for higher-order even parity strips.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 6. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">J. B. Listing, &ldquo;Vorstudien zur Topologie&rdquo; (G&ouml;ttinger Studien, 1847) &mdash; Foundational Analysis of Paradromic Rings</span>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Research paper DOI and formal topological documentation will be updated soon.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma &bull; Minimalist Design</p>
+  </footer>
+
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>

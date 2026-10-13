@@ -222,6 +222,321 @@ const portfolioData = {
           { title: 'https://doi.org/10.13140/RG.2.2.32520.58885', url: 'https://doi.org/10.13140/RG.2.2.32520.58885' }
         ]
       }
+    },
+    {
+      id: 'mobius-law',
+      name: 'The Möbius Law: Phase-Difference Framing of Multi-Twisted Strips',
+      cardImage: 'images/mobius_law_diagram.jpeg',
+      detail: {
+        image: 'images/mobius_law_diagram.jpeg',
+        name: 'The M&ouml;bius Law: Phase-Difference Framing of Multi-Twisted Strips',
+        introduction: `The M&ouml;bius Law is a personal topological discovery framing the behavior of multi-twisted strips under centerline cutting through phase differences (<em>n&pi;</em>).<br><br>While experimenting hands-on with paper strips twisted by multiples of &pi; before joining their ends into closed bands, I noticed a striking, strict parity rule governing what happens when you cut the loop down its centerline. Framing the physical half-twists as a phase difference between the same plane at each end transformed an otherwise confusing geometric puzzle into an elegant, memorable mathematical principle.`,
+        inspiration: {
+          textTop: `This concept emerged from tactile mathematical curiosity&mdash;taking scissors, paper, and tape to explore spatial topology from first principles. I wanted to see what happens when you generalize beyond the classic single-twist M&ouml;bius strip into arbitrary multi-twist loops, cataloging the resulting topologies systematically.`,
+          image: 'images/mobius_law_diagram.jpeg',
+          textBottom: `By tracing centerline paths with a pencil before cutting, a profound topological truth revealed itself: one-sided surfaces possess a single continuous boundary curve of double length, whereas two-sided surfaces possess two distinct boundaries. The physical cut simply exposes the underlying boundary geometry.`
+        },
+        moreText: `<h3 class="detail-subheading">Setup and Definitions</h3>
+<p>Consider a continuous strip of paper. Before joining its two ends into a closed band, rotate one end by an angle that is an integer multiple of &pi; (180&deg;):</p>
+<ul class="detail-list">
+  <li>Define this rotation as the <strong>phase difference</strong>, <em>n&pi;</em>, where <em>n</em> is a non-negative integer representing the number of half-twists.</li>
+  <li><em>n</em> = 0 corresponds to an ordinary, untwisted cylindrical loop.</li>
+  <li><em>n</em> = 1 corresponds to the canonical M&ouml;bius strip (single half-twist, phase &pi;).</li>
+  <li>Glue the ends together to form a closed band, and execute a continuous longitudinal cut along its exact centerline.</li>
+</ul>
+
+<h3 class="detail-subheading">Statement of the Law</h3>
+<p>Given a closed band formed with phase difference <em>n&pi;</em>, cutting it along its centerline produces:</p>
+<div class="detail-formula">
+  If n is even &rArr; 2 separate strips, each with phase difference n&pi;, linked together (interlocked n/2 times)<br><br>
+  If n is odd &rArr; 1 single strip, twice the original length, with phase difference 2(n + 1)&pi;
+</div>
+
+<h3 class="detail-subheading">Worked Examples Across Parities</h3>
+<div class="table-scroll">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>n (Before Cut)</th>
+        <th>Twist Phase</th>
+        <th>Parity</th>
+        <th>Topological Result After Centerline Cut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>1</th><td>&pi; (Standard M&ouml;bius)</td><td>Odd</td><td>1 single strip, double length, phase 2(1 + 1)&pi; = <strong>4&pi;</strong></td></tr>
+      <tr><th>2</th><td>2&pi; (Full twist)</td><td>Even</td><td>2 linked separate strips, each phase <strong>2&pi;</strong>, linked 1 time</td></tr>
+      <tr><th>3</th><td>3&pi; (Triple half-twist)</td><td>Odd</td><td>1 single strip, double length, phase 2(3 + 1)&pi; = <strong>8&pi;</strong></td></tr>
+      <tr><th>4</th><td>4&pi; (Double twist)</td><td>Even</td><td>2 linked separate strips, each phase <strong>4&pi;</strong>, linked 2 times</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="detail-subheading">The Core Insight</h3>
+<p>The fundamental symmetry breaking behind this law can be stated succinctly:</p>
+<blockquote style="border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem; margin: 1.5rem 0; color: var(--accent-cyan); font-size: 1.15rem; font-style: italic;">
+  &ldquo;Even the strip doesn't want its offspring to be odd.&rdquo;
+</blockquote>
+<p>No matter what phase difference you begin with, cutting a band along its centerline <em>never produces an odd-phase result</em>. An odd-phase input (<em>n</em> odd) collapses into a single strip whose new phase, 2(<em>n</em>&nbsp;+&nbsp;1)&pi;, is strictly even. An even-phase input (<em>n</em> even) bifurcates into two distinct strips that each preserve the original even phase.</p>
+<p>Consequently, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.</p>
+
+<h3 class="detail-subheading">Topological Mechanism</h3>
+<p>This behavior is governed by the boundary structure of the strip prior to cutting:</p>
+<ul class="detail-list">
+  <li><strong>Odd n (non-orientable):</strong> An odd-twist band is one-sided and bounded by a single continuous closed curve that winds twice around the core before closing. Cutting down the centerline is geometrically equivalent to tracing parallel to this solitary edge, resulting in one continuous ribbon of double length.</li>
+  <li><strong>Even n (orientable):</strong> An even-twist band is two-sided and possesses two distinct, independent boundary edges. Cutting along the centerline cleanly partitions the two boundaries into two separate bands, linked together due to the initial spatial rotation.</li>
+</ul>
+
+<h3 class="detail-subheading">Relationship to Established Mathematics</h3>
+<p>This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>). While conventional literature frames the theorem in terms of half-twists <em>N</em>, formulating it in terms of continuous phase difference <em>n&pi;</em> offers an intuitive wave-phase perspective discovered through independent physical experimentation.</p>
+
+<h3 class="detail-subheading">Further Explorations</h3>
+<ul class="detail-list">
+  <li><strong>Off-Center Cuts:</strong> Cutting at a fractional width (e.g., 1/3 from an edge) creates interlocking rings of unequal widths and distinct twist configurations.</li>
+  <li><strong>Recursive Cutting:</strong> Applying the transformation recursively across consecutive generations to map branching topological trees.</li>
+  <li><strong>Linking Numbers in Knot Theory:</strong> Rigorously formalizing the Gauss linking integral for higher-order even parity strips.</li>
+</ul>`,
+        references: [
+          { title: 'J. B. Listing, "Vorstudien zur Topologie" (Göttinger Studien, 1847) — Foundational Analysis of Paradromic Rings', url: '#' },
+          { title: 'Research paper DOI and formal topological documentation will be updated soon', url: '#' }
+        ]
+      }
+    },
+    {
+      id: 'opto-acoustic',
+      name: 'Opto-Acoustic Modulation: Mid-Air Volumetric Display',
+      cardImage: 'images/opto_acoustic_diagram1.png',
+      detail: {
+        image: 'images/opto_acoustic_diagram2.png',
+        name: 'Opto-Acoustic Modulation: Mid-Air Volumetric Display via Ultrasonic Refractive-Index Gradients',
+        introduction: `Opto-Acoustic Modulation is a theoretical and quantitative physics investigation into synthesizing true free-space 3D voxels in empty ambient air&mdash;without projection screens, fog, mist, or head-mounted headsets.<br><br>By directing ultrasonic acoustic waves from phased transducer arrays to interfere constructively at precise 3D spatial coordinates, localized pockets of high and low air density are synthesized in room air. Because air's optical refractive index scales directly with density via the Gladstone&ndash;Dale relation, each acoustic interference node acts as a transient, lens-like gradient-index optical element. A synchronized, phase-locked laser pulse fired through the node is refracted toward an observer's pupil, producing the perception of an isolated luminous voxel floating in mid-air.`,
+        inspiration: {
+          textTop: `Another piece of science fiction that deeply captivated me was the interactive, walk-around 3D holographic workspace shown in Marvel films, archetype-exemplified by Tony Stark. Luminous, full-color diagrams hovering freely in room air that multiple people can view and manipulate from any angle without wearing bulky glasses.`,
+          image: 'images/opto_acoustic_inspiration.png',
+          textBottom: `Moving from cinematic sci-fi to real physics poses a brutal question: how do you create a &ldquo;pixel in thin air&rdquo; out of nothing? Light bends when transitioning between media of differing optical densities (refraction). Sound waves are travelling regions of compressed and rarefied air. Realizing that localized ultrasonic interference could sculpt density gradients in ambient air was my eureka moment&mdash;which I later discovered aligns with the deep-tech field of acousto-optics.`
+        },
+        moreText: `<h3 class="detail-subheading">Physical Mechanism: Wave Interference &amp; Density Modulation</h3>
+<p>When two directional, phase-controlled ultrasonic beams superpose at an angle in open space, their acoustic pressure fields form a stationary interference pattern:</p>
+<div class="detail-formula">p(x,t) = p<sub>a</sub> cos(kx &minus; &omega;t) + p<sub>a</sub> cos(kx + &omega;t) = 2p<sub>a</sub> cos(kx) cos(&omega;t)</div>
+<p>At constructive antinodes, acoustic density oscillates with twice the single-wave amplitude, creating a periodic spatial lattice of steep density gradients &nabla;&rho; and matching refractive-index gradients &nabla;n.</p>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <img src="images/opto_acoustic_diagram1.png" alt="Geometric representation of ultrasonic wave interference" style="width: 100%; max-width: 760px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #ffffff; padding: 1rem;">
+  <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Geometric wave interference between two directional ultrasonic sources creating localized compression lattices in ambient air.</p>
+</div>
+
+<h3 class="detail-subheading">The Piezo-Optic Chain in Ambient Air</h3>
+<p>Under adiabatic acoustic conditions, the density perturbation is governed by:</p>
+<div class="detail-formula">&delta;&rho; = p / c<sup>2</sup> &emsp;(where c &approx; 343 m/s in air at 20 &deg;C)</div>
+<p>The optical refractive index of a gas tracks density according to the <strong>Gladstone&ndash;Dale relation</strong>:</p>
+<div class="detail-formula">n &minus; 1 = K &middot; &rho;, &emsp; where K &approx; 2.31 &times; 10<sup>&minus;4</sup> m<sup>3</sup>/kg (for air at 532 nm)</div>
+<p>Combining these expressions yields the fundamental <em>piezo-optic coefficient</em> of ambient air:</p>
+<div class="detail-formula">&delta;n / p = K / c<sup>2</sup> &approx; 1.96 &times; 10<sup>&minus;9</sup> Pa<sup>&minus;1</sup></div>
+<p>Across an acoustic focal interaction length <em>L</em> &approx; &Lambda; (the acoustic wavelength, ~8.6 mm at 40 kHz), the total angular deflection experienced by a ray simplifies to an extraordinarily clean relation:</p>
+<div class="detail-formula">&theta; &approx; 2&pi; &middot; &delta;n &emsp;(radians)</div>
+
+<h3 class="detail-subheading">Quantitative Feasibility: Theory vs. Real Hardware</h3>
+<p>Evaluating the physics against state-of-the-art ultrasonic phased arrays reveals the decisive physical constraints of the concept:</p>
+<div class="table-scroll">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Sound Pressure Level (SPL)</th>
+        <th>Peak Pressure Amplitude</th>
+        <th>Relative Density (&delta;&rho;/&rho;<sub>0</sub>)</th>
+        <th>Index Perturbation (&delta;n)</th>
+        <th>Ray Deflection &theta;</th>
+        <th>Optical Phase &phi;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>120 dB (Directional Speaker)</th><td>~28 Pa</td><td>2.0 &times; 10<sup>&minus;4</sup></td><td>5.6 &times; 10<sup>&minus;8</sup></td><td>0.35 &mu;rad</td><td>0.006 rad</td></tr>
+      <tr><th>140 dB (High-Power Horn)</th><td>~283 Pa</td><td>2.0 &times; 10<sup>&minus;3</sup></td><td>5.6 &times; 10<sup>&minus;7</sup></td><td>3.5 &mu;rad</td><td>0.056 rad</td></tr>
+      <tr><th>150 dB (256-Element Array)</th><td>~894 Pa</td><td>6.3 &times; 10<sup>&minus;3</sup></td><td>1.8 &times; 10<sup>&minus;6</sup></td><td>11 &mu;rad</td><td>0.18 rad</td></tr>
+      <tr><th>160 dB (Acoustic Levitation)</th><td>~2.8 kPa</td><td>2.0 &times; 10<sup>&minus;2</sup></td><td>5.5 &times; 10<sup>&minus;6</sup></td><td>35 &mu;rad</td><td>0.56 rad</td></tr>
+      <tr><th>165 dB (Peak Resonant Focus)</th><td>~5.0 kPa</td><td>3.5 &times; 10<sup>&minus;2</sup></td><td>9.8 &times; 10<sup>&minus;6</sup></td><td>62 &mu;rad</td><td>1.0 rad</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="detail-subheading">The Decisive Barriers &amp; Hard Physical Ceilings</h3>
+<ul class="detail-list">
+  <li><strong>Deflection Deficit:</strong> Modern ultrasonic phased arrays reach 150&ndash;165 dB, producing angular deflections of only 10&ndash;62 &mu;rad (~0.003&deg;). Redirecting light by even a modest 1&deg; toward an off-axis viewer requires &delta;n &gtrsim; 10<sup>&minus;4</sup>, demanding sound pressure levels exceeding 190 dB (in the regime of acoustic shockwaves).</li>
+  <li><strong>Fundamental Density Ceiling:</strong> Since gas density cannot be modulated by more than 100% of its base value, an absolute theoretical upper bound exists: |&delta;n| &le; n<sub>0</sub> &minus; 1 &approx; 2.8 &times; 10<sup>&minus;4</sup> in standard atmospheric air.</li>
+  <li><strong>Stroboscopic Laser Timing:</strong> At 40 kHz, density oscillates with a 25 &mu;s period. Continuous-wave lasers integrate over both compression and rarefaction, canceling the net deflection. The system must operate stroboscopically, firing sub-microsecond laser pulses precisely synchronized with peak compression (t<sub>fire</sub>).</li>
+</ul>
+
+<h3 class="detail-subheading">System Control Architecture</h3>
+<p>To address 3D space dynamically, the system integrates a three-layer pipeline:</p>
+<ul class="detail-list">
+  <li><strong>Host Computer:</strong> 3D voxelizer and spatial scheduler computing target coordinates and running GS-PAT iterative acoustic hologram solvers (>10,000 phase updates/sec on modern GPUs).</li>
+  <li><strong>FPGA Real-Time Driver:</strong> Synthesizes multichannel transducer phases with nanosecond jitter while issuing microsecond-accurate triggers to the laser source.</li>
+  <li><strong>Closed-Loop Eye Tracking:</strong> High-speed cameras track observer eye positions in real time, adjusting beam entry angles so refracted rays enter the pupil.</li>
+</ul>
+
+<h3 class="detail-subheading">Potential Applications</h3>
+<ul class="detail-list">
+  <li><strong>Engineering CAD &amp; Spatial Prototyping:</strong> Inspecting volumetric 3D models in mid-air with genuine depth perception and zero vergence-accommodation conflict.</li>
+  <li><strong>Interactive Medical Imaging:</strong> Floating CT/MRI reconstructions for surgical planning without contaminating sterile fields.</li>
+  <li><strong>Collaborative Telepresence:</strong> Shared mid-air visualizations visible to multiple participants in meeting environments.</li>
+</ul>`,
+        references: [
+          { title: 'Nitinkumar Vishwakarma, "Mid-Air Volumetric Display via Ultrasonically Induced Refractive-Index Gradients: Concept, Quantitative Feasibility, and Limitations of Opto-Acoustic Modulation in Free Air" (2026)', url: '#' },
+          { title: 'Y. Schrödel et al., "Acousto-optic modulation of gigawatt-scale laser pulses in ambient air," Nature Photonics, 18, 54–59 (2024)', url: '#' },
+          { title: 'R. Hirayama et al., "A volumetric display for visual, tactile and audio presentation using acoustic levitation," Nature, 575, 320–323 (2019)', url: '#' },
+          { title: 'Research paper DOI and formal preprint link will be updated soon', url: '#' }
+        ]
+      }
+    },
+    {
+      id: 'photon-rocket',
+      name: 'Photon Rocket Propulsion for Interstellar Flight',
+      cardImage: 'images/photon_rocket_flight_profile.jpeg',
+      detail: {
+        image: 'images/photon_rocket_flight_profile.jpeg',
+        name: 'Photon Rocket Propulsion for Interstellar Flight',
+        introduction: `Photon Rocket Propulsion is a theoretical astronautics concept investigating beamed radiation and matter&ndash;antimatter annihilation to eliminate the exponential fuel-mass penalties of the classical rocket equation for interstellar journeys.<br><br>Chemical and conventional fission rockets hit an impenetrable barrier over interstellar distances: propellant mass. To accelerate a starship to even a modest fraction of light speed within a human-relevant timeframe, the required chemical propellant mass exceeds the mass of the observable universe. A photon rocket bypasses this dilemma by expelling massless photons (<em>p = E/c</em>) as pure reaction mass&mdash;trading carried propellant mass for astronomical continuous power generation.`,
+        inspiration: {
+          textTop: `Humanity's ambition to cross the interstellar void and reach Proxima Centauri (4.246 light-years away) within a single generation requires fundamentally rethinking propulsion physics. The starting question: what if a starship carried zero reaction mass and pushed against the universe solely with directed electromagnetic radiation?`,
+          image: 'images/photon_rocket_power_options.jpeg',
+          textBottom: `Because each individual photon carries a tiny fraction of momentum (<em>p = E/c</em>), generating practical acceleration demands staggering continuous power&mdash;shifting the challenge from mass-ratio logistics to terawatt-scale optical engineering and continuous antimatter synthesis.`
+        },
+        moreText: `<h3 class="detail-subheading">Mission Profile and Kinematics</h3>
+<p>Consider a benchmark interstellar voyage targeting Proxima Centauri, the nearest star system:</p>
+<div class="table-scroll">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Mission Parameter</th>
+        <th>Value</th>
+        <th>Significance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>Target Distance (d)</th><td>4.246 light-years (&approx; 4.017 &times; 10<sup>16</sup> m)</td><td>Nearest stellar neighbor to Earth</td></tr>
+      <tr><th>Total Voyage Duration (t)</th><td>20 Earth years (&approx; 6.312 &times; 10<sup>8</sup> s)</td><td>Feasible timeline within a human career</td></tr>
+      <tr><th>Flight Trajectory</th><td>Constant acceleration (+a) for 10 yrs, midpoint flip, constant deceleration (&minus;a) for 10 yrs</td><td>Arrives at destination at rest relative to target star</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="detail-subheading">Acceleration and Power Budget</h3>
+<p>Applying the constant-acceleration distance relation across the first half of the trajectory:</p>
+<div class="detail-formula">d/2 = &frac12; a (t/2)<sup>2</sup> &emsp;&rArr;&emsp; a = 4d / t<sup>2</sup></div>
+<p>For a realistic <strong>100-metric-ton spacecraft (100,000 kg)</strong>, evaluating these equations yields:</p>
+<div class="table-scroll">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Physical Parameter</th>
+        <th>Calculated Value</th>
+        <th>Engineering Context</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>Required Acceleration (a)</th><td>0.403 m/s<sup>2</sup></td><td>Gentle ~0.04g acceleration (ideal for structures)</td></tr>
+      <tr><th>Required Continuous Thrust (F)</th><td>40,300 N</td><td>F = m &middot; a for 100-ton vehicle</td></tr>
+      <tr><th>Required Beam Power (P)</th><td><strong>12.1 TW</strong> (1.21 &times; 10<sup>13</sup> W)</td><td>&approx; 60% of humanity's total global electric grid, sustained for 20 years</td></tr>
+      <tr><th>Thrust Efficiency Ratio</th><td><strong>~300 MW / Newton</strong></td><td>Derived directly from F = P / c &rArr; P/F = c = 3 &times; 10<sup>8</sup> W/N</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="detail-subheading">Power Source Architectures: Trade-Off Analysis</h3>
+<p>To supply 12.1 terawatts of continuous directed beam energy, two primary technological paths present themselves:</p>
+<ul class="detail-list">
+  <li><strong>Option 1: Earth-Based Beamed Laser:</strong> Reactor arrays remain rooted in the solar system, beaming laser energy to an ultra-reflective spacecraft sail. <em>Advantages:</em> Starship carries zero heavy reactor mass, keeping the vessel extraordinarily light. <em>Challenges:</em> Severe beam divergence over 4.24 light-years requiring planet-scale transmission optics; relativistic Doppler redshift degrading received momentum as the ship accelerates away; and no beam emitter exists at the destination to brake the starship upon arrival.</li>
+  <li><strong>Option 2: Onboard Matter&ndash;Antimatter Annihilation:</strong> Photons are synthesized directly onboard via electron&ndash;positron (e&minus;/e+) or proton&ndash;antiproton annihilation, directed rearward by a parabolic mirror as high-energy gamma-ray exhaust. <em>The Storage Breakthrough:</em> Rather than stockpiling volatile antimatter onboard for decades (a catastrophic containment risk), antimatter is <strong>synthesized continuously in micro-quantities in-flight</strong> as demanded by the drive.</li>
+</ul>
+
+<h3 class="detail-subheading">Historical Lineage and Validation</h3>
+<p>The photon rocket concept was first formulated in 1953 by German aerospace engineer <strong>Eugen S&auml;nger</strong>, who derived the exact 300 MW/N thrust relation and proposed matter&ndash;antimatter gamma lasers with parabolic reflectors.</p>
+<p>Furthermore, the strategy of generating antimatter in-flight to bypass containment hazards independently mirrors physicist Richard Obousy's <strong>VARIES concept</strong> (Vacuum to Antimatter Rocket Interstellar Explorer System), which relies on Schwinger vacuum pair production driven by intense lasers.</p>
+
+<h3 class="detail-subheading">Relativistic Kinematics &amp; Open Bottlenecks</h3>
+<ul class="detail-list">
+  <li><strong>Relativistic Velocity:</strong> Midpoint peak velocity reaches v = a &middot; (t/2) &approx; 1.27 &times; 10<sup>8</sup> m/s &approx; <strong>0.42c</strong>. At 42% the speed of light, time dilation, relativistic mass dilation, and Lorentz contractions necessitate full relativistic rocket equations rather than classical Newtonian approximations.</li>
+  <li><strong>TW-Scale Collimation &amp; Mirror Survivability:</strong> Annihilation gamma rays emit isotropically. Collimating terawatts of gamma radiation into a narrow unidirectional beam without mirror ablation or thermal vaporization remains an unsolved materials challenge.</li>
+  <li><strong>Radiative Waste Heat Rejection:</strong> In the hard vacuum of deep space, even a 0.01% inefficiency in a 12 TW powertrain produces gigawatts of waste heat that can only be discarded through radiative surface panels.</li>
+</ul>`,
+        references: [
+          { title: 'E. Sänger, "The Theory of Photon Rockets," Ingenieur-Archiv, 21, 213 (1953)', url: '#' },
+          { title: 'R. Frisbee, "How to Build an Antimatter Rocket for Interstellar Missions," AIAA Paper 2003-4696', url: '#' },
+          { title: 'P. Gilster, "Antimatter Propulsion: Birth of a Concept," Centauri Dreams (2016)', url: '#' },
+          { title: 'Research paper DOI and formal mission analysis publication will be updated soon', url: '#' }
+        ]
+      }
+    },
+    {
+      id: 'thermoregulating-fabric',
+      name: 'Adaptive Thermoregulating Fabric (ATRF)',
+      cardImage: 'images/thermo_fabric_grid.jpeg',
+      detail: {
+        image: 'images/thermo_fabric_cross_section.jpeg',
+        name: 'Adaptive Thermoregulating Fabric (ATRF)',
+        introduction: `The Adaptive Thermoregulating Fabric (ATRF) is a smart, active textile engineered to dynamically heat or cool itself, maintaining optimal microclimate comfort for the wearer across extreme environmental swings.<br><br>Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and actuates solid-state heating or cooling through an embedded mesh of microscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical trauma: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.`,
+        inspiration: {
+          textTop: `Traditional clothing enforces a rigid compromise: bundle up in thick, bulky winter gear and overheat during physical exertion, or wear light garments and risk hypothermia in sudden cold snaps. I envisioned clothing operating like an artificial, active thermoregulatory organ&mdash;a second skin that balances heat flux dynamically.`,
+          image: 'images/thermo_fabric_grid.jpeg',
+          textBottom: `Conventional wearable heating relies on fragile, continuous wire loops where a single snag or cut breaks the entire circuit. ATRF solves this through architectural fault tolerance: independent, addressable modules linked by flexible serpentine interconnects that maintain system resilience even under severe textile wear.`
+        },
+        moreText: `<h3 class="detail-subheading">Modular Grid Architecture</h3>
+<p>The garment is organized as a 2D mesh of autonomous, solid-state modules interconnected with their immediate cardinal neighbors (North, South, East, West). Because each module is a self-contained sensing and actuation node, the system possesses complete decentralized fault tolerance:</p>
+<div class="table-scroll">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Component Feature</th>
+        <th>Module Specification</th>
+        <th>Functional Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>Physical Dimensions</th><td>&approx; 0.5 cm &times; 0.5 cm die</td><td>Compact profile seamlessly embeddable into flexible woven yarns</td></tr>
+      <tr><th>Integrated Sensor</th><td>Digital micro-thermistor / IR sensor</td><td>Provides high-precision local skin and ambient temperature telemetry</td></tr>
+      <tr><th>Thermal Actuator</th><td>Miniaturized Peltier Element (TEC)</td><td>Reversible solid-state heat pump: heats or cools based on current polarity</td></tr>
+      <tr><th>Communication Bus</th><td>I2C Addressable Slave Bus</td><td>Shared multidrop bus for localized telemetry polling and command delivery</td></tr>
+      <tr><th>Power Distribution</th><td>2-Wire DC Power Rail</td><td>Provides high-efficiency low-voltage power across the interconnected grid</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="detail-subheading">Four-Conductor Stretchable Interconnects</h3>
+<p>Modules are interconnected through serpentine, stretchable conductive tracks containing four conductors:</p>
+<ul class="detail-list">
+  <li><strong>Power (+) &amp; Power (&minus;):</strong> DC power routing supporting bidirectional TEC current drive.</li>
+  <li><strong>I2C Serial Clock (SCL) &amp; Serial Data (SDA):</strong> High-speed digital communication allowing the master microcontroller to address individual modules.</li>
+</ul>
+<p>The loose, serpentine routing geometry accommodates natural textile shearing, bending, and stretching without inducing mechanical strain or fatigue fractures in the conductors.</p>
+
+<h3 class="detail-subheading">Three-Layer Fabric Laminate Construction</h3>
+<p>The physical fabric is engineered as a functional 3-layer sandwich:</p>
+<ul class="detail-list">
+  <li><strong>Outer Layer (Top):</strong> Weatherproof, abrasion-resistant, and wind-blocking protective textile shielding the electronics from external elements.</li>
+  <li><strong>Inner Layer (Middle):</strong> Flexible, porous, and highly thermally conductive matrix. It physically encapsulates the module grid and wire mesh while allowing air and perspiration to pass freely. Its high lateral thermal conductivity diffuses heat smoothly, eliminating uncomfortable localized hot/cold spots.</li>
+  <li><strong>Outer Layer (Bottom):</strong> Soft, breathable, skin-facing textile providing comfortable biometric contact.</li>
+</ul>
+
+<h3 class="detail-subheading">Closed-Loop Control &amp; Energy Harvesting</h3>
+<p>A master microcontroller continuously executes an adaptive control loop:</p>
+<ul class="detail-list">
+  <li><strong>Zone-Based Thermal Regulation:</strong> Polling local modules and comparing readings against user comfort setpoints. Actuating specific regions independently (e.g., cooling the lumbar and upper back while warming fingers or extremities).</li>
+  <li><strong>Thermoelectric Energy Harvesting (Seebeck Mode):</strong> When external temperatures diverge sharply from body temperature and active regulation is idled, the Peltier junctions run in reverse via the Seebeck effect, scavenging thermal gradients to trickle-charge wearable batteries.</li>
+  <li><strong>Biometric Thermal Health Mapping:</strong> The dense grid of hundreds of temperature sensors generates a real-time spatial thermal map of the wearer's body, opening up health telemetry applications such as detecting early fever onset, inflammation, or circulatory constriction.</li>
+</ul>
+
+<h3 class="detail-subheading">Open Engineering Questions</h3>
+<ul class="detail-list">
+  <li><strong>Bus Scaling &amp; Capacitance:</strong> Addressing hundreds of I2C nodes on long flexible garments introduces capacitive bus loading; exploring segmented subnetworks or lightweight single-wire protocols.</li>
+  <li><strong>Wearable Battery Life:</strong> Peltier elements exhibit moderate COP (coefficient of performance); smart duty-cycling and phase-change buffer materials will be required to maximize runtime.</li>
+  <li><strong>Hermetic Washability:</strong> Micro-encapsulation of silicon dies and elastic conductive traces to endure repeated commercial laundry agitation and detergent exposure.</li>
+</ul>`,
+        references: [
+          { title: 'Adaptive Thermoregulating Fabric (ATRF) — Technical Documentation & Concept Architecture Draft (v0.1)', url: '#' },
+          { title: 'Research paper DOI and hardware prototype documentation will be updated soon', url: '#' },
+          { title: 'Literature on Wearable Thermoelectric Generators and Stretchable E-Textiles', url: '#' }
+        ]
+      }
     }
   ]
 };
