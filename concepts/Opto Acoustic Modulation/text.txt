@@ -1,0 +1,32 @@
+This is another concept I spended a lot of my mental energy on, In brief I was trying to make 3d volumetric displays, blah blah blah
+
+
+Inspiration:
+Another peice of Science Fiction that I was deeply fascinated was 3D holograms shown in Marvel movies, specifically the one which tony stark uses for his engineering purposes.
+
+
+TECHNICAL CHALLENGES
+Now, creating a true 3D hologram technology that could create 3d images in air without requiring reflectors or panel we need to create 'pixels' in air 
+That is increadibly difficult because it requires us to produce light from a localised point in air out of nothing or create a microscopic object in air that could reflect light, both of these options are currently impossible or I thought it was. When a light passes through one medium to another with different density, light bends this property is called as dispersion of light, we can use this property and create a density gradient for a microscopic volume of air in air, turns out we already do this, the answer is sound waves , sound waves are basically regions or high and low density in air. 
+
+This project uses directional interference of ultrasonic sound waves to create localised regions of high or low density in air,  and then a laser is fired to that region with distinct density, and the laser bends due to dispersion of light and can reach our eyes, that's the basic idea. Few months later I got to know something like this already exists for years and it's called as 'Opto-Acoustic Modulation'. It's great to realise , I reached deep tech concepts that already exists independently Without any exposure to prior technologies, 
+
+This technology is still very immature, faces some significant challenges:
+1)  the density gradient produced by current directional speakers are tiny.
+(Calculation of how much density we need and what current speakers can produce)
+2)  algorithm to synchronize the operations of this technology between creating pixels and hownmany pixels their shape in 3d space , arrangement of pixels, and when to fire the laser , etc.
+3)  computational power needed to run all of this.
+
+Applications 
+1) This technology can be used for engineering CAD, 
+2) 3d visualisation,
+3) entertainment 
+4) live meetings 
+5) etc, the applications are numerous.
+(To be completed and detailed by AI)
+
+this concept has been parked in the 'great parking lot of ideas' for now.
+
+
+References 
+(To be Added you AI)

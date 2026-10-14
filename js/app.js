@@ -305,7 +305,7 @@ const portfolioData = {
     {
       id: 'opto-acoustic',
       name: 'Opto-Acoustic Modulation: Mid-Air Volumetric Display',
-      cardImage: 'images/opto_acoustic_diagram1.png',
+      cardImage: 'images/opto_acoustic_diagram2.png',
       detail: {
         image: 'images/opto_acoustic_diagram2.png',
         name: 'Opto-Acoustic Modulation: Mid-Air Volumetric Display via Ultrasonic Refractive-Index Gradients',
@@ -391,7 +391,7 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
           { title: 'Nitinkumar Vishwakarma, "Mid-Air Volumetric Display via Ultrasonically Induced Refractive-Index Gradients: Concept, Quantitative Feasibility, and Limitations of Opto-Acoustic Modulation in Free Air" (2026)', url: '#' },
           { title: 'Y. Schrödel et al., "Acousto-optic modulation of gigawatt-scale laser pulses in ambient air," Nature Photonics, 18, 54–59 (2024)', url: '#' },
           { title: 'R. Hirayama et al., "A volumetric display for visual, tactile and audio presentation using acoustic levitation," Nature, 575, 320–323 (2019)', url: '#' },
-          { title: 'Research paper DOI and formal preprint link will be updated soon', url: '#' }
+          { title: 'https://doi.org/10.13140/RG.2.2.35856.37126', url: 'https://doi.org/10.13140/RG.2.2.35856.37126' }
         ]
       }
     },
