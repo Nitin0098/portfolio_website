@@ -290,9 +290,10 @@ img {
 }
 
 .hero-photo-container {
-  flex: 0 0 250px;
-  width: 250px;
-  height: 250px;
+  flex: 0 0 240px;
+  width: 240px;
+  aspect-ratio: 3 / 4;
+  height: auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border-color);
@@ -1095,7 +1096,8 @@ img {
   }
   .hero-photo-container {
     width: 200px;
-    height: 200px;
+    height: auto;
+    aspect-ratio: 3 / 4;
     align-self: center;
   }
   .hero-title {

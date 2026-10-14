@@ -52,7 +52,10 @@
       <div class="detail-intro-section">
         <h2 class="section-subheading">Introduction</h2>
         <p class="detail-text">
-          The Adaptive Thermoregulating Fabric (ATRF) is a smart, active textile engineered to dynamically heat or cool itself, maintaining optimal microclimate comfort for the wearer across extreme environmental swings.
+          <strong>Temperature control clothing:</strong> basically a high-tech fabric that can be used to make clothes. What's special about these fabrics is they can regulate our body temperature in unpleasant environments.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          It can be greatly helpful for winters, summers, or maybe in a college lecture hall where we are assumed to be penguins and the ACs are blasted at the lowest temperature&mdash;the fabric can regulate our body temperature accordingly.
         </p>
         <p class="detail-text" style="margin-top: 1rem;">
           Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and actuates solid-state heating or cooling through an embedded mesh of microscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical trauma: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.
@@ -63,7 +66,7 @@
       <div class="detail-inspiration-section">
         <h2 class="section-subheading">Inspiration</h2>
         <p class="inspiration-text-top">
-          Traditional clothing enforces a rigid compromise: bundle up in thick, bulky winter gear and overheat during physical exertion, or wear light garments and risk hypothermia in sudden cold snaps. I envisioned clothing operating like an artificial, active thermoregulatory organ&mdash;a second skin that balances heat flux dynamically.
+          Traditional clothing enforces a rigid compromise: bundle up in thick, bulky winter gear and overheat during physical exertion, or wear light garments and freeze in unexpected chill. I envisioned clothing operating like an artificial, active thermoregulatory organ&mdash;a responsive second skin that balances heat flux dynamically.
         </p>
         <div class="inspiration-image-container">
           <img src="../images/thermo_fabric_grid.jpeg" alt="ATRF Modular Grid Layout Diagram" class="inspiration-image">
@@ -77,11 +80,18 @@
       <div class="detail-more-text-section">
         <h2 class="section-subheading">Technical Details &amp; Approach</h2>
         <div class="detail-more-text">
-          <h3 class="detail-subheading">Modular Grid Architecture</h3>
+          <h3 class="detail-subheading">Block Technology &amp; Modular Architecture</h3>
           <p>
-            The garment is organized as a 2D mesh of autonomous, solid-state modules interconnected with their immediate cardinal neighbors (North, South, East, West). Because each module is a self-contained sensing and actuation node, the system possesses complete decentralized fault tolerance:
+            In this design, the fabric uses a modular block architecture where small modules are interconnected to each other across a 2D mesh:
           </p>
-          <div class="table-scroll">
+          <ul class="detail-list">
+            <li><strong>Modules:</strong> Each module has its own temperature sensor and Peltier heating/cooling element. The modules are tiny, about 0.5 &times; 0.5 cm&sup2;. The modules are responsible for sensing and regulating the temperature at that part of the fabric.</li>
+            <li><strong>Wires:</strong> There are 3 wires that connect two modules&mdash;two for power and the third for an I2C connection. This allows us to communicate with each module, read the temperature at that part of the fabric, and regulate temperature as commanded by the master microcontroller.</li>
+            <li><strong>Stretchable Interconnects:</strong> Each module is connected to neighbour modules with loose, stretchable, flexible wires. So if the fabric is cut or torn, modules at that region might be separated while the rest of the fabric works normally.</li>
+            <li><strong>Fabric Layering:</strong> The fabric has two external layers on each side sandwiching the internal layer. The internal layer is made up of flexible, porous (for breathability), and thermally conductive material&mdash;the modules and wires lie protected inside this layer.</li>
+          </ul>
+
+          <div class="table-scroll" style="margin: 1.5rem 0;">
             <table class="comparison-table">
               <thead>
                 <tr>
@@ -108,7 +118,7 @@
                 </tr>
                 <tr>
                   <th>Communication Bus</th>
-                  <td>I2C Addressable Slave Bus</td>
+                  <td>I2C Addressable Bus (3-wire topology)</td>
                   <td>Shared multidrop bus for localized telemetry polling and command delivery</td>
                 </tr>
                 <tr>
@@ -120,44 +130,23 @@
             </table>
           </div>
 
-          <h3 class="detail-subheading">Four-Conductor Stretchable Interconnects</h3>
-          <p>
-            Modules are interconnected through serpentine, stretchable conductive tracks containing four conductors:
-          </p>
+          <h3 class="detail-subheading">Other Features</h3>
           <ul class="detail-list">
-            <li><strong>Power (+) &amp; Power (&minus;):</strong> DC power routing supporting bidirectional TEC current drive.</li>
-            <li><strong>I2C Serial Clock (SCL) &amp; Serial Data (SDA):</strong> High-speed digital communication allowing the master microcontroller to address individual modules.</li>
-          </ul>
-          <p>
-            The loose, serpentine routing geometry accommodates natural textile shearing, bending, and stretching without inducing mechanical strain or fatigue fractures in the conductors.
-          </p>
-
-          <h3 class="detail-subheading">Three-Layer Fabric Laminate Construction</h3>
-          <p>
-            The physical fabric is engineered as a functional 3-layer sandwich:
-          </p>
-          <ul class="detail-list">
-            <li><strong>Outer Layer (Top):</strong> Weatherproof, abrasion-resistant, and wind-blocking protective textile shielding the electronics from external elements.</li>
-            <li><strong>Inner Layer (Middle):</strong> Flexible, porous, and highly thermally conductive matrix. It physically encapsulates the module grid and wire mesh while allowing air and perspiration to pass freely. Its high lateral thermal conductivity diffuses heat smoothly, eliminating uncomfortable localized hot/cold spots.</li>
-            <li><strong>Outer Layer (Bottom):</strong> Soft, breathable, skin-facing textile providing comfortable biometric contact.</li>
+            <li><strong>1. Thermoelectric Energy Harvesting:</strong> The same fabric can also be used to harvest heat from our body (via the Seebeck effect) to generate a small amount of electricity when external temperature contrasts with body heat.</li>
+            <li><strong>2. Health Telemetry &amp; Diagnostics:</strong> The fabric can also monitor temperature at each point of the body to predict health complications or diseases (such as early fever onset, inflammation, or circulatory changes).</li>
           </ul>
 
-          <h3 class="detail-subheading">Closed-Loop Control &amp; Energy Harvesting</h3>
+          <h3 class="detail-subheading">Current Limitations &amp; Future Outlook</h3>
           <p>
-            A master microcontroller continuously executes an adaptive control loop:
+            While the architecture is conceptually sound, physical implementation faces clear engineering bottlenecks:
           </p>
           <ul class="detail-list">
-            <li><strong>Zone-Based Thermal Regulation:</strong> Polling local modules and comparing readings against user comfort setpoints. Actuating specific regions independently (e.g., cooling the lumbar and upper back while warming fingers or extremities).</li>
-            <li><strong>Thermoelectric Energy Harvesting (Seebeck Mode):</strong> When external temperatures diverge sharply from body temperature and active regulation is idled, the Peltier junctions run in reverse via the Seebeck effect, scavenging thermal gradients to trickle-charge wearable batteries.</li>
-            <li><strong>Biometric Thermal Health Mapping:</strong> The dense grid of hundreds of temperature sensors generates a real-time spatial thermal map of the wearer's body, opening up health telemetry applications such as detecting early fever onset, inflammation, or circulatory constriction.</li>
+            <li><strong>1. Peltier Inefficiency:</strong> Current Peltier modules are inefficient and waste a lot of energy through resistive losses, which forces the need for larger battery packs.</li>
+            <li><strong>2. Battery Packs:</strong> Large battery packs (10,000+ mAh, 3.7V) are heavy, costly, and not very durable inside daily clothing.</li>
           </ul>
-
-          <h3 class="detail-subheading">Open Engineering Questions</h3>
-          <ul class="detail-list">
-            <li><strong>Bus Scaling &amp; Capacitance:</strong> Addressing hundreds of I2C nodes on long flexible garments introduces capacitive bus loading; exploring segmented subnetworks or lightweight single-wire protocols.</li>
-            <li><strong>Wearable Battery Life:</strong> Peltier elements exhibit moderate COP (coefficient of performance); smart duty-cycling and phase-change buffer materials will be required to maximize runtime.</li>
-            <li><strong>Hermetic Washability:</strong> Micro-encapsulation of silicon dies and elastic conductive traces to endure repeated commercial laundry agitation and detergent exposure.</li>
-          </ul>
+          <p style="margin-top: 1rem; color: var(--accent-cyan);">
+            <em>However, as the boom of electric vehicles (EVs) has made significant advancements in battery technologies, energy density, and flexible cells, this product might not be very far away.</em>
+          </p>
         </div>
       </div>
 

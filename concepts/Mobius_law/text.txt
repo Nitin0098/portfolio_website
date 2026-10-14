@@ -1,0 +1,20 @@
+Mobius law,
+
+I call this mobius law, it's a phenomenon I discovered while experimenting with mobius strips few years ago, 
+
+If we take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together we get a mobius strip
+In this case The phase difference between same plane  on both ends is π
+
+But if the phase difference between same plane on both ends is nπ
+
+And then, we cut the strip by the length of the strip of paper, 
+
+We observe an interesting pattern 
+
+If n is even : we get 2 rings(strips with ends glued together) with nπ phase difference between the end planes
+
+If n is odd we get 1 strip of 2(n+1)π phase difference 
+
+Even the strip doesn't wants it's offspring to be odd. 
+
+Note :  maybe not a new discovery but a mathematical topological result that I conceived, anyways a good personal discovery for me.

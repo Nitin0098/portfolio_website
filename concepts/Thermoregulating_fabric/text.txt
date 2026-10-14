@@ -1,0 +1,27 @@
+Temperature control clothing, 
+
+Basically a high tech fabric, that can be used to make clothes,  what's special about these fabrics is they can regulate our body temperature in unpleasant environments, 
+It can be greatly helpful for winters, summers or maybe in lecture where we are assumed as penguins and the ACs are blasted at lowest temperature, the fabric can regulate our body temperature accordingly.
+
+
+Block technology: in this design the fabric has small modules and each module is interconnected to each other, 
+
+Modules: each module had its own temperature sensor and peltier heating/cooling element, the models are tiny about 0.5x0.5 cm2,  The modules are responsible for sensing and regulating the temperature at that part of the fabric.
+
+Wires: the there are 3 wires that connect two modules two for power and third for I2c connection, so we can communicate to each module get the temperature at that part of the fabric and regulate temperature as commanded by the master microcontroller.
+each modules are connected to neighbour modules with loose, stretchable, flexible wires.
+
+so if the fabric is cut or torn modules at that region might be seprated while the rest of the fabric works normally
+
+Fabric: the fabric has two external layers in each side sandwiching the internal layer, the internal layer is made up of flexible, pourous(for breathebility) and thermally conductive material, the modules and wires lie in this layer.
+
+
+Other features
+1. The same fabric can also be used to har eat heat from our body to generate small amount of electricity 
+2. The fabric can also monitor temperature at each points of the body to predict health complexions or diseases.
+
+Current limitations 
+1. Current peltier modules are inefficient and waste a lot of energy, this will force us to use larger battery packs
+2. Large battery packs(10,000+ mAh ,3.7V ) are heavy, costly and not very durable
+
+however as the boom of EV vehicles have made some significant advancements in battery technologies, this product might not be very far away.

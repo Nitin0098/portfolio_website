@@ -224,81 +224,63 @@ const portfolioData = {
       }
     },
     {
-      id: 'mobius-law',
-      name: 'The Möbius Law: Phase-Difference Framing of Multi-Twisted Strips',
-      cardImage: 'images/mobius_law_diagram.jpeg',
+      id: 'thermoregulating-fabric',
+      name: 'Adaptive Thermoregulating Fabric (ATRF)',
+      cardImage: 'images/thermo_fabric_grid.jpeg',
       detail: {
-        image: 'images/mobius_law_diagram.jpeg',
-        name: 'The M&ouml;bius Law: Phase-Difference Framing of Multi-Twisted Strips',
-        introduction: `The M&ouml;bius Law is a personal topological discovery framing the behavior of multi-twisted strips under centerline cutting through phase differences (<em>n&pi;</em>).<br><br>While experimenting hands-on with paper strips twisted by multiples of &pi; before joining their ends into closed bands, I noticed a striking, strict parity rule governing what happens when you cut the loop down its centerline. Framing the physical half-twists as a phase difference between the same plane at each end transformed an otherwise confusing geometric puzzle into an elegant, memorable mathematical principle.`,
+        image: 'images/thermo_fabric_cross_section.jpeg',
+        name: 'Adaptive Thermoregulating Fabric (ATRF)',
+        introduction: `<strong>Temperature control clothing:</strong> basically a high-tech fabric that can be used to make clothes. What's special about these fabrics is they can regulate our body temperature in unpleasant environments.<br><br>It can be greatly helpful for winters, summers, or maybe in a college lecture hall where we are assumed to be penguins and the ACs are blasted at the lowest temperature—the fabric can regulate our body temperature accordingly.<br><br>Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and actuates solid-state heating or cooling through an embedded mesh of microscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical trauma: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.`,
         inspiration: {
-          textTop: `This concept emerged from tactile mathematical curiosity&mdash;taking scissors, paper, and tape to explore spatial topology from first principles. I wanted to see what happens when you generalize beyond the classic single-twist M&ouml;bius strip into arbitrary multi-twist loops, cataloging the resulting topologies systematically.`,
-          image: 'images/mobius_law_diagram.jpeg',
-          textBottom: `By tracing centerline paths with a pencil before cutting, a profound topological truth revealed itself: one-sided surfaces possess a single continuous boundary curve of double length, whereas two-sided surfaces possess two distinct boundaries. The physical cut simply exposes the underlying boundary geometry.`
+          textTop: `Traditional clothing enforces a rigid compromise: bundle up in thick, bulky winter gear and overheat during physical exertion, or wear light garments and freeze in unexpected chill. I envisioned clothing operating like an artificial, active thermoregulatory organ—a responsive second skin that balances heat flux dynamically.`,
+          image: 'images/thermo_fabric_grid.jpeg',
+          textBottom: `Conventional wearable heating relies on fragile, continuous wire loops where a single snag or cut breaks the entire circuit. ATRF solves this through architectural fault tolerance: independent, addressable modules linked by flexible serpentine interconnects that maintain system resilience even under severe textile wear.`
         },
-        moreText: `<h3 class="detail-subheading">Setup and Definitions</h3>
-<p>Consider a continuous strip of paper. Before joining its two ends into a closed band, rotate one end by an angle that is an integer multiple of &pi; (180&deg;):</p>
+        moreText: `<h3 class="detail-subheading">Block Technology &amp; Modular Architecture</h3>
+<p>In this design, the fabric uses a modular block architecture where small modules are interconnected to each other across a 2D mesh:</p>
 <ul class="detail-list">
-  <li>Define this rotation as the <strong>phase difference</strong>, <em>n&pi;</em>, where <em>n</em> is a non-negative integer representing the number of half-twists.</li>
-  <li><em>n</em> = 0 corresponds to an ordinary, untwisted cylindrical loop.</li>
-  <li><em>n</em> = 1 corresponds to the canonical M&ouml;bius strip (single half-twist, phase &pi;).</li>
-  <li>Glue the ends together to form a closed band, and execute a continuous longitudinal cut along its exact centerline.</li>
+  <li><strong>Modules:</strong> Each module has its own temperature sensor and Peltier heating/cooling element. The modules are tiny, about 0.5 &times; 0.5 cm&sup2;. The modules are responsible for sensing and regulating the temperature at that part of the fabric.</li>
+  <li><strong>Wires:</strong> There are 3 wires that connect two modules—two for power and the third for an I2C connection. This allows us to communicate with each module, read the temperature at that part of the fabric, and regulate temperature as commanded by the master microcontroller.</li>
+  <li><strong>Stretchable Interconnects:</strong> Each module is connected to neighbour modules with loose, stretchable, flexible wires. So if the fabric is cut or torn, modules at that region might be separated while the rest of the fabric works normally.</li>
+  <li><strong>Fabric Layering:</strong> The fabric has two external layers on each side sandwiching the internal layer. The internal layer is made up of flexible, porous (for breathability), and thermally conductive material—the modules and wires lie protected inside this layer.</li>
 </ul>
 
-<h3 class="detail-subheading">Statement of the Law</h3>
-<p>Given a closed band formed with phase difference <em>n&pi;</em>, cutting it along its centerline produces:</p>
-<div class="detail-formula">
-  If n is even &rArr; 2 separate strips, each with phase difference n&pi;, linked together (interlocked n/2 times)<br><br>
-  If n is odd &rArr; 1 single strip, twice the original length, with phase difference 2(n + 1)&pi;
-</div>
-
-<h3 class="detail-subheading">Worked Examples Across Parities</h3>
-<div class="table-scroll">
+<div class="table-scroll" style="margin: 1.5rem 0;">
   <table class="comparison-table">
     <thead>
       <tr>
-        <th>n (Before Cut)</th>
-        <th>Twist Phase</th>
-        <th>Parity</th>
-        <th>Topological Result After Centerline Cut</th>
+        <th>Component Feature</th>
+        <th>Module Specification</th>
+        <th>Functional Role</th>
       </tr>
     </thead>
     <tbody>
-      <tr><th>1</th><td>&pi; (Standard M&ouml;bius)</td><td>Odd</td><td>1 single strip, double length, phase 2(1 + 1)&pi; = <strong>4&pi;</strong></td></tr>
-      <tr><th>2</th><td>2&pi; (Full twist)</td><td>Even</td><td>2 linked separate strips, each phase <strong>2&pi;</strong>, linked 1 time</td></tr>
-      <tr><th>3</th><td>3&pi; (Triple half-twist)</td><td>Odd</td><td>1 single strip, double length, phase 2(3 + 1)&pi; = <strong>8&pi;</strong></td></tr>
-      <tr><th>4</th><td>4&pi; (Double twist)</td><td>Even</td><td>2 linked separate strips, each phase <strong>4&pi;</strong>, linked 2 times</td></tr>
+      <tr><th>Physical Dimensions</th><td>&approx; 0.5 cm &times; 0.5 cm die</td><td>Compact profile seamlessly embeddable into flexible woven yarns</td></tr>
+      <tr><th>Integrated Sensor</th><td>Digital micro-thermistor / IR sensor</td><td>Provides high-precision local skin and ambient temperature telemetry</td></tr>
+      <tr><th>Thermal Actuator</th><td>Miniaturized Peltier Element (TEC)</td><td>Reversible solid-state heat pump: heats or cools based on current polarity</td></tr>
+      <tr><th>Communication Bus</th><td>I2C Addressable Bus (3-wire topology)</td><td>Shared multidrop bus for localized telemetry polling and command delivery</td></tr>
+      <tr><th>Power Distribution</th><td>2-Wire DC Power Rail</td><td>Provides high-efficiency low-voltage power across the interconnected grid</td></tr>
     </tbody>
   </table>
 </div>
 
-<h3 class="detail-subheading">The Core Insight</h3>
-<p>The fundamental symmetry breaking behind this law can be stated succinctly:</p>
-<blockquote style="border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem; margin: 1.5rem 0; color: var(--accent-cyan); font-size: 1.15rem; font-style: italic;">
-  &ldquo;Even the strip doesn't want its offspring to be odd.&rdquo;
-</blockquote>
-<p>No matter what phase difference you begin with, cutting a band along its centerline <em>never produces an odd-phase result</em>. An odd-phase input (<em>n</em> odd) collapses into a single strip whose new phase, 2(<em>n</em>&nbsp;+&nbsp;1)&pi;, is strictly even. An even-phase input (<em>n</em> even) bifurcates into two distinct strips that each preserve the original even phase.</p>
-<p>Consequently, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.</p>
-
-<h3 class="detail-subheading">Topological Mechanism</h3>
-<p>This behavior is governed by the boundary structure of the strip prior to cutting:</p>
+<h3 class="detail-subheading">Other Features</h3>
 <ul class="detail-list">
-  <li><strong>Odd n (non-orientable):</strong> An odd-twist band is one-sided and bounded by a single continuous closed curve that winds twice around the core before closing. Cutting down the centerline is geometrically equivalent to tracing parallel to this solitary edge, resulting in one continuous ribbon of double length.</li>
-  <li><strong>Even n (orientable):</strong> An even-twist band is two-sided and possesses two distinct, independent boundary edges. Cutting along the centerline cleanly partitions the two boundaries into two separate bands, linked together due to the initial spatial rotation.</li>
+  <li><strong>1. Thermoelectric Energy Harvesting:</strong> The same fabric can also be used to harvest heat from our body (via the Seebeck effect) to generate a small amount of electricity when external temperature contrasts with body heat.</li>
+  <li><strong>2. Health Telemetry &amp; Diagnostics:</strong> The fabric can also monitor temperature at each point of the body to predict health complications or diseases (such as early fever onset, inflammation, or circulatory changes).</li>
 </ul>
 
-<h3 class="detail-subheading">Relationship to Established Mathematics</h3>
-<p>This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>). While conventional literature frames the theorem in terms of half-twists <em>N</em>, formulating it in terms of continuous phase difference <em>n&pi;</em> offers an intuitive wave-phase perspective discovered through independent physical experimentation.</p>
-
-<h3 class="detail-subheading">Further Explorations</h3>
+<h3 class="detail-subheading">Current Limitations &amp; Future Outlook</h3>
+<p>While the architecture is conceptually sound, physical implementation faces clear engineering bottlenecks:</p>
 <ul class="detail-list">
-  <li><strong>Off-Center Cuts:</strong> Cutting at a fractional width (e.g., 1/3 from an edge) creates interlocking rings of unequal widths and distinct twist configurations.</li>
-  <li><strong>Recursive Cutting:</strong> Applying the transformation recursively across consecutive generations to map branching topological trees.</li>
-  <li><strong>Linking Numbers in Knot Theory:</strong> Rigorously formalizing the Gauss linking integral for higher-order even parity strips.</li>
-</ul>`,
+  <li><strong>1. Peltier Inefficiency:</strong> Current Peltier modules are inefficient and waste a lot of energy through resistive losses, which forces the need for larger battery packs.</li>
+  <li><strong>2. Battery Packs:</strong> Large battery packs (10,000+ mAh, 3.7V) are heavy, costly, and not very durable inside daily clothing.</li>
+</ul>
+<p style="margin-top: 1rem; color: var(--accent-cyan);"><em>However, as the boom of electric vehicles (EVs) has made significant advancements in battery technologies, energy density, and flexible cells, this product might not be very far away.</em></p>`,
         references: [
-          { title: 'J. B. Listing, "Vorstudien zur Topologie" (Göttinger Studien, 1847) — Foundational Analysis of Paradromic Rings', url: '#' },
-          { title: 'Research paper DOI and formal topological documentation will be updated soon', url: '#' }
+          { title: 'Adaptive Thermoregulating Fabric (ATRF) — Technical Documentation & Concept Architecture Draft (v0.1)', url: '#' },
+          { title: 'Research paper DOI and hardware prototype documentation will be updated soon', url: '#' },
+          { title: 'Literature on Wearable Thermoelectric Generators and Stretchable E-Textiles', url: '#' }
         ]
       }
     },
@@ -309,7 +291,7 @@ const portfolioData = {
       detail: {
         image: 'images/opto_acoustic_diagram2.png',
         name: 'Opto-Acoustic Modulation: Mid-Air Volumetric Display via Ultrasonic Refractive-Index Gradients',
-        introduction: `This is another concept I spended a lot of my mental energy on, In brief I was trying to make 3d volumetric displays that could create true 3d images floating in air without requiring reflectors, panels, or wearing any bulky glasses.<br><br>The main aim was to create actual &ldquo;pixels in air&rdquo; that multiple people can view naturally from different angles. This writeup documents the basic idea, how I arrived at it independently, the technical challenges, and the detailed feasibility calculations to see whether current physics and hardware can actually pull this off.`,
+        introduction: `This is another concept I spent a lot of my mental energy on, In brief I was trying to make 3d volumetric displays that could create true 3d images floating in air without requiring reflectors, panels, or wearing any bulky glasses.<br><br>The main aim was to create actual &ldquo;pixels in air&rdquo; that multiple people can view naturally from different angles. This writeup documents the basic idea, how I arrived at it independently, the technical challenges, and the detailed feasibility calculations to see whether current physics and hardware can actually pull this off.`,
         inspiration: {
           textTop: `Another peice of Science Fiction that I was deeply fascinated was 3D holograms shown in Marvel movies, specifically the one which tony stark uses for his engineering purposes. In those movies, he simply swipes his hand, rotates 3d mechanical components in mid-air, and designs his suits right in front of him.`,
           image: 'images/opto_acoustic_inspiration.png',
@@ -396,17 +378,96 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
       }
     },
     {
+      id: 'mobius-law',
+      name: 'The Möbius Law: Phase-Difference Framing of Multi-Twisted Strips',
+      cardImage: 'images/mobius_cover.jpg',
+      detail: {
+        image: 'images/mobius_cover.jpg',
+        name: 'The M&ouml;bius Law: Phase-Difference Framing of Multi-Twisted Strips',
+        introduction: `I call this the <strong>M&ouml;bius Law</strong>&mdash;it's a phenomenon I discovered while experimenting with M&ouml;bius strips a few years ago.<br><br>If we take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together, we get a M&ouml;bius strip. In this case, the phase difference between the same plane on both ends is &pi;. But what happens if the phase difference between the same plane on both ends is <em>n&pi;</em>?<br><br>And then, we cut the strip by the length of the strip of paper: we observe an interesting, strict topological pattern across parities.<br><br><span style="font-style: italic; color: var(--accent-cyan);">Note: Maybe not a brand-new discovery to mathematics, but a mathematical topological result that I conceived independently&mdash;anyways, a great personal discovery for me.</span>`,
+        inspiration: {
+          textTop: `This concept emerged from tactile mathematical curiosity&mdash;taking scissors, paper, and tape to explore spatial topology from first principles. I wanted to see what happens when you generalize beyond the classic single-twist M&ouml;bius strip into arbitrary multi-twist loops, cataloging the resulting topologies systematically.`,
+          image: 'images/mobius_law_diagram.jpeg',
+          textBottom: `By tracing centerline paths with a pencil before cutting, a profound topological truth revealed itself: one-sided surfaces possess a single continuous boundary curve of double length, whereas two-sided surfaces possess two distinct boundaries. The physical cut simply exposes the underlying boundary geometry.`
+        },
+        moreText: `<h3 class="detail-subheading">Setup and Definitions</h3>
+<p>Take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed, and glue the ends together:</p>
+<ul class="detail-list">
+  <li>The rotation angle defines the <strong>phase difference</strong>, <em>n&pi;</em>, between the same plane on both ends (where <em>n</em> represents the number of half-twists).</li>
+  <li><em>n</em> = 0 corresponds to an ordinary, untwisted cylindrical loop.</li>
+  <li><em>n</em> = 1 corresponds to the canonical M&ouml;bius strip (single half-twist, phase &pi;).</li>
+  <li>Now, cut the strip continuously along the length of the strip of paper (down its centerline).</li>
+</ul>
+
+<h3 class="detail-subheading">We Observe an Interesting Pattern (Statement of the Law)</h3>
+<p>Given a closed band formed with phase difference <em>n&pi;</em> between end planes, cutting it along its centerline produces:</p>
+<div class="detail-formula">
+  If n is even &rArr; 2 rings (strips with ends glued together) with n&pi; phase difference between the end planes (linked together)<br><br>
+  If n is odd &rArr; 1 strip of 2(n + 1)&pi; phase difference (double length)
+</div>
+
+<h3 class="detail-subheading">Worked Examples Across Parities</h3>
+<div class="table-scroll">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>n (Before Cut)</th>
+        <th>Twist Phase</th>
+        <th>Parity</th>
+        <th>Topological Result After Centerline Cut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th>1</th><td>&pi; (Standard M&ouml;bius)</td><td>Odd</td><td>1 single strip, double length, phase 2(1 + 1)&pi; = <strong>4&pi;</strong></td></tr>
+      <tr><th>2</th><td>2&pi; (Full twist)</td><td>Even</td><td>2 linked separate strips, each phase <strong>2&pi;</strong>, linked 1 time</td></tr>
+      <tr><th>3</th><td>3&pi; (Triple half-twist)</td><td>Odd</td><td>1 single strip, double length, phase 2(3 + 1)&pi; = <strong>8&pi;</strong></td></tr>
+      <tr><th>4</th><td>4&pi; (Double twist)</td><td>Even</td><td>2 linked separate strips, each phase <strong>4&pi;</strong>, linked 2 times</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="detail-subheading">The Core Insight</h3>
+<p>The fundamental symmetry breaking behind this law can be stated succinctly:</p>
+<blockquote style="border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem; margin: 1.5rem 0; color: var(--accent-cyan); font-size: 1.15rem; font-style: italic;">
+  &ldquo;Even the strip doesn't want its offspring to be odd.&rdquo;
+</blockquote>
+<p>No matter what phase difference you begin with, cutting a band along its centerline <em>never produces an odd-phase result</em>. An odd-phase input (<em>n</em> odd) collapses into a single strip whose new phase, 2(<em>n</em>&nbsp;+&nbsp;1)&pi;, is strictly even. An even-phase input (<em>n</em> even) bifurcates into two distinct strips that each preserve the original even phase.</p>
+<p>Consequently, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.</p>
+
+<h3 class="detail-subheading">Topological Mechanism</h3>
+<p>This behavior is governed by the boundary structure of the strip prior to cutting:</p>
+<ul class="detail-list">
+  <li><strong>Odd n (non-orientable):</strong> An odd-twist band is one-sided and bounded by a single continuous closed curve that winds twice around the core before closing. Cutting down the centerline is geometrically equivalent to tracing parallel to this solitary edge, resulting in one continuous ribbon of double length.</li>
+  <li><strong>Even n (orientable):</strong> An even-twist band is two-sided and possesses two distinct, independent boundary edges. Cutting along the centerline cleanly partitions the two boundaries into two separate bands, linked together due to the initial spatial rotation.</li>
+</ul>
+
+<h3 class="detail-subheading">Relationship to Established Mathematics</h3>
+<p>This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>). While conventional literature frames the theorem in terms of half-twists <em>N</em>, formulating it in terms of continuous phase difference <em>n&pi;</em> offers an intuitive wave-phase perspective discovered through independent physical experimentation.</p>
+
+<h3 class="detail-subheading">Further Explorations</h3>
+<ul class="detail-list">
+  <li><strong>Off-Center Cuts:</strong> Cutting at a fractional width (e.g., 1/3 from an edge) creates interlocking rings of unequal widths and distinct twist configurations.</li>
+  <li><strong>Recursive Cutting:</strong> Applying the transformation recursively across consecutive generations to map branching topological trees.</li>
+  <li><strong>Linking Numbers in Knot Theory:</strong> Rigorously formalizing the Gauss linking integral for higher-order even parity strips.</li>
+</ul>`,
+        references: [
+          { title: 'J. B. Listing, "Vorstudien zur Topologie" (Göttinger Studien, 1847) — Foundational Analysis of Paradromic Rings', url: '#' },
+          { title: 'Research paper DOI and formal topological documentation will be updated soon', url: '#' }
+        ]
+      }
+    },
+    {
       id: 'photon-rocket',
       name: 'Photon Rocket Propulsion for Interstellar Flight',
       cardImage: 'images/photon_rocket_flight_profile.jpeg',
       detail: {
         image: 'images/photon_rocket_flight_profile.jpeg',
         name: 'Photon Rocket Propulsion for Interstellar Flight',
-        introduction: `Photon Rocket Propulsion is a theoretical astronautics concept investigating beamed radiation and matter&ndash;antimatter annihilation to eliminate the exponential fuel-mass penalties of the classical rocket equation for interstellar journeys.<br><br>Chemical and conventional fission rockets hit an impenetrable barrier over interstellar distances: propellant mass. To accelerate a starship to even a modest fraction of light speed within a human-relevant timeframe, the required chemical propellant mass exceeds the mass of the observable universe. A photon rocket bypasses this dilemma by expelling massless photons (<em>p = E/c</em>) as pure reaction mass&mdash;trading carried propellant mass for astronomical continuous power generation.`,
+        introduction: `<strong>The Problem:</strong> Normal fuel rockets work fine for travelling to other planets or moons in our solar system, but we face a physical bottleneck when it's about interstellar travel to a different star. We can carry only a limited amount of fuel in the rocket; the fuel, no matter how much, will run out after a while, and large amounts of fuel are also harder to get outside of Earth's atmosphere. All of these problems limit our dreams to fly to a different star in a practical timeframe.<br><br><strong>The Concept:</strong> So I thought, why not get rid of chemical fuels and maybe rely on electricity, because sufficient amounts of electricity can be generated by nuclear reactors reliably for long durations of time. But the problem is to gain momentum in space we have to push against something. In the case of chemical fuels we pushed gas to accelerate, but for electricity? There exists only one option (as far as I know) and that is photons.<br><br>So the photon rocket engine is basically a rocket engine that creates a large amount of photons and expels them. And since photons carry momentum (<em>p = E/c</em>), we get a very small acceleration from each photon. We need an astronomical number of photons to get a considerable amount of starship acceleration.`,
         inspiration: {
-          textTop: `Humanity's ambition to cross the interstellar void and reach Proxima Centauri (4.246 light-years away) within a single generation requires fundamentally rethinking propulsion physics. The starting question: what if a starship carried zero reaction mass and pushed against the universe solely with directed electromagnetic radiation?`,
+          textTop: `Humanity's ambition to cross the interstellar void and reach Proxima Centauri (4.246 light-years away) within a human lifetime requires fundamentally rethinking propulsion physics. The starting question: what if a starship carried zero chemical reaction mass and pushed against the universe solely with directed electromagnetic radiation?`,
           image: 'images/photon_rocket_power_options.jpeg',
-          textBottom: `Because each individual photon carries a tiny fraction of momentum (<em>p = E/c</em>), generating practical acceleration demands staggering continuous power&mdash;shifting the challenge from mass-ratio logistics to terawatt-scale optical engineering and continuous antimatter synthesis.`
+          textBottom: `According to calculations, the core challenge is that generating meaningful acceleration demands staggering continuous power: approximately 12.1 terawatts (TW).`
         },
         moreText: `<h3 class="detail-subheading">Mission Profile and Kinematics</h3>
 <p>Consider a benchmark interstellar voyage targeting Proxima Centauri, the nearest star system:</p>
@@ -460,88 +521,19 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
 <p>The photon rocket concept was first formulated in 1953 by German aerospace engineer <strong>Eugen S&auml;nger</strong>, who derived the exact 300 MW/N thrust relation and proposed matter&ndash;antimatter gamma lasers with parabolic reflectors.</p>
 <p>Furthermore, the strategy of generating antimatter in-flight to bypass containment hazards independently mirrors physicist Richard Obousy's <strong>VARIES concept</strong> (Vacuum to Antimatter Rocket Interstellar Explorer System), which relies on Schwinger vacuum pair production driven by intense lasers.</p>
 
-<h3 class="detail-subheading">Relativistic Kinematics &amp; Open Bottlenecks</h3>
+<h3 class="detail-subheading">Unresolved Questions &amp; Open Bottlenecks</h3>
+<p style="font-style: italic; color: var(--accent-cyan); margin-bottom: 1rem;">Note: The idea is incomplete&mdash;there are a lot of problems with this concept and many unanswered questions listed below:</p>
 <ul class="detail-list">
-  <li><strong>Relativistic Velocity:</strong> Midpoint peak velocity reaches v = a &middot; (t/2) &approx; 1.27 &times; 10<sup>8</sup> m/s &approx; <strong>0.42c</strong>. At 42% the speed of light, time dilation, relativistic mass dilation, and Lorentz contractions necessitate full relativistic rocket equations rather than classical Newtonian approximations.</li>
-  <li><strong>TW-Scale Collimation &amp; Mirror Survivability:</strong> Annihilation gamma rays emit isotropically. Collimating terawatts of gamma radiation into a narrow unidirectional beam without mirror ablation or thermal vaporization remains an unsolved materials challenge.</li>
-  <li><strong>Radiative Waste Heat Rejection:</strong> In the hard vacuum of deep space, even a 0.01% inefficiency in a 12 TW powertrain produces gigawatts of waste heat that can only be discarded through radiative surface panels.</li>
+  <li><strong>Relativistic Velocity (0.42c):</strong> Midpoint peak velocity reaches v = a &middot; (t/2) &approx; 1.27 &times; 10<sup>8</sup> m/s &approx; <strong>0.42c</strong>. At 42% the speed of light, time dilation, relativistic mass dilation, and interstellar dust impacts pose extreme structural risks.</li>
+  <li><strong>TW-Scale Collimation &amp; Mirror Survivability:</strong> Annihilation gamma rays emit isotropically. Collimating terawatts of high-energy gamma radiation into a narrow unidirectional beam without mirror ablation or thermal vaporization remains an unsolved materials challenge.</li>
+  <li><strong>Radiative Waste Heat Rejection:</strong> In the hard vacuum of deep space, even a 0.01% inefficiency in a 12 TW powertrain produces gigawatts of waste heat that can only be discarded through enormous radiative surface panels.</li>
+  <li><strong>Antimatter Synthesis Efficiency:</strong> Continuous micro-synthesis of antimatter requires enormous input power, creating an energy loop closure challenge that demands breakthrough power conversion efficiencies.</li>
 </ul>`,
         references: [
           { title: 'E. Sänger, "The Theory of Photon Rockets," Ingenieur-Archiv, 21, 213 (1953)', url: '#' },
           { title: 'R. Frisbee, "How to Build an Antimatter Rocket for Interstellar Missions," AIAA Paper 2003-4696', url: '#' },
           { title: 'P. Gilster, "Antimatter Propulsion: Birth of a Concept," Centauri Dreams (2016)', url: '#' },
           { title: 'Research paper DOI and formal mission analysis publication will be updated soon', url: '#' }
-        ]
-      }
-    },
-    {
-      id: 'thermoregulating-fabric',
-      name: 'Adaptive Thermoregulating Fabric (ATRF)',
-      cardImage: 'images/thermo_fabric_grid.jpeg',
-      detail: {
-        image: 'images/thermo_fabric_cross_section.jpeg',
-        name: 'Adaptive Thermoregulating Fabric (ATRF)',
-        introduction: `The Adaptive Thermoregulating Fabric (ATRF) is a smart, active textile engineered to dynamically heat or cool itself, maintaining optimal microclimate comfort for the wearer across extreme environmental swings.<br><br>Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and actuates solid-state heating or cooling through an embedded mesh of microscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical trauma: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.`,
-        inspiration: {
-          textTop: `Traditional clothing enforces a rigid compromise: bundle up in thick, bulky winter gear and overheat during physical exertion, or wear light garments and risk hypothermia in sudden cold snaps. I envisioned clothing operating like an artificial, active thermoregulatory organ&mdash;a second skin that balances heat flux dynamically.`,
-          image: 'images/thermo_fabric_grid.jpeg',
-          textBottom: `Conventional wearable heating relies on fragile, continuous wire loops where a single snag or cut breaks the entire circuit. ATRF solves this through architectural fault tolerance: independent, addressable modules linked by flexible serpentine interconnects that maintain system resilience even under severe textile wear.`
-        },
-        moreText: `<h3 class="detail-subheading">Modular Grid Architecture</h3>
-<p>The garment is organized as a 2D mesh of autonomous, solid-state modules interconnected with their immediate cardinal neighbors (North, South, East, West). Because each module is a self-contained sensing and actuation node, the system possesses complete decentralized fault tolerance:</p>
-<div class="table-scroll">
-  <table class="comparison-table">
-    <thead>
-      <tr>
-        <th>Component Feature</th>
-        <th>Module Specification</th>
-        <th>Functional Role</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><th>Physical Dimensions</th><td>&approx; 0.5 cm &times; 0.5 cm die</td><td>Compact profile seamlessly embeddable into flexible woven yarns</td></tr>
-      <tr><th>Integrated Sensor</th><td>Digital micro-thermistor / IR sensor</td><td>Provides high-precision local skin and ambient temperature telemetry</td></tr>
-      <tr><th>Thermal Actuator</th><td>Miniaturized Peltier Element (TEC)</td><td>Reversible solid-state heat pump: heats or cools based on current polarity</td></tr>
-      <tr><th>Communication Bus</th><td>I2C Addressable Slave Bus</td><td>Shared multidrop bus for localized telemetry polling and command delivery</td></tr>
-      <tr><th>Power Distribution</th><td>2-Wire DC Power Rail</td><td>Provides high-efficiency low-voltage power across the interconnected grid</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<h3 class="detail-subheading">Four-Conductor Stretchable Interconnects</h3>
-<p>Modules are interconnected through serpentine, stretchable conductive tracks containing four conductors:</p>
-<ul class="detail-list">
-  <li><strong>Power (+) &amp; Power (&minus;):</strong> DC power routing supporting bidirectional TEC current drive.</li>
-  <li><strong>I2C Serial Clock (SCL) &amp; Serial Data (SDA):</strong> High-speed digital communication allowing the master microcontroller to address individual modules.</li>
-</ul>
-<p>The loose, serpentine routing geometry accommodates natural textile shearing, bending, and stretching without inducing mechanical strain or fatigue fractures in the conductors.</p>
-
-<h3 class="detail-subheading">Three-Layer Fabric Laminate Construction</h3>
-<p>The physical fabric is engineered as a functional 3-layer sandwich:</p>
-<ul class="detail-list">
-  <li><strong>Outer Layer (Top):</strong> Weatherproof, abrasion-resistant, and wind-blocking protective textile shielding the electronics from external elements.</li>
-  <li><strong>Inner Layer (Middle):</strong> Flexible, porous, and highly thermally conductive matrix. It physically encapsulates the module grid and wire mesh while allowing air and perspiration to pass freely. Its high lateral thermal conductivity diffuses heat smoothly, eliminating uncomfortable localized hot/cold spots.</li>
-  <li><strong>Outer Layer (Bottom):</strong> Soft, breathable, skin-facing textile providing comfortable biometric contact.</li>
-</ul>
-
-<h3 class="detail-subheading">Closed-Loop Control &amp; Energy Harvesting</h3>
-<p>A master microcontroller continuously executes an adaptive control loop:</p>
-<ul class="detail-list">
-  <li><strong>Zone-Based Thermal Regulation:</strong> Polling local modules and comparing readings against user comfort setpoints. Actuating specific regions independently (e.g., cooling the lumbar and upper back while warming fingers or extremities).</li>
-  <li><strong>Thermoelectric Energy Harvesting (Seebeck Mode):</strong> When external temperatures diverge sharply from body temperature and active regulation is idled, the Peltier junctions run in reverse via the Seebeck effect, scavenging thermal gradients to trickle-charge wearable batteries.</li>
-  <li><strong>Biometric Thermal Health Mapping:</strong> The dense grid of hundreds of temperature sensors generates a real-time spatial thermal map of the wearer's body, opening up health telemetry applications such as detecting early fever onset, inflammation, or circulatory constriction.</li>
-</ul>
-
-<h3 class="detail-subheading">Open Engineering Questions</h3>
-<ul class="detail-list">
-  <li><strong>Bus Scaling &amp; Capacitance:</strong> Addressing hundreds of I2C nodes on long flexible garments introduces capacitive bus loading; exploring segmented subnetworks or lightweight single-wire protocols.</li>
-  <li><strong>Wearable Battery Life:</strong> Peltier elements exhibit moderate COP (coefficient of performance); smart duty-cycling and phase-change buffer materials will be required to maximize runtime.</li>
-  <li><strong>Hermetic Washability:</strong> Micro-encapsulation of silicon dies and elastic conductive traces to endure repeated commercial laundry agitation and detergent exposure.</li>
-</ul>`,
-        references: [
-          { title: 'Adaptive Thermoregulating Fabric (ATRF) — Technical Documentation & Concept Architecture Draft (v0.1)', url: '#' },
-          { title: 'Research paper DOI and hardware prototype documentation will be updated soon', url: '#' },
-          { title: 'Literature on Wearable Thermoelectric Generators and Stretchable E-Textiles', url: '#' }
         ]
       }
     }

@@ -42,7 +42,7 @@
 
       <!-- 1. Image of the concept -->
       <div class="detail-main-image-container">
-        <img src="../images/mobius_law_diagram.jpeg" alt="The Möbius Law Diagram" class="detail-main-image">
+        <img src="../images/mobius_cover.jpg" alt="The Möbius Law Strip Cover" class="detail-main-image">
       </div>
 
       <!-- 2. Name of the concept in large text -->
@@ -52,10 +52,16 @@
       <div class="detail-intro-section">
         <h2 class="section-subheading">Introduction</h2>
         <p class="detail-text">
-          The M&ouml;bius Law is a personal topological discovery framing the behavior of multi-twisted strips under centerline cutting through phase differences (<em>n&pi;</em>).
+          I call this the <strong>M&ouml;bius Law</strong>&mdash;it's a phenomenon I discovered while experimenting with M&ouml;bius strips a few years ago.
         </p>
         <p class="detail-text" style="margin-top: 1rem;">
-          While experimenting hands-on with paper strips twisted by multiples of &pi; before joining their ends into closed bands, I noticed a striking, strict parity rule governing what happens when you cut the loop down its centerline. Framing the physical half-twists as a phase difference between the same plane at each end transformed an otherwise confusing geometric puzzle into an elegant, memorable mathematical principle.
+          If we take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together, we get a M&ouml;bius strip. In this case, the phase difference between the same plane on both ends is &pi;. But what happens if the phase difference between the same plane on both ends is <em>n&pi;</em>?
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          And then, we cut the strip by the length of the strip of paper: we observe an interesting, strict topological pattern across parities.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem; font-style: italic; color: var(--accent-cyan);">
+          Note: Maybe not a brand-new discovery to mathematics, but a mathematical topological result that I conceived independently&mdash;anyways, a great personal discovery for me.
         </p>
       </div>
 
@@ -79,22 +85,22 @@
         <div class="detail-more-text">
           <h3 class="detail-subheading">Setup and Definitions</h3>
           <p>
-            Consider a continuous strip of paper. Before joining its two ends into a closed band, rotate one end by an angle that is an integer multiple of &pi; (180&deg;):
+            Take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed, and glue the ends together:
           </p>
           <ul class="detail-list">
-            <li>Define this rotation as the <strong>phase difference</strong>, <em>n&pi;</em>, where <em>n</em> is a non-negative integer representing the number of half-twists.</li>
+            <li>The rotation angle defines the <strong>phase difference</strong>, <em>n&pi;</em>, between the same plane on both ends (where <em>n</em> represents the number of half-twists).</li>
             <li><em>n</em> = 0 corresponds to an ordinary, untwisted cylindrical loop.</li>
             <li><em>n</em> = 1 corresponds to the canonical M&ouml;bius strip (single half-twist, phase &pi;).</li>
-            <li>Glue the ends together to form a closed band, and execute a continuous longitudinal cut along its exact centerline.</li>
+            <li>Now, cut the strip continuously along the length of the strip of paper (down its centerline).</li>
           </ul>
 
-          <h3 class="detail-subheading">Statement of the Law</h3>
+          <h3 class="detail-subheading">We Observe an Interesting Pattern (Statement of the Law)</h3>
           <p>
-            Given a closed band formed with phase difference <em>n&pi;</em>, cutting it along its centerline produces:
+            Given a closed band formed with phase difference <em>n&pi;</em> between end planes, cutting it along its centerline produces:
           </p>
           <div class="detail-formula">
-            If n is even &rArr; 2 separate strips, each with phase difference n&pi;, linked together (interlocked n/2 times)<br><br>
-            If n is odd &rArr; 1 single strip, twice the original length, with phase difference 2(n + 1)&pi;
+            If n is even &rArr; 2 rings (strips with ends glued together) with n&pi; phase difference between the end planes (linked together)<br><br>
+            If n is odd &rArr; 1 strip of 2(n + 1)&pi; phase difference (double length)
           </div>
 
           <h3 class="detail-subheading">Worked Examples Across Parities</h3>
