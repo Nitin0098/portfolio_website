@@ -284,7 +284,7 @@
     playSound('hit');
     addBurst(player.x, player.y, '#f43f5e', 24);
 
-    const beatCreator = score > 620;
+    const beatCreator = score > 1610;
     if (score > bestScore) {
       bestScore = score;
       localStorage.setItem('portfolio_minigame_best', bestScore);
@@ -303,9 +303,9 @@
     }
 
     if (beatCreator) {
-      overlaySubtitle.textContent = 'Outstanding reflexes! You surpassed Nitin\'s high score of 620!';
+      overlaySubtitle.textContent = 'Outstanding reflexes! You surpassed Nitin\'s high score of 1610!';
     } else {
-      overlaySubtitle.textContent = 'Nitin\'s record is 620. Can you beat it on your next attempt?';
+      overlaySubtitle.textContent = 'Nitin\'s record is 1610. Can you beat it on your next attempt?';
     }
     startBtn.textContent = 'Play Again';
     overlay.classList.remove('hidden');
