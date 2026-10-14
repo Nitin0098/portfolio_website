@@ -46,36 +46,36 @@
         <div class="contact-info-strip">
           <div class="contact-info-item">
             <span class="contact-info-label">Direct Email</span>
-            <span class="contact-info-value">portfolio.contact@domain.com</span>
-          </div>
-          <div class="contact-info-item">
-            <span class="contact-info-label">Response Time</span>
-            <span class="contact-info-value">Within 24–48 hours</span>
+            <span class="contact-info-value"><a href="mailto:nitinfromindia4@gmail.com" class="contact-email-link">nitinfromindia4@gmail.com</a></span>
           </div>
         </div>
 
-        <form class="thoughts-form" onsubmit="event.preventDefault(); this.querySelector('.form-success-banner').style.display='block'; this.reset();">
+        <form class="thoughts-form" action="https://formsubmit.co/nitinfromindia4@gmail.com" method="POST" onsubmit="handleThoughtsSubmit(event, this)">
+          <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
           <div class="form-group">
             <label class="form-label">Your Name</label>
-            <input type="text" required class="form-input" placeholder="Your name">
+            <input type="text" name="name" required class="form-input" placeholder="Your name">
           </div>
           <div class="form-group">
             <label class="form-label">Your Contact / Email</label>
-            <input type="email" required class="form-input" placeholder="name@example.com">
+            <input type="email" name="email" required class="form-input" placeholder="name@example.com">
           </div>
           <div class="form-group">
             <label class="form-label">Write Your Thoughts</label>
-            <textarea required class="form-textarea" placeholder="Write your thoughts here..."></textarea>
+            <textarea name="message" required class="form-textarea" placeholder="Write your thoughts here..."></textarea>
           </div>
           <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
-          <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
+          <div class="form-success-banner">Thank you! Your message has been sent to Nitin.</div>
         </form>
       </div>
     </div>
   </main>
 
   <footer class="site-footer">
-    <p>Nitin Vishwakarma &bull; Minimalist Design</p>
+    <p>Nitin Vishwakarma</p>
   </footer>
 
   <script src="../js/nav.js?v=3"></script>

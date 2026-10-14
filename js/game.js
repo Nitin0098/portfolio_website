@@ -284,16 +284,29 @@
     playSound('hit');
     addBurst(player.x, player.y, '#f43f5e', 24);
 
+    const beatCreator = score > 620;
     if (score > bestScore) {
       bestScore = score;
       localStorage.setItem('portfolio_minigame_best', bestScore);
       bestScoreDisplay.textContent = bestScore;
-      overlayTitle.textContent = 'New High Score: ' + score + '!';
+      if (beatCreator) {
+        overlayTitle.textContent = 'Incredible! You beat my score: ' + score + '!';
+      } else {
+        overlayTitle.textContent = 'New High Score: ' + score + '!';
+      }
     } else {
-      overlayTitle.textContent = 'Run Ended — Score: ' + score;
+      if (beatCreator) {
+        overlayTitle.textContent = 'You beat my score! Score: ' + score;
+      } else {
+        overlayTitle.textContent = 'Run Ended — Score: ' + score;
+      }
     }
 
-    overlaySubtitle.textContent = 'Avoid the red anomaly hazards. Collect cyan sparks to boost your score!';
+    if (beatCreator) {
+      overlaySubtitle.textContent = 'Outstanding reflexes! You surpassed Nitin\'s high score of 620!';
+    } else {
+      overlaySubtitle.textContent = 'Nitin\'s record is 620. Can you beat it on your next attempt?';
+    }
     startBtn.textContent = 'Play Again';
     overlay.classList.remove('hidden');
   }

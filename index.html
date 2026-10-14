@@ -75,6 +75,11 @@
           </p>
         </div>
 
+        <!-- Challenge Banner above the game -->
+        <div class="game-challenge-header">
+          <p class="game-challenge-text">Can you beat my score?</p>
+        </div>
+
         <!-- At bottom: The game comes at last -->
         <div class="hero-game-card">
           <div class="game-header">
@@ -83,8 +88,9 @@
               <h3>Pulse Drift</h3>
             </div>
             <div class="game-stats">
-              <div class="game-stat-item">Score: <span id="game-score">0</span></div>
-              <div class="game-stat-item">Best: <span id="game-best-score">0</span></div>
+              <div class="game-stat-item game-stat-creator">My Best: <span>620</span></div>
+              <div class="game-stat-item">Your Score: <span id="game-score">0</span></div>
+              <div class="game-stat-item">Your Best: <span id="game-best-score">0</span></div>
             </div>
           </div>
 
@@ -94,7 +100,7 @@
             <div id="game-overlay" class="game-overlay">
               <h2 id="game-overlay-title" class="game-overlay-title">Pulse Drift</h2>
               <p id="game-overlay-subtitle" class="game-overlay-subtitle">
-                Guide your energy core with the cursor or arrow keys. Collect glowing cyan pulses and dodge the red hazard anomalies.
+                Can you beat my best score of 620? Guide your energy core with the cursor or arrow keys. Collect glowing cyan pulses and dodge the red hazard anomalies.
               </p>
               <button id="game-start-btn" class="game-btn">Start Game</button>
             </div>
@@ -192,29 +198,29 @@
           <div class="contact-info-strip">
             <div class="contact-info-item">
               <span class="contact-info-label">Direct Email</span>
-              <span class="contact-info-value">portfolio.contact@domain.com</span>
-            </div>
-            <div class="contact-info-item">
-              <span class="contact-info-label">Response Time</span>
-              <span class="contact-info-value">Within 24–48 hours</span>
+              <span class="contact-info-value"><a href="mailto:nitinfromindia4@gmail.com" class="contact-email-link">nitinfromindia4@gmail.com</a></span>
             </div>
           </div>
 
-          <form class="thoughts-form" onsubmit="handleThoughtsSubmit(event, this)">
+          <form class="thoughts-form" action="https://formsubmit.co/nitinfromindia4@gmail.com" method="POST" onsubmit="handleThoughtsSubmit(event, this)">
+            <input type="hidden" name="_subject" value="New Message from Portfolio Website">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
             <div class="form-group">
               <label class="form-label">Your Name</label>
-              <input type="text" required class="form-input" placeholder="Your name">
+              <input type="text" name="name" required class="form-input" placeholder="Your name">
             </div>
             <div class="form-group">
               <label class="form-label">Your Contact / Email</label>
-              <input type="email" required class="form-input" placeholder="name@example.com">
+              <input type="email" name="email" required class="form-input" placeholder="name@example.com">
             </div>
             <div class="form-group">
               <label class="form-label">Write Your Thoughts</label>
-              <textarea required class="form-textarea" placeholder="Write your thoughts here..."></textarea>
+              <textarea name="message" required class="form-textarea" placeholder="Write your thoughts here..."></textarea>
             </div>
             <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
-            <div class="form-success-banner">Thank you! Your thoughts have been received.</div>
+            <div class="form-success-banner">Thank you! Your message has been sent to Nitin.</div>
           </form>
         </div>
       </div>
@@ -226,7 +232,7 @@
        PERSISTENT FOOTER
        ========================================================================= -->
   <footer class="site-footer">
-    <p>Nitin Vishwakarma &bull; Minimalist Design</p>
+    <p>Nitin Vishwakarma</p>
   </footer>
 
   <!-- Scripts -->
