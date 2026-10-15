@@ -176,6 +176,17 @@ const portfolioData = {
   <li><strong>On-Board Micro-Controller:</strong> A microscopic CMOS logic circuit or microcontroller etched into the core coordinates local timing, communication packets, and coil polarities. When linked together, the swarm can operate as a massively distributed computing processor.</li>
 </ul>
 
+<div style="margin: 2.25rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: center;">
+  <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img src="images/microbots_isometric_view.png" alt="Isometric CAD view of cubic microbot" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">
+    <p style="font-size: 0.88rem; color: #1e293b; margin-top: 0.85rem; font-weight: 500;">Figure: Isometric 3D view showing cubic bonding geometry and face coils.</p>
+  </div>
+  <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <img src="images/microbots_front_view.png" alt="Front view of cubic microbot" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">
+    <p style="font-size: 0.88rem; color: #1e293b; margin-top: 0.85rem; font-weight: 500;">Figure: Front face view detailing planar coil layout and edge contact pads.</p>
+  </div>
+</div>
+
 <h3 class="detail-subheading">Powering the Swarm: Dual-Plexing</h3>
 <p>At the micro-scale, conventional chemical batteries are completely impractical due to volume constraints, weight, and cycle degradation. Microbots carry no internal batteries. Instead, they operate completely battery-free by drawing energy from an external oscillating magnetic field via electromagnetic induction.</p>
 <p>To prevent interference between power reception and mechanical bonding, the system uses a synchronized control strategy called <strong>dual-plexing</strong>(this is still very imature and needs further development):</p>
@@ -185,6 +196,14 @@ const portfolioData = {
 
 <h3 class="detail-subheading">Overcoming Energy Limits: The Supercapacitor Breakthrough</h3>
 <p>In my initial design version, I calculated the energy storage of a conventional parallel-plate capacitor with high-permittivity barium titanate (BaTiO<sub>3</sub>, &epsilon;<sub>r</sub> = 10,000). At microscopic dimensions (0.5&nbsp;mm cube), the capacitance was just 44.25&nbsp;pF. Even assuming an extreme voltage of 200&nbsp;V—which I think will certainly cause electric arcing and dielectric breakdown at this scale—the stored energy was only ~885&nbsp;nJ, which is far too low to power actuation coils.</p>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <div style="display: inline-block; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; max-width: 440px; width: 100%;">
+    <img src="images/microbots_internal_capacitor_view.png" alt="Internal capacitor structure from early design calculations" style="max-height: 260px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block;">
+    <p style="font-size: 0.88rem; color: #1e293b; margin-top: 0.85rem; font-weight: 500;">Figure: Internal parallel-plate capacitor architecture modeled in the initial design version.</p>
+  </div>
+</div>
+
 <p>To solve this critical bottleneck, I upgraded the internal storage model to <strong>porous activated-carbon supercapacitor technology</strong> (electric double-layer capacitor). With porous carbon electrodes offering huge surface areas (~100–200&nbsp;F/g):</p>
 <div class="detail-formula">C = 100 F/g &times; 12.5 &micro;g = 1.25 mF &emsp;&rArr;&emsp; E = &frac12; C V<sup>2</sup> = &frac12; (1.25 &times; 10<sup>&minus;3</sup>) &times; (2.7)<sup>2</sup> &approx; 4.56 mJ</div>
 <p>This increases stored energy by over <strong>4,000&times;</strong> (from nanojoules to 4.56&nbsp;mJ) while operating at a safe, realistic voltage of just 2.7&nbsp;V, completely eliminating the need for high-voltage hazards and making electromagnetic actuation physically viable, This was the second breakthrough I made in this project.</p>
@@ -287,9 +306,9 @@ const portfolioData = {
     {
       id: 'opto-acoustic',
       name: 'Opto-Acoustic Modulation: Mid-Air Volumetric Display',
-      cardImage: 'images/opto_acoustic_diagram2.png',
+      cardImage: 'images/image_1_setup_coverimage.png',
       detail: {
-        image: 'images/opto_acoustic_diagram2.png',
+        image: 'images/image_1_setup_coverimage.png',
         name: 'Opto-Acoustic Modulation: Mid-Air Volumetric Display via Ultrasonic Refractive-Index Gradients',
         introduction: `This is another concept I spent a lot of my mental energy on, In brief I was trying to make 3d volumetric displays that could create true 3d images floating in air without requiring reflectors, panels, or wearing any bulky glasses.<br><br>The main aim was to create actual &ldquo;pixels in air&rdquo; that multiple people can view naturally from different angles. This writeup documents the basic idea, how I arrived at it independently, the technical challenges, and the detailed feasibility calculations to see whether current physics and hardware can actually pull this off.`,
         inspiration: {
@@ -308,7 +327,7 @@ const portfolioData = {
 <p>Where they constructively interfere, the density oscillates with double the single wave amplitude, creating localized pockets of high density and steep refractive-index gradients in ambient air.</p>
 
 <div style="margin: 2rem 0; text-align: center;">
-  <img src="images/opto_acoustic_diagram1.png" alt="Geometric representation of ultrasonic wave interference" style="width: 100%; max-width: 760px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #ffffff; padding: 1rem;">
+  <img src="images/image_2_interference.png" alt="Geometric representation of ultrasonic wave interference" style="width: 100%; max-width: 760px; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: #ffffff; padding: 1rem;">
   <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Geometric wave interference between two directional ultrasonic sources creating localized high-density compression lattices in ambient air.</p>
 </div>
 

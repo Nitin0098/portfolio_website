@@ -468,6 +468,11 @@ img {
   line-height: 1.5;
 }
 
+.game-overlay-subtitle:empty {
+  display: none;
+  margin: 0;
+}
+
 .game-btn {
   background-color: var(--accent-cyan);
   color: var(--bg-navy-deep);
@@ -647,6 +652,66 @@ img {
 /* Carousel controls hidden (Down direction scrollable) */
 .carousel-controls {
   display: none !important;
+}
+
+/* Concepts Note & IP Notice Card */
+.concepts-notice-card {
+  margin-top: 3.5rem;
+  background: var(--bg-navy-card);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-cyan);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.concepts-notice-title {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-cyan);
+  margin-bottom: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.concepts-notice-icon {
+  font-size: 1rem;
+}
+
+.concepts-notice-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  padding: 0;
+  margin: 0;
+}
+
+.concepts-notice-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.concepts-notice-item strong {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.concepts-notice-num {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
 }
 
 /* ==========================================================================
