@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIY Smartphone Microscope - Nitin Vishwakarma</title>
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+      </div>
+
+      <!-- 1. Image of the project -->
+      <div class="detail-main-image-container">
+        <img src="../images/project_microscope_cover.jpeg" alt="Onion Tissues under DIY Microscope" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the project in large text -->
+      <h1 class="detail-title">DIY Smartphone Microscope</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          As a hard tech enthusiast and electronics engineer, biology never stops fascinating me too. I have always wanted a microscope that I can use to see the microscopic world around us.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          Finding the market options out of my budget I decided to do some 'jugaad' and made this. Of course its not as good as a real microscope but considering the components used it works surprisingly good.
+        </p>
+      </div>
+
+      <!-- 4. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Optical Approach</h2>
+        <div class="detail-more-text">
+          <p>
+            So this is a DIY microscope that I made with simple components. For the lens, I used plano-convex lenses extracted from cheap 50 Rupees laser pointers (I used two of them).
+          </p>
+          <p>
+            I made this by sticking those two lenses together (flat side of one lens is stuck on flat side of second lens to reduce optical error) and then I taped this lens on my smartphone camera as close as possible so I can view the image on smartphone and capture photos.
+          </p>
+
+          <div style="margin: 2rem 0; text-align: center;">
+            <div style="display: inline-block; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
+              <img src="../images/project_microscope_setup.jpeg" alt="DIY Smartphone Microscope Optical Assembly" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Dual-Lens Assembly &amp; Optical Alignment over Smartphone Camera Sensor.</p>
+            </div>
+          </div>
+
+          <h3 class="detail-subheading">Camera Settings (Expert Mode)</h3>
+          <p>
+            Now this setup alone will provide a blurry image, we need to adjust some camera settings. First switch to expert mode then set the given settings:
+          </p>
+          <ul class="detail-list">
+            <li><strong>1. Focus:</strong> Increase the focus to maximum.</li>
+            <li><strong>2. Shutter Speed:</strong> Set Exposure time / Shutter Speed to 1/90s or 1/125s.</li>
+            <li><strong>3. Illumination:</strong> Turn on the flash.</li>
+            <li><strong>4. Zoom:</strong> Increase zoom as much as possible.</li>
+            <li><strong>5. ISO:</strong> ISO to 100.</li>
+            <li><strong>6. Exposure Value:</strong> Exposure value to 0.00.</li>
+            <li><strong>7. Enjoy:</strong> That's it. Enjoy lurking in the microscopic world!</li>
+          </ul>
+
+          <h3 class="detail-subheading">Microscopic Results Gallery</h3>
+          <p>Here are some of the results captured directly through this DIY optical setup:</p>
+
+          <div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; text-align: center;">
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+              <img src="../images/project_microscope_cover.jpeg" alt="Onion epidermal cells" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Onion Epidermal Cells</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+              <img src="../images/project_microscope_ant.jpeg" alt="Red ant microscopic head anatomy" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Red Ant Head Anatomy</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+              <img src="../images/project_microscope_led.jpeg" alt="LED diode semiconductor die" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">LED Diode Semiconductor Die</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+              <img src="../images/project_microscope_leaf.jpeg" alt="Plant leaf microscopic structure" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Plant Leaf Microscopic Veins</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+              <img src="../images/project_microscope_display.jpeg" alt="Display sub-pixels matrix" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">RGB Display Sub-Pixel Matrix</p>
+            </div>
+          </div>
+
+          <h3 class="detail-subheading">Components List</h3>
+          <ul class="detail-list">
+            <li>2&times; Plano-convex optical lenses (extracted from standard ₹50 laser pointers)</li>
+            <li>Smartphone camera with manual/expert mode capability</li>
+            <li>Optical transparent adhesive tape / mounting jig</li>
+            <li>Specimen slides &amp; LED backlight source</li>
+          </ul>
+
+          <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">
+            Note: Demo video will be uploaded on YouTube and linked here soon.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">DIY Microscopy &amp; Optical Lens Aberration Reduction Principles</span>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Smartphone Macro Photomicrography Setup Guide</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma</p>
+  </footer>
+
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>

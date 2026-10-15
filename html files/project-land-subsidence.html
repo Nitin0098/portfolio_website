@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Subsidence & Landslide Early Warning System - Nitin Vishwakarma</title>
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+      </div>
+
+      <!-- 1. Image of the project -->
+      <div class="detail-main-image-container">
+        <img src="../images/project_land_subsidence_cover.jpeg" alt="Land Subsidence Early Warning Sensor Prototype" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the project in large text -->
+      <h1 class="detail-title">Land Subsidence &amp; Landslide Early Warning System</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          This is a device that is meant to be installed in mining areas or landslide-prone zones. It detects early signatures of landslides and land subsidence using tilt, micro-vibrations, and location sensors.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          This was a product me and my team were developing for the Ministry of Coal and Mines during the Smart India Hackathon (SIH) competition.
+        </p>
+      </div>
+
+      <!-- 4. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">The Problem &amp; Engineering Approach</h2>
+        <div class="detail-more-text">
+          <p>
+            <strong>The Problem:</strong><br>
+            In open-cast and underground coal mines, slope failure and ground subsidence can happen suddenly with catastrophic consequences for human lives and heavy machinery. Traditional surveying methods or satellite radar (InSAR) are periodic, costly, and cannot provide real-time, seconds-ahead warning on the ground when slope instability starts developing. We needed an autonomous, field-deployable IoT sensor node that can stay out in harsh conditions 24/7 and yell before the ground moves.
+          </p>
+
+          <p>
+            <strong>Hardware Architecture:</strong><br>
+            We designed a multi-sensor wireless telemetry node. At its core, the unit uses an ultra-sensitive geophone (SM-4) to pick up micro-vibrations in the ground and an IMU unit (MPU-6050 for our prototype, upgrading to high-precision industrial ISM330DHCX) to measure subtle angular tilt variations.
+          </p>
+
+          <div style="margin: 2rem 0; text-align: center;">
+            <div style="display: inline-block; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
+              <img src="../images/project_land_subsidence_circuit.svg" alt="ESP32 Sensor Node Circuit Diagram" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block;">
+              <p style="font-size: 0.88rem; color: #1e293b; margin-top: 0.75rem; font-weight: 500;">Figure: Circuit Schematic of the ESP32 Core, Sensor Interfacing &amp; LoRa Transceiver.</p>
+            </div>
+          </div>
+
+          <p>
+            <strong>Off-Grid Power &amp; Long-Range LoRa Telemetry:</strong><br>
+            The sensor node is powered by an ESP32 microcontroller with power management handled via a TP4056 BMS module and an 18650 Li-ion battery kept charged by a compact 10&times;10 cm solar panel. Since mining pits often have zero cellular coverage or WiFi, we used SX1278 LoRa modules operating at 433/466 MHz to transmit packet telemetry over several kilometers back to a base receiver station.
+          </p>
+
+          <div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: center;">
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+              <img src="../images/project_land_subsidence_receiver.jpeg" alt="Receiver End Hardware Unit" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: LoRa Base Receiver &amp; Alert Processing Unit.</p>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+              <img src="../images/project_land_subsidence_closeup.png" alt="Field Enclosure 3D Render" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Weather-resistant Field Enclosure &amp; Ground Spike.</p>
+            </div>
+          </div>
+
+          <h3 class="detail-subheading">Components List</h3>
+          <ul class="detail-list">
+            <li><strong>Sensors:</strong> Geophone (SM-4) &amp; IMU unit (ISM330DHCX / MPU-6050 for prototype)</li>
+            <li><strong>Processing:</strong> 2&times; Microcontrollers (ESP32 DevKit, NodeMCU ESP8266)</li>
+            <li><strong>Wireless Telemetry:</strong> 2&times; LoRa Modules + Whip Antennas (SX1278, 433/466 MHz)</li>
+            <li><strong>Power Source:</strong> 18650 3.7V Li-ion Battery with TP4056 BMS Protection Circuit</li>
+            <li><strong>Solar Harvesting:</strong> 10&times;10 cm Solar Panel with DC-DC Boost Converter</li>
+            <li><strong>Prototyping:</strong> Solderless breadboards, terminal blocks, and custom jumper harnesses</li>
+          </ul>
+
+          <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">
+            Note: Demo video will be uploaded on YouTube and linked here soon.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Smart India Hackathon (SIH) — Ministry of Coal &amp; Mines Project Submission</span>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Subsidence Prediction Network Whitepaper &amp; Field Telemetry Architecture</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma</p>
+  </footer>
+
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>

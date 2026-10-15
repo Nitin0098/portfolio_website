@@ -8,33 +8,160 @@
 const portfolioData = {
   projects: [
     {
-      id: 'placeholder-project',
-      name: 'Project Alpha',
-      cardImage: 'images/project-placeholder-hero.svg',
+      id: 'land-subsidence-predictor',
+      name: 'Land Subsidence & Landslide Early Warning System',
+      cardImage: 'images/project_land_subsidence_cover.jpeg',
       detail: {
-        image: 'images/project-placeholder-hero.svg',
-        name: 'Project Alpha',
-        introduction: 'A minimalist architecture engineered for instantaneous feedback and lightweight execution.',
-        moreText: 'The system operates on native browser primitives without external dependencies. State transitions are coordinated through declarative hash routing and hardware-accelerated transforms to ensure fluid high-framerate execution.',
+        image: 'images/project_land_subsidence_cover.jpeg',
+        name: 'Land Subsidence & Landslide Early Warning System',
+        introduction: `This is a device that is meant to be installed in mining areas or landslide-prone zones. It detects early signatures of landslides and land subsidence using tilt, micro-vibrations, and location sensors.<br><br>This was a product me and my team were developing for the Ministry of Coal and Mines during the Smart India Hackathon (SIH) competition.`,
+        moreText: `<p><strong>The Problem:</strong><br>In open-cast and underground coal mines, slope failure and ground subsidence can happen suddenly with catastrophic consequences for human lives and heavy machinery. Traditional surveying methods or satellite radar (InSAR) are periodic, costly, and cannot provide real-time, seconds-ahead warning on the ground when slope instability starts developing. We needed an autonomous, field-deployable IoT sensor node that can stay out in harsh conditions 24/7 and yell before the ground moves.</p>
+
+<p><strong>Hardware Architecture:</strong><br>We designed a multi-sensor wireless telemetry node. At its core, the unit uses an ultra-sensitive geophone (SM-4) to pick up micro-vibrations in the ground and an IMU unit (MPU-6050 for our prototype, upgrading to high-precision industrial ISM330DHCX) to measure subtle angular tilt variations.</p>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <div style="display: inline-block; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
+    <img src="images/project_land_subsidence_circuit.svg" alt="ESP32 Sensor Node Circuit Diagram" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block;">
+    <p style="font-size: 0.88rem; color: #1e293b; margin-top: 0.75rem; font-weight: 500;">Figure: Circuit Schematic of the ESP32 Core, Sensor Interfacing &amp; LoRa Transceiver.</p>
+  </div>
+</div>
+
+<p><strong>Off-Grid Power &amp; Long-Range LoRa Telemetry:</strong><br>The sensor node is powered by an ESP32 microcontroller with power management handled via a TP4056 BMS module and an 18650 Li-ion battery kept charged by a compact 10&times;10 cm solar panel. Since mining pits often have zero cellular coverage or WiFi, we used SX1278 LoRa modules operating at 433/466 MHz to transmit packet telemetry over several kilometers back to a base receiver station.</p>
+
+<div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: center;">
+  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+    <img src="images/project_land_subsidence_receiver.jpeg" alt="Receiver End Hardware Unit" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: LoRa Base Receiver &amp; Alert Processing Unit.</p>
+  </div>
+  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+    <img src="images/project_land_subsidence_closeup.png" alt="Field Enclosure 3D Render" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Weather-resistant Field Enclosure &amp; Ground Spike.</p>
+  </div>
+</div>
+
+<h3 class="detail-subheading">Components List</h3>
+<ul class="detail-list">
+  <li><strong>Sensors:</strong> Geophone (SM-4) &amp; IMU unit (ISM330DHCX / MPU-6050 for prototype)</li>
+  <li><strong>Processing:</strong> 2&times; Microcontrollers (ESP32 DevKit, NodeMCU ESP8266)</li>
+  <li><strong>Wireless Telemetry:</strong> 2&times; LoRa Modules + Whip Antennas (SX1278, 433/466 MHz)</li>
+  <li><strong>Power Source:</strong> 18650 3.7V Li-ion Battery with TP4056 BMS Protection Circuit</li>
+  <li><strong>Solar Harvesting:</strong> 10&times;10 cm Solar Panel with DC-DC Boost Converter</li>
+  <li><strong>Prototyping:</strong> Solderless breadboards, terminal blocks, and custom jumper harnesses</li>
+</ul>
+
+<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
-          { title: 'Minimalist Interface Principles & System Guidelines', url: '#' },
-          { title: 'W3C Web Standards & High Frame-Rate Rendering', url: '#' },
-          { title: 'Repository & Architecture Documentation', url: '#' }
+          { title: 'Smart India Hackathon (SIH) — Ministry of Coal & Mines Project Submission', url: '#' },
+          { title: 'Subsidence Prediction Network Whitepaper & Field Telemetry Architecture', url: '#' }
         ]
       }
     },
     {
-      id: 'project-beta',
-      name: 'Project Beta',
-      cardImage: 'images/project-2.svg',
+      id: 'smart-wifi-extension-board',
+      name: 'Smart WiFi Power Extension Board',
+      cardImage: 'images/project_smart_extension_cover.jpeg',
       detail: {
-        image: 'images/project-2.svg',
-        name: 'Project Beta',
-        introduction: 'An exploration of spatial coordinate projection and minimal geometric silhouettes.',
-        moreText: 'Coordinate calculations are evaluated directly within the viewport canvas, maintaining zero layout recalculation overhead and fluid responsiveness across displays.',
+        image: 'images/project_smart_extension_cover.jpeg',
+        name: 'Smart WiFi Power Extension Board',
+        introduction: `A custom IoT-enabled smart power strip engineered to bring wireless control, automation, and individual socket switching to ordinary home appliances over local WiFi.`,
+        moreText: `<p><strong>Why I Built This:</strong><br>Commercial smart plugs available in the market are either overpriced, bulky, or rely on shady cloud servers with terrible latency and privacy issues. I wanted an integrated multi-socket power extension board where every single outlet could be toggled independently via a local web interface or smartphone without relying on external cloud servers or an active internet connection.</p>
+
+<p><strong>Hardware Architecture &amp; High-Voltage Safety:</strong><br>I took a standard multi-outlet extension chassis and gutted its internals to retrofit microcontroller control. The system uses an ESP microcontroller connected to an opto-isolated relay board to switch high-voltage 220V AC lines safely. The high-voltage AC traces were physically isolated from low-voltage DC logic with routed air gaps to prevent arcing and protect the microcontroller.</p>
+<p>Power for the ESP microcontroller and relays is derived directly from the 220V AC mains using a compact step-down power supply module (Hi-Link HLK-PM01), eliminating the need for an external wall adapter.</p>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <div style="display: inline-block; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
+    <img src="images/project_smart_extension_internals.jpeg" alt="Relay and wiring internals closeup" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Internal Relay Wiring, AC Mains Routing &amp; Controller Isolation.</p>
+  </div>
+</div>
+
+<p><strong>Firmware &amp; Local Network Control:</strong><br>The microcontroller hosts an asynchronous web server directly on your local WiFi network, serving a clean, responsive mobile control UI with instant tactile feedback and state persistence across power outages.</p>
+
+<h3 class="detail-subheading">Components List</h3>
+<ul class="detail-list">
+  <li><strong>Controller:</strong> ESP8266 / NodeMCU Wi-Fi Microcontroller</li>
+  <li><strong>Switching:</strong> Multi-Channel Opto-Isolated 5V Relay Module (10A 250V AC)</li>
+  <li><strong>Power Supply:</strong> Hi-Link HLK-PM01 AC-to-DC Step-Down Module (220V AC to 5V DC)</li>
+  <li><strong>Mains Hardware:</strong> Heavy-duty Copper Bus Strips &amp; Multi-Socket 3-Pin Outlets</li>
+  <li><strong>Safety &amp; Indicators:</strong> Status Indicator LEDs, Thermal Fuse &amp; Manual Override Tactile Buttons</li>
+</ul>
+
+<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
-          { title: 'Axonometric Projections in Modern Web Interfaces', url: '#' },
-          { title: 'Interactive Vector Kinematics Case Study', url: '#' }
+          { title: 'Custom Firmware Repository & Embedded Web Server Code', url: '#' },
+          { title: 'Mains Electrical Isolation Guidelines & Relay Circuit Schematic', url: '#' }
+        ]
+      }
+    },
+    {
+      id: 'diy-microscope',
+      name: 'DIY Smartphone Microscope',
+      cardImage: 'images/project_microscope_cover.jpeg',
+      detail: {
+        image: 'images/project_microscope_cover.jpeg',
+        name: 'DIY Smartphone Microscope',
+        introduction: `As a hard tech enthusiast and electronics engineer, biology never stops fascinating me too. I have always wanted a microscope that I can use to see the microscopic world around us.<br><br>Finding the market options out of my budget I decided to do some 'jugaad' and made this. Of course its not as good as a real microscope but considering the components used it works surprisingly good.`,
+        moreText: `<p>So this is a DIY microscope that I made with simple components. For the lens, I used plano-convex lenses extracted from cheap 50 Rupees laser pointers (I used two of them).</p>
+<p>I made this by sticking those two lenses together (flat side of one lens is stuck on flat side of second lens to reduce optical error) and then I taped this lens on my smartphone camera as close as possible so I can view the image on smartphone and capture photos.</p>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <div style="display: inline-block; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
+    <img src="images/project_microscope_setup.jpeg" alt="DIY Smartphone Microscope Optical Assembly" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Dual-Lens Assembly &amp; Optical Alignment over Smartphone Camera Sensor.</p>
+  </div>
+</div>
+
+<h3 class="detail-subheading">Camera Settings (Expert Mode)</h3>
+<p>Now this setup alone will provide a blurry image, we need to adjust some camera settings. First switch to expert mode then set the given settings:</p>
+<ul class="detail-list">
+  <li><strong>1. Focus:</strong> Increase the focus to maximum.</li>
+  <li><strong>2. Shutter Speed:</strong> Set Exposure time / Shutter Speed to 1/90s or 1/125s.</li>
+  <li><strong>3. Illumination:</strong> Turn on the flash.</li>
+  <li><strong>4. Zoom:</strong> Increase zoom as much as possible.</li>
+  <li><strong>5. ISO:</strong> ISO to 100.</li>
+  <li><strong>6. Exposure Value:</strong> Exposure value to 0.00.</li>
+  <li><strong>7. Enjoy:</strong> That's it. Enjoy lurking in the microscopic world!</li>
+</ul>
+
+<h3 class="detail-subheading">Microscopic Results Gallery</h3>
+<p>Here are some of the results captured directly through this DIY optical setup:</p>
+
+<div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; text-align: center;">
+  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+    <img src="images/project_microscope_cover.jpeg" alt="Onion epidermal cells" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Onion Epidermal Cells</p>
+  </div>
+  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+    <img src="images/project_microscope_ant.jpeg" alt="Red ant microscopic head anatomy" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Red Ant Head Anatomy</p>
+  </div>
+  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+    <img src="images/project_microscope_led.jpeg" alt="LED diode semiconductor die" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">LED Diode Semiconductor Die</p>
+  </div>
+  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+    <img src="images/project_microscope_leaf.jpeg" alt="Plant leaf microscopic structure" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Plant Leaf Microscopic Veins</p>
+  </div>
+  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+    <img src="images/project_microscope_display.jpeg" alt="Display sub-pixels matrix" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">RGB Display Sub-Pixel Matrix</p>
+  </div>
+</div>
+
+<h3 class="detail-subheading">Components List</h3>
+<ul class="detail-list">
+  <li>2&times; Plano-convex optical lenses (extracted from standard ₹50 laser pointers)</li>
+  <li>Smartphone camera with manual/expert mode capability</li>
+  <li>Optical transparent adhesive tape / mounting jig</li>
+  <li>Specimen slides &amp; LED backlight source</li>
+</ul>
+
+<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+        references: [
+          { title: 'DIY Microscopy & Optical Lens Aberration Reduction Principles', url: '#' },
+          { title: 'Smartphone Macro Photomicrography Setup Guide', url: '#' }
         ]
       }
     }

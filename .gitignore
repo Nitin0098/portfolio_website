@@ -1,0 +1,8 @@
+# Raw local project notes, drafts, and test media
+projects/
+
+# Video files (hosted externally on YouTube)
+*.mp4
+
+# Private / untracked archives
+dont_see_this_Ai.zip

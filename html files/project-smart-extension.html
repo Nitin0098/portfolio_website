@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart WiFi Power Extension Board - Nitin Vishwakarma</title>
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">concepts</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+      </div>
+
+      <!-- 1. Image of the project -->
+      <div class="detail-main-image-container">
+        <img src="../images/project_smart_extension_cover.jpeg" alt="Smart WiFi Power Extension Board Internal Assembly" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the project in large text -->
+      <h1 class="detail-title">Smart WiFi Power Extension Board</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          A custom IoT-enabled smart power strip engineered to bring wireless control, automation, and individual socket switching to ordinary home appliances over local WiFi.
+        </p>
+      </div>
+
+      <!-- 4. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Approach</h2>
+        <div class="detail-more-text">
+          <p>
+            <strong>Why I Built This:</strong><br>
+            Commercial smart plugs available in the market are either overpriced, bulky, or rely on shady cloud servers with terrible latency and privacy issues. I wanted an integrated multi-socket power extension board where every single outlet could be toggled independently via a local web interface or smartphone without relying on external cloud servers or an active internet connection.
+          </p>
+
+          <p>
+            <strong>Hardware Architecture &amp; High-Voltage Safety:</strong><br>
+            I took a standard multi-outlet extension chassis and gutted its internals to retrofit microcontroller control. The system uses an ESP microcontroller connected to an opto-isolated relay board to switch high-voltage 220V AC lines safely. The high-voltage AC traces were physically isolated from low-voltage DC logic with routed air gaps to prevent arcing and protect the microcontroller.
+          </p>
+          <p>
+            Power for the ESP microcontroller and relays is derived directly from the 220V AC mains using a compact step-down power supply module (Hi-Link HLK-PM01), eliminating the need for an external wall adapter.
+          </p>
+
+          <div style="margin: 2rem 0; text-align: center;">
+            <div style="display: inline-block; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
+              <img src="../images/project_smart_extension_internals.jpeg" alt="Relay and wiring internals closeup" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+              <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Internal Relay Wiring, AC Mains Routing &amp; Controller Isolation.</p>
+            </div>
+          </div>
+
+          <p>
+            <strong>Firmware &amp; Local Network Control:</strong><br>
+            The microcontroller hosts an asynchronous web server directly on your local WiFi network, serving a clean, responsive mobile control UI with instant tactile feedback and state persistence across power outages.
+          </p>
+
+          <h3 class="detail-subheading">Components List</h3>
+          <ul class="detail-list">
+            <li><strong>Controller:</strong> ESP8266 / NodeMCU Wi-Fi Microcontroller</li>
+            <li><strong>Switching:</strong> Multi-Channel Opto-Isolated 5V Relay Module (10A 250V AC)</li>
+            <li><strong>Power Supply:</strong> Hi-Link HLK-PM01 AC-to-DC Step-Down Module (220V AC to 5V DC)</li>
+            <li><strong>Mains Hardware:</strong> Heavy-duty Copper Bus Strips &amp; Multi-Socket 3-Pin Outlets</li>
+            <li><strong>Safety &amp; Indicators:</strong> Status Indicator LEDs, Thermal Fuse &amp; Manual Override Tactile Buttons</li>
+          </ul>
+
+          <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">
+            Note: Demo video will be uploaded on YouTube and linked here soon.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Custom Firmware Repository &amp; Embedded Web Server Code</span>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Mains Electrical Isolation Guidelines &amp; Relay Circuit Schematic</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma</p>
+  </footer>
+
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>
