@@ -654,6 +654,36 @@ img {
   display: none !important;
 }
 
+/* Minimal Easter Egg Button at bottom of projects */
+.easter-egg-wrapper {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.easter-egg-btn {
+  display: inline-block;
+  background-color: var(--accent-cyan);
+  color: var(--bg-navy-deep);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  letter-spacing: 0.3px;
+  text-transform: lowercase;
+}
+
+.easter-egg-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px var(--accent-cyan-glow);
+}
+
 /* Concepts Note & IP Notice Card */
 .concepts-notice-card {
   margin-top: 3.5rem;
