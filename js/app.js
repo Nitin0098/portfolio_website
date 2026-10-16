@@ -20,34 +20,24 @@ const portfolioData = {
 <p><strong>Hardware Architecture:</strong><br>We designed a multi-sensor wireless telemetry node. At its core, the unit uses an ultra-sensitive geophone (SM-4) to pick up micro-vibrations in the ground and an IMU unit (MPU-6050 for our prototype, upgrading to high-precision industrial ISM330DHCX) to measure subtle angular tilt variations.</p>
 
 <div style="margin: 2rem 0; text-align: center;">
-  <div style="display: inline-block; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
-    <img src="images/project_land_subsidence_circuit.svg" alt="ESP32 Sensor Node Circuit Diagram" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block;">
-    <p style="font-size: 0.88rem; color: #1e293b; margin-top: 0.75rem; font-weight: 500;">Figure: Circuit Schematic of the ESP32 Core, Sensor Interfacing &amp; LoRa Transceiver.</p>
-  </div>
+  <img src="images/project_land_subsidence_circuit.svg" alt="ESP32 Sensor Node Circuit Diagram" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm);">
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Circuit Schematic of the ESP32 Core, Sensor Interfacing &amp; LoRa Transceiver.</p>
 </div>
 
 <p><strong>Off-Grid Power &amp; Long-Range LoRa Telemetry:</strong><br>The sensor node is powered by an ESP32 microcontroller with power management handled via a TP4056 BMS module and an 18650 Li-ion battery kept charged by a compact 10&times;10 cm solar panel. Since mining pits often have zero cellular coverage or WiFi, we used SX1278 LoRa modules operating at 433/466 MHz to transmit packet telemetry over several kilometers back to a base receiver station.</p>
 
 <div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: center;">
-  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+  <div>
     <img src="images/project_land_subsidence_receiver.jpeg" alt="Receiver End Hardware Unit" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: LoRa Base Receiver &amp; Alert Processing Unit.</p>
+    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: LoRa Base Receiver &amp; Alert Processing Unit.</p>
   </div>
-  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+  <div>
     <img src="images/project_land_subsidence_closeup.png" alt="Field Enclosure 3D Render" style="max-height: 280px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Weather-resistant Field Enclosure &amp; Ground Spike.</p>
+    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Weather-resistant Field Enclosure &amp; Ground Spike.</p>
   </div>
 </div>
 
-<h3 class="detail-subheading">Components List</h3>
-<ul class="detail-list">
-  <li><strong>Sensors:</strong> Geophone (SM-4) &amp; IMU unit (ISM330DHCX / MPU-6050 for prototype)</li>
-  <li><strong>Processing:</strong> 2&times; Microcontrollers (ESP32 DevKit, NodeMCU ESP8266)</li>
-  <li><strong>Wireless Telemetry:</strong> 2&times; LoRa Modules + Whip Antennas (SX1278, 433/466 MHz)</li>
-  <li><strong>Power Source:</strong> 18650 3.7V Li-ion Battery with TP4056 BMS Protection Circuit</li>
-  <li><strong>Solar Harvesting:</strong> 10&times;10 cm Solar Panel with DC-DC Boost Converter</li>
-  <li><strong>Prototyping:</strong> Solderless breadboards, terminal blocks, and custom jumper harnesses</li>
-</ul>
+<p><strong>Components:</strong> Geophone (SM-4), IMU unit (ISM330DHCX / MPU-6050), 2&times; microcontrollers (ESP32 DevKit, NodeMCU ESP8266), 2&times; LoRa modules with whip antennas (SX1278, 433/466 MHz), 18650 3.7V Li-ion battery with TP4056 BMS protection circuit, 10&times;10 cm solar panel with DC-DC boost converter, solderless breadboards, terminal blocks, and custom jumper harnesses.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
@@ -70,22 +60,13 @@ const portfolioData = {
 <p>Power for the ESP microcontroller and relays is derived directly from the 220V AC mains using a compact step-down power supply module (Hi-Link HLK-PM01), eliminating the need for an external wall adapter.</p>
 
 <div style="margin: 2rem 0; text-align: center;">
-  <div style="display: inline-block; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
-    <img src="images/project_smart_extension_internals.jpeg" alt="Relay and wiring internals closeup" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Internal Relay Wiring, AC Mains Routing &amp; Controller Isolation.</p>
-  </div>
+  <img src="images/project_smart_extension_internals.jpeg" alt="Relay and wiring internals closeup" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Internal Relay Wiring, AC Mains Routing &amp; Controller Isolation.</p>
 </div>
 
 <p><strong>Firmware &amp; Local Network Control:</strong><br>The microcontroller hosts an asynchronous web server directly on your local WiFi network, serving a clean, responsive mobile control UI with instant tactile feedback and state persistence across power outages.</p>
 
-<h3 class="detail-subheading">Components List</h3>
-<ul class="detail-list">
-  <li><strong>Controller:</strong> ESP8266 / NodeMCU Wi-Fi Microcontroller</li>
-  <li><strong>Switching:</strong> Multi-Channel Opto-Isolated 5V Relay Module (10A 250V AC)</li>
-  <li><strong>Power Supply:</strong> Hi-Link HLK-PM01 AC-to-DC Step-Down Module (220V AC to 5V DC)</li>
-  <li><strong>Mains Hardware:</strong> Heavy-duty Copper Bus Strips &amp; Multi-Socket 3-Pin Outlets</li>
-  <li><strong>Safety &amp; Indicators:</strong> Status Indicator LEDs, Thermal Fuse &amp; Manual Override Tactile Buttons</li>
-</ul>
+<p><strong>Components:</strong> ESP8266 / NodeMCU Wi-Fi microcontroller, multi-channel opto-isolated 5V relay module (10A 250V AC), Hi-Link HLK-PM01 AC-to-DC step-down module (220V AC to 5V DC), heavy-duty copper bus strips, multi-socket 3-pin outlets, status indicator LEDs, thermal fuse, and manual override tactile buttons.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
@@ -106,10 +87,8 @@ const portfolioData = {
 <p>I made this by sticking those two lenses together (flat side of one lens is stuck on flat side of second lens to reduce optical error) and then I taped this lens on my smartphone camera as close as possible so I can view the image on smartphone and capture photos.</p>
 
 <div style="margin: 2rem 0; text-align: center;">
-  <div style="display: inline-block; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; width: 100%; max-width: 760px;">
-    <img src="images/project_microscope_setup.jpeg" alt="DIY Smartphone Microscope Optical Assembly" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.75rem;">Figure: Dual-Lens Assembly &amp; Optical Alignment over Smartphone Camera Sensor.</p>
-  </div>
+  <img src="images/project_microscope_setup.jpeg" alt="DIY Smartphone Microscope Optical Assembly" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Dual-Lens Assembly &amp; Optical Alignment over Smartphone Camera Sensor.</p>
 </div>
 
 <h3 class="detail-subheading">Camera Settings (Expert Mode)</h3>
@@ -127,36 +106,30 @@ const portfolioData = {
 <h3 class="detail-subheading">Microscopic Results Gallery</h3>
 <p>Here are some of the results captured directly through this DIY optical setup:</p>
 
-<div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; text-align: center;">
-  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+<div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; text-align: center;">
+  <div>
     <img src="images/project_microscope_cover.jpeg" alt="Onion epidermal cells" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Onion Epidermal Cells</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Onion Epidermal Cells</p>
   </div>
-  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+  <div>
     <img src="images/project_microscope_ant.jpeg" alt="Red ant microscopic head anatomy" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Red Ant Head Anatomy</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Red Ant Head Anatomy</p>
   </div>
-  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+  <div>
     <img src="images/project_microscope_led.jpeg" alt="LED diode semiconductor die" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">LED Diode Semiconductor Die</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">LED Diode Semiconductor Die</p>
   </div>
-  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+  <div>
     <img src="images/project_microscope_leaf.jpeg" alt="Plant leaf microscopic structure" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">Plant Leaf Microscopic Veins</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Plant Leaf Microscopic Veins</p>
   </div>
-  <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem;">
+  <div>
     <img src="images/project_microscope_display.jpeg" alt="Display sub-pixels matrix" style="max-height: 240px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm);">
-    <p style="font-size: 0.85rem; color: var(--accent-cyan); margin-top: 0.6rem; font-weight: 500;">RGB Display Sub-Pixel Matrix</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">RGB Display Sub-Pixel Matrix</p>
   </div>
 </div>
 
-<h3 class="detail-subheading">Components List</h3>
-<ul class="detail-list">
-  <li>2&times; Plano-convex optical lenses (extracted from standard ₹50 laser pointers)</li>
-  <li>Smartphone camera with manual/expert mode capability</li>
-  <li>Optical transparent adhesive tape / mounting jig</li>
-  <li>Specimen slides &amp; LED backlight source</li>
-</ul>
+<p><strong>Components:</strong> 2&times; plano-convex optical lenses (extracted from standard ₹50 laser pointers), smartphone camera with manual/expert mode capability, optical transparent adhesive tape / mounting jig, specimen slides, and LED backlight source.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
