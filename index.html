@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nitin Vishwakarma</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.youtube.com; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="icon" type="image/svg+xml" href="images/logo.svg?v=2">
   <link rel="stylesheet" href="css/style.css?v=2">
 </head>
@@ -221,29 +223,32 @@
           <div class="contact-info-strip">
             <div class="contact-info-item">
               <span class="contact-info-label">Direct Email</span>
-              <span class="contact-info-value"><a href="mailto:nitinfromindia4@gmail.com" class="contact-email-link">nitinfromindia4@gmail.com</a></span>
+              <span class="contact-info-value"><a href="#" class="contact-email-link" data-user="nitinfromindia4" data-domain="gmail.com">nitinfromindia4 [at] gmail.com</a></span>
             </div>
           </div>
 
           <form class="thoughts-form" action="https://formsubmit.co/nitinfromindia4@gmail.com" method="POST" onsubmit="handleThoughtsSubmit(event, this)">
+            <!-- Anti-Spam Honeypot Field (hidden from humans, trapped by bots) -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="_subject" value="New Message from Portfolio Website">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
 
             <div class="form-group">
               <label class="form-label">Your Name</label>
-              <input type="text" name="name" required class="form-input" placeholder="Your name">
+              <input type="text" name="name" required maxlength="80" class="form-input" placeholder="Your name">
             </div>
             <div class="form-group">
               <label class="form-label">Your Contact / Email</label>
-              <input type="email" name="email" required class="form-input" placeholder="name@example.com">
+              <input type="email" name="email" required maxlength="120" class="form-input" placeholder="name@example.com">
             </div>
             <div class="form-group">
               <label class="form-label">Write Your Thoughts</label>
-              <textarea name="message" required class="form-textarea" placeholder="Write your thoughts here..."></textarea>
+              <textarea name="message" required maxlength="2500" class="form-textarea" placeholder="Write your thoughts here..."></textarea>
             </div>
             <button type="submit" class="form-submit-btn">Send Thoughts &rarr;</button>
             <div class="form-success-banner">Thank you! Your message has been sent to Nitin.</div>
+            <div class="form-error-banner"></div>
           </form>
         </div>
       </div>

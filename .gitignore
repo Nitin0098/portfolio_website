@@ -4,5 +4,14 @@ projects/
 # Video files (hosted externally on YouTube)
 *.mp4
 
-# Private / untracked archives
+# Private / untracked archives & sensitive files
 dont_see_this_Ai.zip
+*.zip
+*.tar.gz
+*.rar
+.env
+.env.*
+*.key
+*.pem
+.DS_Store
+Thumbs.db

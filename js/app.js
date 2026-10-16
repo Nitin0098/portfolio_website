@@ -945,51 +945,7 @@ function handleHashChange() {
   }
 }
 
-// Form Submission Handler (AJAX via FormSubmit to nitinfromindia4@gmail.com)
-window.handleThoughtsSubmit = function (e, form) {
-  e.preventDefault();
-  const banner = form.querySelector('.form-success-banner');
-  const btn = form.querySelector('.form-submit-btn');
-  const originalBtnText = btn ? btn.innerHTML : 'Send Thoughts &rarr;';
-
-  if (btn) {
-    btn.disabled = true;
-    btn.innerHTML = 'Sending...';
-  }
-
-  const formData = new FormData(form);
-
-  fetch('https://formsubmit.co/ajax/nitinfromindia4@gmail.com', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json'
-    },
-    body: formData
-  })
-    .then(response => {
-      if (!response.ok) throw new Error('Submission failed');
-      return response.json();
-    })
-    .then(data => {
-      if (banner) {
-        banner.textContent = 'Thank you! Your message has been sent to Nitin.';
-        banner.style.display = 'block';
-      }
-      form.reset();
-      setTimeout(() => {
-        if (banner) banner.style.display = 'none';
-      }, 6000);
-    })
-    .catch(err => {
-      form.submit();
-    })
-    .finally(() => {
-      if (btn) {
-        btn.disabled = false;
-        btn.innerHTML = originalBtnText;
-      }
-    });
-};
+// Form Submission Handler is centralized and hardened in js/nav.js
 
 // Initialization
 document.addEventListener('DOMContentLoaded', () => {

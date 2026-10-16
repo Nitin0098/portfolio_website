@@ -1136,6 +1136,17 @@ img {
   margin-top: 1rem;
 }
 
+.form-error-banner {
+  display: none;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
 /* ==========================================================================
    FOOTER (Minimal outer framing)
    ========================================================================== */
