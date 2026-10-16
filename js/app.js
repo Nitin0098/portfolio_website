@@ -498,7 +498,7 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
     },
     {
       id: 'mobius-law',
-      name: 'The Möbius Law: Phase-Difference Framing of Multi-Twisted Strips',
+      name: 'The Möbius Law',
       cardImage: 'images/mobius_cover.jpg',
       detail: {
         image: 'images/mobius_cover.jpg',
@@ -906,10 +906,13 @@ function handleHashChange() {
   } else if (hash.startsWith('project/')) {
     const projectId = hash.replace('project/', '');
     switchView('projectDetail', projectId);
-  } else if (hash === 'concepts') {
+  } else if (hash === 'concepts' || hash === 'theoretical-projects') {
     switchView('concepts');
   } else if (hash.startsWith('concept/')) {
     const conceptId = hash.replace('concept/', '');
+    switchView('conceptDetail', conceptId);
+  } else if (hash.startsWith('theoretical-project/')) {
+    const conceptId = hash.replace('theoretical-project/', '');
     switchView('conceptDetail', conceptId);
   } else if (hash === 'contact') {
     switchView('contact');
