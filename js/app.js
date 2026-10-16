@@ -502,13 +502,9 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
       cardImage: 'images/mobius_cover.jpg',
       detail: {
         image: 'images/mobius_cover.jpg',
-        name: 'The M&ouml;bius Law: Phase-Difference Framing of Multi-Twisted Strips',
+        name: 'The M&ouml;bius Law',
         introduction: `I call this the <strong>M&ouml;bius Law</strong>&mdash;it's a phenomenon I discovered while experimenting with M&ouml;bius strips a few years ago.<br><br>If we take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together, we get a M&ouml;bius strip. In this case, the phase difference between the same plane on both ends is &pi;. But what happens if the phase difference between the same plane on both ends is <em>n&pi;</em>?<br><br>And then, we cut the strip by the length of the strip of paper: we observe an interesting, strict topological pattern across parities.<br><br><span style="font-style: italic; color: var(--accent-cyan);">Note: Maybe not a brand-new discovery to mathematics, but a mathematical topological result that I conceived independently&mdash;anyways, a great personal discovery for me.</span>`,
-        inspiration: {
-          textTop: `This concept emerged from tactile mathematical curiosity&mdash;taking scissors, paper, and tape to explore spatial topology from first principles. I wanted to see what happens when you generalize beyond the classic single-twist M&ouml;bius strip into arbitrary multi-twist loops, cataloging the resulting topologies systematically.`,
-          image: 'images/mobius_explanation.png',
-          textBottom: `By tracing centerline paths with a pencil before cutting, a profound topological truth revealed itself: one-sided surfaces possess a single continuous boundary curve of double length, whereas two-sided surfaces possess two distinct boundaries. The physical cut simply exposes the underlying boundary geometry.`
-        },
+        explanationImage: 'images/mobius_explanation.png',
         moreText: `<h3 class="detail-subheading">Setup and Definitions</h3>
 <p>Take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed, and glue the ends together:</p>
 <ul class="detail-list">
@@ -791,7 +787,8 @@ function renderConceptDetail(conceptId) {
       <p class="detail-text">${d.introduction}</p>
     </div>
 
-    <!-- 4. Inspiration -->
+    <!-- 4. Inspiration or Diagram Image -->
+    ${d.inspiration ? `
     <div class="detail-inspiration-section">
       <h2 class="section-subheading">Inspiration</h2>
       <p class="inspiration-text-top">${d.inspiration.textTop}</p>
@@ -800,6 +797,11 @@ function renderConceptDetail(conceptId) {
       </div>
       ${d.inspiration.textBottom ? `<p class="inspiration-text-bottom">${d.inspiration.textBottom}</p>` : ''}
     </div>
+    ` : (d.explanationImage ? `
+    <div class="inspiration-image-container" style="margin: 2.5rem 0;">
+      <img src="${d.explanationImage}" alt="Explanation Diagram" class="inspiration-image">
+    </div>
+    ` : '')}
 
     <!-- 5. Technical Details & Approach -->
     <div class="detail-more-text-section">

@@ -1,5 +1,5 @@
 # The Möbius Law
-### A personal topology discovery — phase-difference framing of multi-twisted strips
+### A personal topology discovery
 
 ## 1. Origin
 
