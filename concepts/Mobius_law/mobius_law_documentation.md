@@ -21,7 +21,7 @@ While experimenting with paper Möbius strips, I noticed a pattern in what happe
 > - **If n is even:** two separate strips, each with phase difference nπ, linked together (interlocked n/2 times).
 > - **If n is odd:** one single strip, twice the original length, with phase difference **2(n + 1)π**.
 
-![The Möbius Law diagram](mobius_law_diagram.png)
+![The Möbius Law diagram](explanation.png)
 
 ### 3.1 Worked examples
 
