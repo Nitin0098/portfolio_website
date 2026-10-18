@@ -20,6 +20,11 @@ const portfolioData = {
 <p><strong>Hardware Architecture:</strong><br>We designed a multi-sensor wireless telemetry node. At its core, the unit uses an ultra-sensitive geophone (SM-4) to pick up micro-vibrations in the ground and an IMU unit (MPU-6050 for our prototype, upgrading to high-precision industrial ISM330DHCX) to measure subtle angular tilt variations.</p>
 
 <div style="margin: 2rem 0; text-align: center;">
+  <img src="images/project_land_subsidence_node_architecture.png" alt="Complete Node System Architecture" style="width: 100%; max-width: 680px; height: auto; object-fit: contain; margin: 0 auto; display: block; background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Complete Node System Architecture — showing sensor subsystems (geophone &amp; IMU), dual microcontrollers (ESP32 &amp; ESP8266), SX1278 LoRa RF mesh, TP4056 BMS with Li-ion battery, solar harvesting, and 360&deg; LED hazard beacon.</p>
+</div>
+
+<div style="margin: 2rem 0; text-align: center;">
   <img src="images/project_land_subsidence_circuit.svg" alt="ESP32 Sensor Node Circuit Diagram" style="width: 100%; height: auto; max-height: 420px; object-fit: contain; margin: 0 auto; display: block; background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm);">
   <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Circuit Schematic of the ESP32 Core, Sensor Interfacing &amp; LoRa Transceiver.</p>
 </div>
@@ -39,10 +44,77 @@ const portfolioData = {
 
 <p><strong>Components:</strong> Geophone (SM-4), IMU unit (ISM330DHCX / MPU-6050), 2&times; microcontrollers (ESP32 DevKit, NodeMCU ESP8266), 2&times; LoRa modules with whip antennas (SX1278, 433/466 MHz), 18650 3.7V Li-ion battery with TP4056 BMS protection circuit, 10&times;10 cm solar panel with DC-DC boost converter, solderless breadboards, terminal blocks, and custom jumper harnesses.</p>
 
+<h3 class="detail-subheading" style="margin-top: 2.5rem;">Detection Pipeline: The 'Council' Consensus System</h3>
+<p><strong>The False-Alarm Problem in Active Mines:</strong><br>In active mining environments, 50-ton dump trucks, excavation machinery, drilling, blasting, and surface traffic continuously transmit heavy vibrations into the ground. If an isolated IoT node were allowed to trigger an emergency evacuation alert every time its sensor spiked, false alarms would occur constantly&mdash;causing mine operators to quickly lose trust and ignore the system.</p>
+
+<p><strong>Trend-Based Precursor Prediction:</strong><br>Our objective is prediction, not post-event recording. Rather than treating individual instantaneous spikes as emergencies, each node tracks statistical trends across sliding time windows: cumulative energy release, event frequency, and progressive angular tilt rate.</p>
+
+<p><strong>Two-Stage Verification &amp; The 'Council' Vote:</strong><br>To prevent rogue or faulty sensors from crying wolf, the network enforces a strict two-stage verification barrier:</p>
+<ul class="detail-list">
+  <li><strong>Stage 1 (Local Filtering):</strong> Raw sensor telemetry is passed through an on-node classification filter to differentiate benign surface machinery rumblings from genuine subsurface rock fracture dynamics and continuous tilt deviation.</li>
+  <li><strong>Stage 2 (The Multi-Node 'Council' Consensus):</strong> <em>No single node can broadcast an emergency SOS alone.</em> When a node detects an anomaly crossing Stage 1, it convenes an automated local peer &ldquo;Council&rdquo; by broadcasting an encrypted query to neighboring nodes over LoRa mesh. An emergency SOS is escalated to the operator control room <strong>only if a majority of nearby nodes in that sector corroborate the subsurface movement</strong>. If the anomaly is isolated to one unit, it is logged for maintenance inspection and suppressed from triggering false emergency sirens.</li>
+  <li><strong>Density as Anti-Hallucination:</strong> Spatial redundancy is the system's core defense. By deploying a dense array of low-cost nodes rather than a handful of expensive isolated instruments, more overlapping neighbors participate in every Council vote, driving false positives to near zero.</li>
+</ul>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <img src="images/project_land_subsidence_decision_tree.png" alt="Decision Making Tree Flowchart" style="width: 100%; max-width: 580px; height: auto; object-fit: contain; margin: 0 auto; display: block; background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Per-Node Decision Making Tree — from continuous sensor sampling, through on-node filtering and trend evaluation, to the peer Council consensus voting stage and final SOS alert escalation.</p>
+</div>
+
+<h3 class="detail-subheading" style="margin-top: 2.5rem;">Case Study &amp; Recalculated Budget: Jharia Coalfield</h3>
+<p><strong>The Jharia Hazard Context:</strong><br>The Jharia Coalfield in Dhanbad, Jharkhand spans approximately 318 km&sup2; and represents one of the most critical subsidence disaster zones in the world. Subsidence in Jharia is driven by a dangerous dual hazard: decades of historic room-and-pillar underground coal mining voids combined with century-old subterranean coal fires that continuously hollow out supporting strata beneath dense settlements, railways, and highways.</p>
+
+<p><strong>Priority Hazard Zonation (48.7 km&sup2; Total):</strong><br>Regional geological and remote sensing assessments classify subsidence vulnerability across Jharia into three key target zones:</p>
+<ul class="detail-list">
+  <li><strong>Very High Hazard Zone:</strong> 1.2 km&sup2; (areas where active subsurface coal fires directly intersect unstable underground mining voids)</li>
+  <li><strong>High Hazard Zone:</strong> 7.3 km&sup2;</li>
+  <li><strong>Moderate Hazard Zone:</strong> 40.2 km&sup2;</li>
+  <li><strong>Total Targeted High-Risk Area:</strong> <strong>48.7 km&sup2;</strong></li>
+</ul>
+
+<p><strong>Realistic Cost Recalculation (&#8377;3,000&ndash;&#8377;4,000 per Node):</strong><br>Initial preliminary hackathon estimates tentatively cited &#8377;1,200&ndash;&#8377;1,500 per node. However, a rigorous, production-grade Bill of Materials (BOM) including an industrial-grade MEMS IMU (ISM330DHCX-class with micro-g tilt resolution), dual-core ESP32 MCU, SX1278 LoRa transceiver, 18650 Li-ion battery, TP4056 BMS protection circuit, 10&times;10 cm polycrystalline solar panel, IP65/IP67 weatherproof casing, 1-meter steel ground spike, depth collar, and 360&deg; LED hazard beacon realistically prices at <strong>&#8377;3,000 to &#8377;4,000 per node</strong>.</p>
+
+<p>Recalculating the deployment budget across Jharia's target zones based on a ~100 m detection radius per node:</p>
+
+<div class="table-scroll" style="margin: 1.5rem 0;">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Deployment Scenario</th>
+        <th>Target Area Covered</th>
+        <th>Node Count (~100m Radius)</th>
+        <th>Recalculated Budget (&#8377;3,000&ndash;&#8377;4,000 / Node)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Full Target Coverage</th>
+        <td>48.7 km&sup2; (Very High, High &amp; Moderate Zones)</td>
+        <td>~1,500 &ndash; 1,700 nodes</td>
+        <td><strong>&#8377;45 Lakh &ndash; &#8377;68 Lakh</strong></td>
+      </tr>
+      <tr>
+        <th>Optimized Coverage</th>
+        <td>&gt;80% of critical high-risk zones</td>
+        <td>~1,200 nodes</td>
+        <td><strong>&#8377;36 Lakh &ndash; &#8377;48 Lakh</strong></td>
+      </tr>
+      <tr>
+        <th>High-Priority Pilot Phase</th>
+        <td>8.5 km&sup2; (Very High &amp; High Hazard Zones)</td>
+        <td>~280 &ndash; 300 nodes</td>
+        <td><strong>&#8377;9 Lakh &ndash; &#8377;12 Lakh</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p><strong>Economic &amp; Safety Viability:</strong><br>Traditional monitoring options like borehole extensometers, automated total stations, or periodic satellite InSAR surveys cost tens of crores of rupees while failing to deliver continuous, real-time seconds-ahead warnings on the ground. Deploying an autonomous, solar-powered LoRa mesh network across an entire high-risk coalfield for &#8377;36&ndash;&#8377;68 Lakh offers an unprecedented level of disaster prevention at a fraction of standard industrial geotechnical monitoring budgets.</p>
+
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
           { title: 'Smart India Hackathon (SIH) — Ministry of Coal & Mines Project Submission', url: '#' },
-          { title: 'Subsidence Prediction Network Whitepaper & Field Telemetry Architecture', url: '#' }
+          { title: 'Subsidence Prediction Network Documentation & Whitepaper (Google Drive)', url: 'https://drive.google.com/drive/folders/1TVip5XRRRrXL2fhHxnLk9Urh_kY9lxim?usp=sharing' }
         ]
       }
     },
@@ -64,9 +136,23 @@ const portfolioData = {
   <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Internal Relay Wiring, AC Mains Routing &amp; Controller Isolation.</p>
 </div>
 
+<div style="margin: 2rem 0; text-align: center;">
+  <img src="images/project_smart_extension_circuit.png" alt="Smart WiFi Power Extension Board Circuit Schematic" style="width: 100%; max-width: 820px; height: auto; object-fit: contain; margin: 0 auto; display: block; background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Complete Circuit Schematic &mdash; showing AC surge protection (MOV), opto-isolated relay switching, 8A per-channel fuses, RC snubbers, touch sensor inputs, and ESP control circuitry.</p>
+</div>
+
+<h3 class="detail-subheading" style="margin-top: 2rem;">Key Features &amp; Electrical Protection</h3>
+<ul class="detail-list">
+  <li><strong>1. MOV for Overvoltage Protection:</strong> A Metal Oxide Varistor (MOV) is wired across the incoming AC mains to clamp transient voltage spikes, line noise, and lightning surges before they reach sensitive components.</li>
+  <li><strong>2. 8A Fuse per Channel for Short Circuit Protection:</strong> Each individual relay socket channel is fitted with a dedicated 8A fuse, ensuring that any downstream appliance short circuit or overcurrent condition is isolated to that specific outlet without blowing the main line.</li>
+  <li><strong>3. RC Snubbers on Each Relay:</strong> Dedicated Resistor-Capacitor (RC) snubber networks are placed across each relay contact to suppress inductive kickback and eliminate contact arcing during inductive load switching (e.g., fans, motors, power adapters), drastically extending relay lifespan.</li>
+  <li><strong>4. Dual Control (Touch Sensors &amp; Wireless Web Interface):</strong> Sockets can be controlled physically via capacitive touch sensors fixed right beside each socket or operated wirelessly from any smartphone, tablet, or laptop through the onboard local web page.</li>
+  <li><strong>5. Extra Safety via Segregated Mains &amp; Low-Voltage Lines:</strong> High-voltage 220V AC mains traces and wiring are physically segregated from low-voltage 3.3V/5V microcontroller lines with isolation air gaps and optocouplers to prevent arcing and ensure complete user and device safety.</li>
+</ul>
+
 <p><strong>Firmware &amp; Local Network Control:</strong><br>The microcontroller hosts an asynchronous web server directly on your local WiFi network, serving a clean, responsive mobile control UI with instant tactile feedback and state persistence across power outages.</p>
 
-<p><strong>Components:</strong> ESP8266 / NodeMCU Wi-Fi microcontroller, multi-channel opto-isolated 5V relay module (10A 250V AC), Hi-Link HLK-PM01 AC-to-DC step-down module (220V AC to 5V DC), heavy-duty copper bus strips, multi-socket 3-pin outlets, status indicator LEDs, thermal fuse, and manual override tactile buttons.</p>
+<p><strong>Components:</strong> ESP8266 / NodeMCU Wi-Fi microcontroller, multi-channel opto-isolated 5V relay module (10A 250V AC), Hi-Link HLK-PM01 AC-to-DC step-down module (220V AC to 5V DC), Metal Oxide Varistors (MOVs), 8A fast-blow fuses &amp; fuse holders, RC snubber circuits, capacitive touch sensors, heavy-duty copper bus strips, multi-socket 3-pin outlets, status indicator LEDs, and insulated enclosure.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
@@ -349,17 +435,18 @@ const portfolioData = {
       detail: {
         image: 'images/thermo_fabric_cross_section.jpeg',
         name: 'Adaptive Thermoregulating Fabric (ATRF)',
-        introduction: `<strong>Temperature control clothing:</strong> basically a high-tech fabric that can be used to make clothes. What's special about these fabrics is they can regulate our body temperature in unpleasant environments.<br><br>It can be greatly helpful for winters, summers, or maybe in a college lecture hall where we are assumed to be penguins and the ACs are blasted at the lowest temperature—the fabric can regulate our body temperature accordingly.<br><br>Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and actuates solid-state heating or cooling through an embedded mesh of microscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical trauma: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.`,
+        introduction: `<strong>Temperature control clothing:</strong> basically a high-tech fabric that can be used to make clothes. What's special about these fabrics is they can regulate our body temperature in unpleasant environments.<br><br>It can be greatly helpful for winters, summers, or maybe in a college lecture hall where we are assumed to be penguins and the ACs are blasted at the lowest temperature—the fabric can regulate our body temperature accordingly.<br><br>Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and activates solid-state heating or cooling through an embedded mesh of macroscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical damage: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.`,
         inspiration: {
-          textTop: `Traditional clothing enforces a rigid compromise: bundle up in thick, bulky winter gear and overheat during physical exertion, or wear light garments and freeze in unexpected chill. I envisioned clothing operating like an artificial, active thermoregulatory organ—a responsive second skin that balances heat flux dynamically.`,
+          hideTitle: true,
+          textTop: `Traditional clothing forces a rigid compromise: tank up in thick, bulky winter gear and overheat during physical activity, or wear light garments and freeze to ice in unexpected chill. I see clothing operating like an active adaptive organ—a responsive second skin that balances heat flux dynamically while being light and comfortable.`,
           image: 'images/thermo_fabric_grid.jpeg',
-          textBottom: `Conventional wearable heating relies on fragile, continuous wire loops where a single snag or cut breaks the entire circuit. ATRF solves this through architectural fault tolerance: independent, addressable modules linked by flexible serpentine interconnects that maintain system resilience even under severe textile wear.`
+          textBottom: `Conventional wearable heating relies on fragile, continuous wire loops where a single cut breaks the entire circuit. ATRF solves this through architectural fault tolerance: independent, addressable modules linked by flexible interconnected wires that maintain system resilience even under severe textile wear.`
         },
         moreText: `<h3 class="detail-subheading">Block Technology &amp; Modular Architecture</h3>
 <p>In this design, the fabric uses a modular block architecture where small modules are interconnected to each other across a 2D mesh:</p>
 <ul class="detail-list">
   <li><strong>Modules:</strong> Each module has its own temperature sensor and Peltier heating/cooling element. The modules are tiny, about 0.5 &times; 0.5 cm&sup2;. The modules are responsible for sensing and regulating the temperature at that part of the fabric.</li>
-  <li><strong>Wires:</strong> There are 3 wires that connect two modules—two for power and the third for an I2C connection. This allows us to communicate with each module, read the temperature at that part of the fabric, and regulate temperature as commanded by the master microcontroller.</li>
+  <li><strong>Wires:</strong> There are 4 thin wires that connect two modules—two for power and other two for an I2C connection. This allows us to communicate with each module, read the temperature at that part of the fabric, and regulate temperature as commanded by the master microcontroller.</li>
   <li><strong>Stretchable Interconnects:</strong> Each module is connected to neighbour modules with loose, stretchable, flexible wires. So if the fabric is cut or torn, modules at that region might be separated while the rest of the fabric works normally.</li>
   <li><strong>Fabric Layering:</strong> The fabric has two external layers on each side sandwiching the internal layer. The internal layer is made up of flexible, porous (for breathability), and thermally conductive material—the modules and wires lie protected inside this layer.</li>
 </ul>
@@ -377,7 +464,7 @@ const portfolioData = {
       <tr><th>Physical Dimensions</th><td>&approx; 0.5 cm &times; 0.5 cm die</td><td>Compact profile seamlessly embeddable into flexible woven yarns</td></tr>
       <tr><th>Integrated Sensor</th><td>Digital micro-thermistor / IR sensor</td><td>Provides high-precision local skin and ambient temperature telemetry</td></tr>
       <tr><th>Thermal Actuator</th><td>Miniaturized Peltier Element (TEC)</td><td>Reversible solid-state heat pump: heats or cools based on current polarity</td></tr>
-      <tr><th>Communication Bus</th><td>I2C Addressable Bus (3-wire topology)</td><td>Shared multidrop bus for localized telemetry polling and command delivery</td></tr>
+      <tr><th>Communication Bus</th><td>I2C Addressable Bus (4-wire topology)</td><td>Shared multidrop bus for localized telemetry polling and command delivery</td></tr>
       <tr><th>Power Distribution</th><td>2-Wire DC Power Rail</td><td>Provides high-efficiency low-voltage power across the interconnected grid</td></tr>
     </tbody>
   </table>
@@ -418,8 +505,8 @@ const portfolioData = {
         },
         moreText: `<h3 class="detail-subheading">TECHNICAL CHALLENGES</h3>
 <p>Now, creating a true 3D hologram technology that could create 3d images in air without requiring reflectors or panel we need to create 'pixels' in air.</p>
-<p>That is increadibly difficult because it requires us to produce light from a localised point in air out of nothing or create a microscopic object in air that could reflect light, both of these options are currently impossible or I thought it was. When a light passes through one medium to another with different density, light bends this property is called as dispersion of light (or refraction), we can use this property and create a density gradient for a microscopic volume of air in air, turns out we already do this, the answer is sound waves , sound waves are basically regions or high and low density in air.</p>
-<p>This project uses directional interference of ultrasonic sound waves to create localised regions of high or low density in air, and then a laser is fired to that region with distinct density, and the laser bends due to dispersion of light and can reach our eyes, that's the basic idea. Few months later I got to know something like this already exists for years and it's called as 'Opto-Acoustic Modulation'. It's great to realise , I reached deep tech concepts that already exists independently Without any exposure to prior technologies.</p>
+<p>That is increadibly difficult because it requires us to produce light from a localised point in air out of nothing or create a microscopic object in air that could reflect light, both of these options are currently impossible or I thought it was. When a light passes through one medium to another with different density, light bends this property is called refraction of light, we can use this property and create a density gradient for a microscopic volume of air in air, turns out we already do this, the answer is sound waves , sound waves are basically regions of high and low density in air.</p>
+<p>This project uses directional interference of ultrasonic sound waves to create localised regions of high or low density in air, and then a light waves from nearby light source reach that volume and the light wave bends due to refraction of light and can reach our eyes, that's the basic idea. Few months later I got to know something like this already exists for years and it's called as 'Opto-Acoustic Modulation'. It's great to realise , I reached deep tech concepts that already exists independently Without any exposure to prior technologies.</p>
 
 <h3 class="detail-subheading">Physical Mechanism &amp; Wave Interference</h3>
 <p>When two directional ultrasonic beams cross each other in open air, their sound pressure fields superpose together and form a standing interference pattern:</p>
@@ -469,7 +556,7 @@ Here is the calculation of how much density we need and what current speakers ca
   </table>
 </div>
 
-<p>As you can see from the table above, the deflection angle produced by current ultrasonic phased arrays is only around 10 to 62 &mu;rad (which is tiny, ~0.003&deg;). To bend light by even just 1&deg; toward someone's eye, we would need &delta;n &gtrsim; 10<sup>&minus;4</sup>, which means sound pressure above 190 dB! That is near acoustic shockwave levels. And there is a hard physical ceiling: air density cannot be modulated by more than 100% of its own value, so |&delta;n| &le; n<sub>0</sub> &minus; 1 &approx; 2.8 &times; 10<sup>&minus;4</sup> in atmospheric air.</p>
+<p>As you can see from the table above, the deflection angle produced by current ultrasonic phased arrays is only around 10 to 62 &mu;rad (which is tiny, ~0.003&deg;). To bend light by even just 1&deg; toward someone's eye, we would need &delta;n &gtrsim; 10<sup>&minus;4</sup>, which means sound pressure above 190 dB! That is near acoustic shockwave levels. And there is a hard physical ceiling: air density cannot be modulated by more than 100% of its own value, so |&delta;n| &le; n<sub>0</sub> &minus; 1 &approx; 2.8 &times; 10<sup>&minus;4</sup> in atmospheric air, Current speakers are incapable of this But heres a solution we dont use just two ultrasonic sources we use tens of then and direct all the speakers towards same volume of air, the combined interference of tens of speakers can give us the required density change we need.</p>
 
 <p><strong>2) Algorithm to synchronize the operations of this technology between creating pixels and how many pixels their shape in 3d space, arrangement of pixels, and when to fire the laser, etc.</strong><br>
 At 40 kHz, sound waves oscillate every 25 &mu;s. If you fire a normal continuous laser, the compressions and rarefactions cancel each other out and the beam doesn't bend at all. So you have to pulse the laser in ultra-short bursts synchronized exactly at the peak compression moment (t<sub>fire</sub>). Also, you need high-speed eye tracking cameras to know where the viewer is looking, so the scanner aims the incoming laser at the right angle so the bent light enters their eyes.</p>
@@ -503,12 +590,13 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
       detail: {
         image: 'images/mobius_cover.jpg',
         name: 'The M&ouml;bius Law',
-        introduction: `I call this the <strong>M&ouml;bius Law</strong>&mdash;it's a phenomenon I discovered while experimenting with M&ouml;bius strips a few years ago.<br><br>If we take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together, we get a M&ouml;bius strip. In this case, the phase difference between the same plane on both ends is &pi;. But what happens if the phase difference between the same plane on both ends is <em>n&pi;</em>?<br><br>And then, we cut the strip by the length of the strip of paper: we observe an interesting, strict topological pattern across parities.<br><br><span style="font-style: italic; color: var(--accent-cyan);">Note: Maybe not a brand-new discovery to mathematics, but a mathematical topological result that I conceived independently&mdash;anyways, a great personal discovery for me.</span>`,
+        introduction: `I call this the <strong>M&ouml;bius Law</strong>&mdash;it's a phenomenon I discovered while experimenting with M&ouml;bius strips a few years ago.<br><br>If we take a strip of paper and twist one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together, we get a M&ouml;bius strip. In this case, the twisting angle between the same plane on both ends is &pi;. But what happens if twisting angle between the same plane on both ends is <em>n&pi;</em>?<br><br>And then, we cut the strip by the length of the strip of paper: we observe an interesting, strict topological pattern across parities.`,
         explanationImage: 'images/mobius_explanation.png',
+        explanationImageStyle: 'max-width: 50%; margin: 2rem auto;',
         moreText: `<h3 class="detail-subheading">Setup and Definitions</h3>
-<p>Take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed, and glue the ends together:</p>
+<p>Take a strip of paper and rotate(twist) one end by &pi; (180 degrees) of the paper keeping the other end fixed, and glue the ends together:</p>
 <ul class="detail-list">
-  <li>The rotation angle defines the <strong>phase difference</strong>, <em>n&pi;</em>, between the same plane on both ends (where <em>n</em> represents the number of half-twists).</li>
+  <li>The twisting angle, <em>n&pi;</em>, between the same plane on both ends (where <em>n</em> represents the number of half-twists).</li>
   <li><em>n</em> = 0 corresponds to an ordinary, untwisted cylindrical loop.</li>
   <li><em>n</em> = 1 corresponds to the canonical M&ouml;bius strip (single half-twist, phase &pi;).</li>
   <li>Now, cut the strip continuously along the length of the strip of paper (down its centerline).</li>
@@ -517,11 +605,11 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
 <h3 class="detail-subheading">We Observe an Interesting Pattern (Statement of the Law)</h3>
 <p>Given a closed band formed with phase difference <em>n&pi;</em> between end planes, cutting it along its centerline produces:</p>
 <div class="detail-formula">
-  If n is even &rArr; 2 rings (strips with ends glued together) with n&pi; phase difference between the end planes (linked together)<br><br>
+  If n is even &rArr; 2 rings (strips with ends glued together) with n&pi; twisting angle between the end planes (linked together)<br><br>
   If n is odd &rArr; 1 strip of 2(n + 1)&pi; phase difference (double length)
 </div>
 
-<h3 class="detail-subheading">Worked Examples Across Parities</h3>
+<h3 class="detail-subheading">Examples</h3>
 <div class="table-scroll">
   <table class="comparison-table">
     <thead>
@@ -541,13 +629,12 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
   </table>
 </div>
 
-<h3 class="detail-subheading">The Core Insight</h3>
-<p>The fundamental symmetry breaking behind this law can be stated succinctly:</p>
+<h3 class="detail-subheading">Insight</h3>
+<p>The fundamental symmetry breaking behind this law can be stated as:</p>
 <blockquote style="border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem; margin: 1.5rem 0; color: var(--accent-cyan); font-size: 1.15rem; font-style: italic;">
   &ldquo;Even the strip doesn't want its offspring to be odd.&rdquo;
 </blockquote>
-<p>No matter what phase difference you begin with, cutting a band along its centerline <em>never produces an odd-phase result</em>. An odd-phase input (<em>n</em> odd) collapses into a single strip whose new phase, 2(<em>n</em>&nbsp;+&nbsp;1)&pi;, is strictly even. An even-phase input (<em>n</em> even) bifurcates into two distinct strips that each preserve the original even phase.</p>
-<p>Consequently, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.</p>
+<p>In scientific terms, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.</p>
 
 <h3 class="detail-subheading">Topological Mechanism</h3>
 <p>This behavior is governed by the boundary structure of the strip prior to cutting:</p>
@@ -557,7 +644,7 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
 </ul>
 
 <h3 class="detail-subheading">Relationship to Established Mathematics</h3>
-<p>This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>). While conventional literature frames the theorem in terms of half-twists <em>N</em>, formulating it in terms of continuous phase difference <em>n&pi;</em> offers an intuitive wave-phase perspective discovered through independent physical experimentation.</p>
+<p>This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>).</p>
 
 <h3 class="detail-subheading">Further Explorations</h3>
 <ul class="detail-list">
@@ -578,11 +665,10 @@ Calculating multi-point acoustic hologram phases in real time (using algorithms 
       detail: {
         image: 'images/photon_rocket_flight_profile.jpeg',
         name: 'Photon Rocket Propulsion for Interstellar Flight',
-        introduction: `<strong>The Problem:</strong> Normal fuel rockets work fine for travelling to other planets or moons in our solar system, but we face a physical bottleneck when it's about interstellar travel to a different star. We can carry only a limited amount of fuel in the rocket; the fuel, no matter how much, will run out after a while, and large amounts of fuel are also harder to get outside of Earth's atmosphere. All of these problems limit our dreams to fly to a different star in a practical timeframe.<br><br><strong>The Concept:</strong> So I thought, why not get rid of chemical fuels and maybe rely on electricity, because sufficient amounts of electricity can be generated by nuclear reactors reliably for long durations of time. But the problem is to gain momentum in space we have to push against something. In the case of chemical fuels we pushed gas to accelerate, but for electricity? There exists only one option (as far as I know) and that is photons.<br><br>So the photon rocket engine is basically a rocket engine that creates a large amount of photons and expels them. And since photons carry momentum (<em>p = E/c</em>), we get a very small acceleration from each photon. We need an astronomical number of photons to get a considerable amount of starship acceleration.`,
+        introduction: `<strong>The Problem:</strong> Normal fuel rockets work fine for travelling to other planets or moons in our solar system, but we face a physical bottleneck when it's about interstellar travel to a different star. We can carry only a limited amount of fuel in the rocket; the fuel, no matter how much, will run out after a while, and large amounts of fuel are also harder to get outside of Earth's atmosphere. All of these problems limit our dreams to fly to a different star in a practical timeframe.<br><br><strong>The Concept:</strong> So I thought, why not get rid of chemical fuels and maybe rely on electricity, because sufficient amounts of electricity can be generated by nuclear reactors reliably for long durations of time. But the problem is, to gain momentum in space we have to push against something. In the case of chemical fuels we pushed gas to accelerate, but for electricity? There exists only one option (as far as I know) and that is photons.<br><br>So the photon rocket engine is basically a rocket engine that creates a large amount of photons and expels them. And since photons carry momentum (<em>p = E/c</em>), we get a very small acceleration from each photon. We need an astronomical number of photons to get a considerable amount of starship acceleration.`,
         inspiration: {
           textTop: `Humanity's ambition to cross the interstellar void and reach Proxima Centauri (4.246 light-years away) within a human lifetime requires fundamentally rethinking propulsion physics. The starting question: what if a starship carried zero chemical reaction mass and pushed against the universe solely with directed electromagnetic radiation?`,
-          image: 'images/photon_rocket_power_options.jpeg',
-          textBottom: `According to calculations, the core challenge is that generating meaningful acceleration demands staggering continuous power: approximately 12.1 terawatts (TW).`
+          image: 'images/photon_rocket_power_options.jpeg'
         },
         moreText: `<h3 class="detail-subheading">Mission Profile and Kinematics</h3>
 <p>Consider a benchmark interstellar voyage targeting Proxima Centauri, the nearest star system:</p>
@@ -790,7 +876,7 @@ function renderConceptDetail(conceptId) {
     <!-- 4. Inspiration or Diagram Image -->
     ${d.inspiration ? `
     <div class="detail-inspiration-section">
-      <h2 class="section-subheading">Inspiration</h2>
+      ${d.inspiration.hideTitle ? '' : '<h2 class="section-subheading">Inspiration</h2>'}
       <p class="inspiration-text-top">${d.inspiration.textTop}</p>
       <div class="inspiration-image-container">
         <img src="${d.inspiration.image}" alt="Concept Inspiration Diagram" class="inspiration-image">
@@ -798,7 +884,7 @@ function renderConceptDetail(conceptId) {
       ${d.inspiration.textBottom ? `<p class="inspiration-text-bottom">${d.inspiration.textBottom}</p>` : ''}
     </div>
     ` : (d.explanationImage ? `
-    <div class="inspiration-image-container" style="margin: 2.5rem 0;">
+    <div class="inspiration-image-container" style="${d.explanationImageStyle || 'margin: 2.5rem 0;'}">
       <img src="${d.explanationImage}" alt="Explanation Diagram" class="inspiration-image">
     </div>
     ` : '')}

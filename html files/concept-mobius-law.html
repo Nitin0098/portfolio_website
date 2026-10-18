@@ -57,18 +57,15 @@
           I call this the <strong>M&ouml;bius Law</strong>&mdash;it's a phenomenon I discovered while experimenting with M&ouml;bius strips a few years ago.
         </p>
         <p class="detail-text" style="margin-top: 1rem;">
-          If we take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together, we get a M&ouml;bius strip. In this case, the phase difference between the same plane on both ends is &pi;. But what happens if the phase difference between the same plane on both ends is <em>n&pi;</em>?
+          If we take a strip of paper and twist one end (by 180 degrees) of the paper keeping the other end fixed and glue the ends together, we get a M&ouml;bius strip. In this case, the twisting angle between the same plane on both ends is &pi;. But what happens if twisting angle between the same plane on both ends is <em>n&pi;</em>?
         </p>
         <p class="detail-text" style="margin-top: 1rem;">
           And then, we cut the strip by the length of the strip of paper: we observe an interesting, strict topological pattern across parities.
         </p>
-        <p class="detail-text" style="margin-top: 1rem; font-style: italic; color: var(--accent-cyan);">
-          Note: Maybe not a brand-new discovery to mathematics, but a mathematical topological result that I conceived independently&mdash;anyways, a great personal discovery for me.
-        </p>
       </div>
 
-      <!-- 4. Explanation Diagram -->
-      <div class="inspiration-image-container" style="margin: 2.5rem 0;">
+      <!-- 4. Explanation Diagram (Reduced by 50%) -->
+      <div class="inspiration-image-container" style="max-width: 50%; margin: 2rem auto;">
         <img src="../images/mobius_explanation.png" alt="The Möbius Law Explanation Diagram" class="inspiration-image">
       </div>
 
@@ -78,10 +75,10 @@
         <div class="detail-more-text">
           <h3 class="detail-subheading">Setup and Definitions</h3>
           <p>
-            Take a strip of paper and rotate one end (by 180 degrees) of the paper keeping the other end fixed, and glue the ends together:
+            Take a strip of paper and rotate(twist) one end by &pi; (180 degrees) of the paper keeping the other end fixed, and glue the ends together:
           </p>
           <ul class="detail-list">
-            <li>The rotation angle defines the <strong>phase difference</strong>, <em>n&pi;</em>, between the same plane on both ends (where <em>n</em> represents the number of half-twists).</li>
+            <li>The twisting angle, <em>n&pi;</em>, between the same plane on both ends (where <em>n</em> represents the number of half-twists).</li>
             <li><em>n</em> = 0 corresponds to an ordinary, untwisted cylindrical loop.</li>
             <li><em>n</em> = 1 corresponds to the canonical M&ouml;bius strip (single half-twist, phase &pi;).</li>
             <li>Now, cut the strip continuously along the length of the strip of paper (down its centerline).</li>
@@ -92,11 +89,11 @@
             Given a closed band formed with phase difference <em>n&pi;</em> between end planes, cutting it along its centerline produces:
           </p>
           <div class="detail-formula">
-            If n is even &rArr; 2 rings (strips with ends glued together) with n&pi; phase difference between the end planes (linked together)<br><br>
+            If n is even &rArr; 2 rings (strips with ends glued together) with n&pi; twisting angle between the end planes (linked together)<br><br>
             If n is odd &rArr; 1 strip of 2(n + 1)&pi; phase difference (double length)
           </div>
 
-          <h3 class="detail-subheading">Worked Examples Across Parities</h3>
+          <h3 class="detail-subheading">Examples</h3>
           <div class="table-scroll">
             <table class="comparison-table">
               <thead>
@@ -136,18 +133,16 @@
             </table>
           </div>
 
-          <h3 class="detail-subheading">The Core Insight</h3>
+          <h3 class="detail-subheading">Insight</h3>
           <p>
-            The fundamental symmetry breaking behind this law can be stated succinctly:
+            The fundamental symmetry breaking behind this law can be stated as:
           </p>
           <blockquote style="border-left: 3px solid var(--accent-cyan); padding-left: 1.2rem; margin: 1.5rem 0; color: var(--accent-cyan); font-size: 1.15rem; font-style: italic;">
             &ldquo;Even the strip doesn't want its offspring to be odd.&rdquo;
           </blockquote>
+
           <p>
-            No matter what phase difference you begin with, cutting a band along its centerline <em>never produces an odd-phase result</em>. An odd-phase input (<em>n</em> odd) collapses into a single strip whose new phase, 2(<em>n</em>&nbsp;+&nbsp;1)&pi;, is strictly even. An even-phase input (<em>n</em> even) bifurcates into two distinct strips that each preserve the original even phase.
-          </p>
-          <p>
-            Consequently, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.
+            In scientific terms, <strong>every strip emerging from a centerline cut is strictly two-sided and orientable (even phase)</strong>. The cut operation physically forbids the creation of one-sided offspring: only the parent strip can possess non-orientable topology; nothing produced by a centerline cut ever does.
           </p>
 
           <h3 class="detail-subheading">Topological Mechanism</h3>
@@ -161,7 +156,7 @@
 
           <h3 class="detail-subheading">Relationship to Established Mathematics</h3>
           <p>
-            This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>). While conventional literature frames the theorem in terms of half-twists <em>N</em>, formulating it in terms of continuous phase difference <em>n&pi;</em> offers an intuitive wave-phase perspective discovered through independent physical experimentation.
+            This phenomenon corresponds to a classical result in geometric topology termed <strong>paradromic rings</strong>, first systematically investigated in 1847 by German mathematician Johann Benedict Listing (who coined the term <em>topology</em>). 
           </p>
 
           <h3 class="detail-subheading">Further Explorations</h3>

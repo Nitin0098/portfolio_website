@@ -80,13 +80,27 @@
             <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Internal Relay Wiring, AC Mains Routing &amp; Controller Isolation.</p>
           </div>
 
+          <div style="margin: 2rem 0; text-align: center;">
+            <img src="../images/project_smart_extension_circuit.png" alt="Smart WiFi Power Extension Board Circuit Schematic" style="width: 100%; max-width: 820px; height: auto; object-fit: contain; margin: 0 auto; display: block; background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Complete Circuit Schematic &mdash; showing AC surge protection (MOV), opto-isolated relay switching, 8A per-channel fuses, RC snubbers, touch sensor inputs, and ESP control circuitry.</p>
+          </div>
+
+          <h3 class="detail-subheading" style="margin-top: 2rem;">Key Features &amp; Electrical Protection</h3>
+          <ul class="detail-list">
+            <li><strong>1. MOV for Overvoltage Protection:</strong> A Metal Oxide Varistor (MOV) is wired across the incoming AC mains to clamp transient voltage spikes, line noise, and lightning surges before they reach sensitive components.</li>
+            <li><strong>2. 8A Fuse per Channel for Short Circuit Protection:</strong> Each individual relay socket channel is fitted with a dedicated 8A fuse, ensuring that any downstream appliance short circuit or overcurrent condition is isolated to that specific outlet without blowing the main line.</li>
+            <li><strong>3. RC Snubbers on Each Relay:</strong> Dedicated Resistor-Capacitor (RC) snubber networks are placed across each relay contact to suppress inductive kickback and eliminate contact arcing during inductive load switching (e.g., fans, motors, power adapters), drastically extending relay lifespan.</li>
+            <li><strong>4. Dual Control (Touch Sensors &amp; Wireless Web Interface):</strong> Sockets can be controlled physically via capacitive touch sensors fixed right beside each socket or operated wirelessly from any smartphone, tablet, or laptop through the onboard local web page.</li>
+            <li><strong>5. Extra Safety via Segregated Mains &amp; Low-Voltage Lines:</strong> High-voltage 220V AC mains traces and wiring are physically segregated from low-voltage 3.3V/5V microcontroller lines with isolation air gaps and optocouplers to prevent arcing and ensure complete user and device safety.</li>
+          </ul>
+
           <p>
             <strong>Firmware &amp; Local Network Control:</strong><br>
             The microcontroller hosts an asynchronous web server directly on your local WiFi network, serving a clean, responsive mobile control UI with instant tactile feedback and state persistence across power outages.
           </p>
 
           <p>
-            <strong>Components:</strong> ESP8266 / NodeMCU Wi-Fi microcontroller, multi-channel opto-isolated 5V relay module (10A 250V AC), Hi-Link HLK-PM01 AC-to-DC step-down module (220V AC to 5V DC), heavy-duty copper bus strips, multi-socket 3-pin outlets, status indicator LEDs, thermal fuse, and manual override tactile buttons.
+            <strong>Components:</strong> ESP8266 / NodeMCU Wi-Fi microcontroller, multi-channel opto-isolated 5V relay module (10A 250V AC), Hi-Link HLK-PM01 AC-to-DC step-down module (220V AC to 5V DC), Metal Oxide Varistors (MOVs), 8A fast-blow fuses &amp; fuse holders, RC snubber circuits, capacitive touch sensors, heavy-duty copper bus strips, multi-socket 3-pin outlets, status indicator LEDs, and insulated enclosure.
           </p>
 
           <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">

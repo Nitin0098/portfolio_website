@@ -60,21 +60,20 @@
           It can be greatly helpful for winters, summers, or maybe in a college lecture hall where we are assumed to be penguins and the ACs are blasted at the lowest temperature&mdash;the fabric can regulate our body temperature accordingly.
         </p>
         <p class="detail-text" style="margin-top: 1rem;">
-          Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and actuates solid-state heating or cooling through an embedded mesh of microscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical trauma: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.
+          Unlike conventional passive textiles that merely trap static air pockets, ATRF continuously senses localized skin surface temperatures in real time and activates solid-state heating or cooling through an embedded mesh of macroscopic thermal modules. Constructed as a decentralized two-dimensional array, the garment degrades gracefully under physical damage: cutting, tearing, or piercing any section only disables local modules in that damaged zone, while the remainder of the garment continues regulating temperature completely uninterrupted.
         </p>
       </div>
 
-      <!-- 4. Inspiration -->
+      <!-- 4. Inspiration Section (Title removed, content kept) -->
       <div class="detail-inspiration-section">
-        <h2 class="section-subheading">Inspiration</h2>
         <p class="inspiration-text-top">
-          Traditional clothing enforces a rigid compromise: bundle up in thick, bulky winter gear and overheat during physical exertion, or wear light garments and freeze in unexpected chill. I envisioned clothing operating like an artificial, active thermoregulatory organ&mdash;a responsive second skin that balances heat flux dynamically.
+          Traditional clothing forces a rigid compromise: tank up in thick, bulky winter gear and overheat during physical activity, or wear light garments and freeze to ice in unexpected chill. I see clothing operating like an active adaptive organ&mdash;a responsive second skin that balances heat flux dynamically while being light and comfortable.
         </p>
         <div class="inspiration-image-container">
           <img src="../images/thermo_fabric_grid.jpeg" alt="ATRF Modular Grid Layout Diagram" class="inspiration-image">
         </div>
         <p class="inspiration-text-bottom">
-          Conventional wearable heating relies on fragile, continuous wire loops where a single snag or cut breaks the entire circuit. ATRF solves this through architectural fault tolerance: independent, addressable modules linked by flexible serpentine interconnects that maintain system resilience even under severe textile wear.
+          Conventional wearable heating relies on fragile, continuous wire loops where a single cut breaks the entire circuit. ATRF solves this through architectural fault tolerance: independent, addressable modules linked by flexible interconnected wires that maintain system resilience even under severe textile wear.
         </p>
       </div>
 
@@ -88,7 +87,7 @@
           </p>
           <ul class="detail-list">
             <li><strong>Modules:</strong> Each module has its own temperature sensor and Peltier heating/cooling element. The modules are tiny, about 0.5 &times; 0.5 cm&sup2;. The modules are responsible for sensing and regulating the temperature at that part of the fabric.</li>
-            <li><strong>Wires:</strong> There are 3 wires that connect two modules&mdash;two for power and the third for an I2C connection. This allows us to communicate with each module, read the temperature at that part of the fabric, and regulate temperature as commanded by the master microcontroller.</li>
+            <li><strong>Wires:</strong> There are 4 thin wires that connect two modules&mdash;two for power and other two for an I2C connection. This allows us to communicate with each module, read the temperature at that part of the fabric, and regulate temperature as commanded by the master microcontroller.</li>
             <li><strong>Stretchable Interconnects:</strong> Each module is connected to neighbour modules with loose, stretchable, flexible wires. So if the fabric is cut or torn, modules at that region might be separated while the rest of the fabric works normally.</li>
             <li><strong>Fabric Layering:</strong> The fabric has two external layers on each side sandwiching the internal layer. The internal layer is made up of flexible, porous (for breathability), and thermally conductive material&mdash;the modules and wires lie protected inside this layer.</li>
           </ul>
@@ -120,7 +119,7 @@
                 </tr>
                 <tr>
                   <th>Communication Bus</th>
-                  <td>I2C Addressable Bus (3-wire topology)</td>
+                  <td>I2C Addressable Bus (4-wire topology)</td>
                   <td>Shared multidrop bus for localized telemetry polling and command delivery</td>
                 </tr>
                 <tr>

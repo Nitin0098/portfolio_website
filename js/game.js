@@ -270,7 +270,7 @@
     if (isPaused) {
       pauseBtn.textContent = 'Resume';
       overlayTitle.textContent = 'Game Paused';
-      overlaySubtitle.textContent = 'Take a breather. Press Resume to continue collecting pulses.';
+      overlaySubtitle.textContent = 'Catch your breath! Hit Resume whenever you\'re ready to keep dodging and scoring.';
       startBtn.textContent = 'Resume Game';
       overlay.classList.remove('hidden');
     } else {
@@ -292,22 +292,22 @@
       if (beatCreator) {
         overlayTitle.textContent = 'Incredible! You beat my score: ' + score + '!';
       } else {
-        overlayTitle.textContent = 'New High Score: ' + score + '!';
+        overlayTitle.textContent = 'You set a new personal best: ' + score + '!';
       }
     } else {
       if (beatCreator) {
-        overlayTitle.textContent = 'You beat my score! Score: ' + score;
+        overlayTitle.textContent = 'You beat my score! Final: ' + score;
       } else {
-        overlayTitle.textContent = 'Run Ended — Score: ' + score;
+        overlayTitle.textContent = 'You scored ' + score + '!';
       }
     }
 
     if (beatCreator) {
-      overlaySubtitle.textContent = 'Outstanding reflexes! You surpassed Nitin\'s high score of 1610!';
+      overlaySubtitle.textContent = 'Insane reflexes! You actually beat my record of 1610 — hats off to you!';
     } else {
-      overlaySubtitle.textContent = 'Nitin\'s record is 1610. Can you beat it on your next attempt?';
+      overlaySubtitle.textContent = 'My high score stands at 1610. Jump back in and see if you can take me down!';
     }
-    startBtn.textContent = 'Play Again';
+    startBtn.textContent = 'Try Again';
     overlay.classList.remove('hidden');
   }
 
