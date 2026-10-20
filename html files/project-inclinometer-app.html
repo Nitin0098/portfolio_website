@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smartphone Inclinometer &amp; Digital Level - Nitin Vishwakarma</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.youtube.com; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">theoretical projects</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+      </div>
+
+      <!-- 1. Image of the project -->
+      <div class="detail-main-image-container">
+        <img src="../images/project_inclinometer_cover.jpeg" alt="Inclinometer Android App UI" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the project in large text -->
+      <h1 class="detail-title">Smartphone Inclinometer &amp; Digital Level</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          As an engineer I can never have enough tools, and having tools available 24/7 is a daydream. One of the tools I frequently need is an inclinometer to measure the inclination angle of any surface.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          So like a normal person I asked ChatGPT about the options available to me and learned that almost every modern smartphone has built-in IMUs including an accelerometer which can be used for inclinometers, so I headed to the Play Store.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          Soon enough I was frustrated with the apps available on the Play Store: they all had lots of annoying, intrusive ads for a simple utility tool like an inclinometer. These ads irritated me, I had plenty of AI credits and time, so I built my own clean, ad-free app.
+        </p>
+      </div>
+
+      <!-- 4. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Approach</h2>
+        <div class="detail-more-text">
+          <p>
+            <strong>How It Works &amp; Gravitational Reference Anchor:</strong><br>
+            Every smartphone has a built-in IMU unit (accelerometer, gyroscope, and magnetometer). I leveraged the built-in accelerometer for this project. At rest, the 3-axis accelerometer measures the reaction force to Earth's gravitational field, providing a 3D gravity vector <strong>g</strong> = (<em>g<sub>x</sub></em>, <em>g<sub>y</sub></em>, <em>g<sub>z</sub></em>) in the phone's own local coordinate frame. This acceleration due to gravity serves as a stable, absolute anchor for measuring planar tilt.
+          </p>
+
+          <div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; justify-items: center; text-align: center;">
+            <div>
+              <img src="../images/project_inclinometer_screenshot1.jpeg" alt="Inclinometer App UI - Measuring surface tilt" style="max-height: 480px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Figure: Two-axis digital bubble level display with large degree readout.</p>
+            </div>
+            <div>
+              <img src="../images/project_inclinometer_screenshot2.jpeg" alt="Inclinometer App UI - Level alignment" style="max-height: 480px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Figure: Visual green alignment indicator when within 0.5&deg; of level, with zero calibration.</p>
+            </div>
+          </div>
+
+          <p>
+            <strong>Trigonometric Orientation &amp; Dual-Axis Leveling:</strong><br>
+            The app measures the orientation of the smartphone relative to the gravity vector and calculates the pitch and roll angles:
+          </p>
+          <ul class="detail-list">
+            <li><strong>Overall Angle:</strong> The primary numeric readout in the middle calculates the overall angle between the phone's flat face and horizontal level via arccos(<em>g<sub>z</sub></em> / |<strong>g</strong>|). 0.0&deg; represents perfectly flat; 90.0&deg; means standing on its edge.</li>
+            <li><strong>Two-Axis Pitch &amp; Roll:</strong> Computes the left/right and front/back tilt components separately, so it behaves like a real two-axis spirit bubble level rather than just a single scalar.</li>
+            <li><strong>Digital Low-Pass Filtering:</strong> A software low-pass filter smooths incoming raw accelerometer samples, eliminating jitter and micro-tremors from hands or table vibrations.</li>
+            <li><strong>Zero Offset Calibration:</strong> Laying the phone on a surface and tapping &ldquo;Calibrate zero&rdquo; zeroes out the current position—especially handy for compensating for camera bumps or phone protective cases.</li>
+          </ul>
+
+          <p>
+            <strong>Automated CI/CD APK Generation:</strong><br>
+            The project repository includes a GitHub Actions workflow that automatically compiles and signs a debug APK on GitHub runners, allowing instant downloads and installation without requiring local Android Studio setups.
+          </p>
+
+          <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">
+            Note: Demo video will be uploaded on YouTube and linked here soon.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <a href="https://github.com/Nitin0098/inclinometer-app" class="reference-link" target="_blank" rel="noopener noreferrer">Inclinometer App Source Code &amp; APK Releases (GitHub) &rarr;</a>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">MEMS Accelerometer Gravity Vector Decomposition &amp; Low-Pass Filtering</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma</p>
+  </footer>
+
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>

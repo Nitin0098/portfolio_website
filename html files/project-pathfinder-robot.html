@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Pathfinder Robot - Nitin Vishwakarma</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.youtube.com; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">theoretical projects</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+      </div>
+
+      <!-- 1. Image of the project -->
+      <div class="detail-main-image-container">
+        <img src="../images/project_pathfinder_robot_cover.jpeg" alt="Autonomous Pathfinder Robot Hardware Assembly" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the project in large text -->
+      <h1 class="detail-title">Autonomous Pathfinder Robot</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          An autonomous navigating robot made with simple components capable of detecting obstacles in its path, scanning for a clear corridor, and adjusting its trajectory accordingly.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          I made this project when I first got my hands on IoT microcontrollers. It was really fun playing with and tuning this robot until I eventually needed the parts for another project and had to dismantle it. R.I.P!
+        </p>
+      </div>
+
+      <!-- 4. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Approach</h2>
+        <div class="detail-more-text">
+          <p>
+            <strong>Navigation &amp; Obstacle Avoidance Logic:</strong><br>
+            The robot is designed as a differential drive platform with two 5V DC BO geared motors on 65mm rubber wheels and a front caster ball wheel for smooth pivoting. Real-time spatial perception is provided by an HC-SR04 ultrasonic distance sensor mounted directly atop a TowerPro SG90 micro servo.
+          </p>
+          <p>
+            While rolling forward, the sensor continuously measures clearance ahead by timing ultrasonic echo reflections:
+          </p>
+          <ul class="detail-list">
+            <li><strong>Clear Forward Sector (&gt; 25 cm):</strong> The robot drives both motors forward at balanced speeds.</li>
+            <li><strong>Obstacle Detected (&le; 25 cm):</strong> The robot immediately stops its drive wheels to avoid collisions. The microcontroller commands the servo to pan the ultrasonic sensor left and right to sample clearances on both sides.</li>
+            <li><strong>Trajectory Selection:</strong> The onboard microcontroller evaluates both distance readings, selects the direction offering the widest unobstructed path, pivots the chassis toward that opening using differential motor rotation, and resumes forward drive.</li>
+            <li><strong>Dead-End Escape:</strong> If both left and right directions are obstructed, the robot reverses and executes a 180&deg; spin to explore open space.</li>
+          </ul>
+
+          <p>
+            <strong>Drive Actuation &amp; Power Isolation:</strong><br>
+            Motor power is supplied through an L298N dual H-bridge motor driver module, enabling smooth PWM speed control and bidirectional torque while isolating sensitive microcontroller logic from motor inductive noise and flyback spikes.
+          </p>
+
+          <p>
+            <strong>Components:</strong> L298N Dual H-Bridge Motor Driver, 2&times; BO Motor 5V, 2&times; BO wheels (65mm), 1&times; Free / Caster Wheel, TowerPro SG90 Micro Servo, NodeMCU ESP8266 / ESP32 microcontroller, HC-SR04 Ultrasonic Distance Sensor, battery pack, chassis plate, and hardware connectors.
+          </p>
+
+          <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">
+            Note: Demo video will be uploaded on YouTube and linked here soon.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5. References and links -->
+      <div class="detail-references-section">
+        <h2 class="section-subheading">References &amp; Links</h2>
+        <ul class="references-list">
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Ultrasonic Ranging &amp; Autonomous Obstacle Avoidance Control Algorithms</span>
+          </li>
+          <li class="reference-item">
+            <span style="color: var(--accent-cyan);">&#8250;</span>
+            <span class="reference-text">Differential Drive Kinematics &amp; Dual H-Bridge Motor Control</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma</p>
+  </footer>
+
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>

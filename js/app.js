@@ -254,6 +254,72 @@ const portfolioData = {
           { title: 'Heterodyne Signal Mixing & Inductive Search Coil Physics', url: '#' }
         ]
       }
+    },
+    {
+      id: 'pathfinder-robot',
+      name: 'Autonomous Pathfinder Robot',
+      cardImage: 'images/project_pathfinder_robot_cover.jpeg',
+      detail: {
+        image: 'images/project_pathfinder_robot_cover.jpeg',
+        name: 'Autonomous Pathfinder Robot',
+        introduction: `An autonomous navigating robot made with simple components capable of detecting obstacles in its path, scanning for a clear corridor, and adjusting its trajectory accordingly.<br><br>I made this project when I first got my hands on IoT microcontrollers. It was really fun playing with and tuning this robot until I eventually needed the parts for another project and had to dismantle it. R.I.P!`,
+        moreText: `<p><strong>Navigation &amp; Obstacle Avoidance Logic:</strong><br>The robot is designed as a differential drive platform with two 5V DC BO geared motors on 65mm rubber wheels and a front caster ball wheel for smooth pivoting. Real-time spatial perception is provided by an HC-SR04 ultrasonic distance sensor mounted directly atop a TowerPro SG90 micro servo.</p>
+<p>While rolling forward, the sensor continuously measures clearance ahead by timing ultrasonic echo reflections:</p>
+<ul class="detail-list">
+  <li><strong>Clear Forward Sector (&gt; 25 cm):</strong> The robot drives both motors forward at balanced speeds.</li>
+  <li><strong>Obstacle Detected (&le; 25 cm):</strong> The robot immediately stops its drive wheels to avoid collisions. The microcontroller commands the servo to pan the ultrasonic sensor left and right to sample clearances on both sides.</li>
+  <li><strong>Trajectory Selection:</strong> The onboard microcontroller evaluates both distance readings, selects the direction offering the widest unobstructed path, pivots the chassis toward that opening using differential motor rotation, and resumes forward drive.</li>
+  <li><strong>Dead-End Escape:</strong> If both left and right directions are obstructed, the robot reverses and executes a 180&deg; spin to explore open space.</li>
+</ul>
+
+<p><strong>Drive Actuation &amp; Power Isolation:</strong><br>Motor power is supplied through an L298N dual H-bridge motor driver module, enabling smooth PWM speed control and bidirectional torque while isolating sensitive microcontroller logic from motor inductive noise and flyback spikes.</p>
+
+<p><strong>Components:</strong> L298N Dual H-Bridge Motor Driver, 2&times; BO Motor 5V, 2&times; BO wheels (65mm), 1&times; Free / Caster Wheel, TowerPro SG90 Micro Servo, NodeMCU ESP8266 / ESP32 microcontroller, HC-SR04 Ultrasonic Distance Sensor, battery pack, chassis plate, and hardware connectors.</p>
+
+<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+        references: [
+          { title: 'Ultrasonic Ranging & Autonomous Obstacle Avoidance Control Algorithms', url: '#' },
+          { title: 'Differential Drive Kinematics & Dual H-Bridge Motor Control', url: '#' }
+        ]
+      }
+    },
+    {
+      id: 'inclinometer-app',
+      name: 'Smartphone Inclinometer & Digital Level',
+      cardImage: 'images/project_inclinometer_cover.jpeg',
+      detail: {
+        image: 'images/project_inclinometer_cover.jpeg',
+        name: 'Smartphone Inclinometer & Digital Level',
+        introduction: `As an engineer I can never have enough tools, and having tools available 24/7 is a daydream. One of the tools I frequently need is an inclinometer to measure the inclination angle of any surface.<br><br>So like a normal person I asked ChatGPT about the options available to me and learned that almost every modern smartphone has built-in IMUs including an accelerometer which can be used for inclinometers, so I headed to the Play Store. Soon enough I was frustrated with the apps available on the Play Store: they all had lots of annoying, intrusive ads for a simple utility tool like an inclinometer. These ads irritated me, I had plenty of AI credits and time, so I built my own clean, ad-free app.`,
+        moreText: `<p><strong>How It Works &amp; Gravitational Reference Anchor:</strong><br>Every smartphone has a built-in IMU unit (accelerometer, gyroscope, and magnetometer). I leveraged the built-in accelerometer for this project. At rest, the 3-axis accelerometer measures the reaction force to Earth's gravitational field, providing a 3D gravity vector <strong>g</strong> = (<em>g<sub>x</sub></em>, <em>g<sub>y</sub></em>, <em>g<sub>z</sub></em>) in the phone's own local coordinate frame. This acceleration due to gravity serves as a stable, absolute anchor for measuring planar tilt.</p>
+
+<div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; justify-items: center; text-align: center;">
+  <div>
+    <img src="images/project_inclinometer_screenshot1.jpeg" alt="Inclinometer App UI - Measuring surface tilt" style="max-height: 480px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Figure: Two-axis digital bubble level display with large degree readout.</p>
+  </div>
+  <div>
+    <img src="images/project_inclinometer_screenshot2.jpeg" alt="Inclinometer App UI - Level alignment" style="max-height: 480px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Figure: Visual green alignment indicator when within 0.5&deg; of level, with zero calibration.</p>
+  </div>
+</div>
+
+<p><strong>Trigonometric Orientation &amp; Dual-Axis Leveling:</strong><br>The app measures the orientation of the smartphone relative to the gravity vector and calculates the pitch and roll angles:</p>
+<ul class="detail-list">
+  <li><strong>Overall Angle:</strong> The primary numeric readout in the middle calculates the overall angle between the phone's flat face and horizontal level via arccos(<em>g<sub>z</sub></em> / |<strong>g</strong>|). 0.0&deg; represents perfectly flat; 90.0&deg; means standing on its edge.</li>
+  <li><strong>Two-Axis Pitch &amp; Roll:</strong> Computes the left/right and front/back tilt components separately, so it behaves like a real two-axis spirit bubble level rather than just a single scalar.</li>
+  <li><strong>Digital Low-Pass Filtering:</strong> A software low-pass filter smooths incoming raw accelerometer samples, eliminating jitter and micro-tremors from hands or table vibrations.</li>
+  <li><strong>Zero Offset Calibration:</strong> Laying the phone on a surface and tapping &ldquo;Calibrate zero&rdquo; zeroes out the current position—especially handy for compensating for camera bumps or phone protective cases.</li>
+</ul>
+
+<p><strong>Automated CI/CD APK Generation:</strong><br>The project repository includes a GitHub Actions workflow that automatically compiles and signs a debug APK on GitHub runners, allowing instant downloads and installation without requiring local Android Studio setups.</p>
+
+<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+        references: [
+          { title: 'Inclinometer App Source Code & APK Releases (GitHub)', url: 'https://github.com/Nitin0098/inclinometer-app' },
+          { title: 'MEMS Accelerometer Gravity Vector Decomposition & Low-Pass Filtering', url: '#' }
+        ]
+      }
     }
   ],
 
