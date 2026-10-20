@@ -113,7 +113,6 @@ const portfolioData = {
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
-          { title: 'Smart India Hackathon (SIH) — Ministry of Coal & Mines Project Submission', url: '#' },
           { title: 'Subsidence Prediction Network Documentation & Whitepaper (Google Drive)', url: 'https://drive.google.com/drive/folders/1TVip5XRRRrXL2fhHxnLk9Urh_kY9lxim?usp=sharing' }
         ]
       }
@@ -155,10 +154,7 @@ const portfolioData = {
 <p><strong>Components:</strong> ESP8266 / NodeMCU Wi-Fi microcontroller, multi-channel opto-isolated 5V relay module (10A 250V AC), Hi-Link HLK-PM01 AC-to-DC step-down module (220V AC to 5V DC), Metal Oxide Varistors (MOVs), 8A fast-blow fuses &amp; fuse holders, RC snubber circuits, capacitive touch sensors, heavy-duty copper bus strips, multi-socket 3-pin outlets, status indicator LEDs, and insulated enclosure.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
-        references: [
-          { title: 'Custom Firmware Repository & Embedded Web Server Code', url: '#' },
-          { title: 'Mains Electrical Isolation Guidelines & Relay Circuit Schematic', url: '#' }
-        ]
+        references: []
       }
     },
     {
@@ -218,10 +214,7 @@ const portfolioData = {
 <p><strong>Components:</strong> 2&times; plano-convex optical lenses (extracted from standard ₹50 laser pointers), smartphone camera with manual/expert mode capability, optical transparent adhesive tape / mounting jig, specimen slides, and LED backlight source.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
-        references: [
-          { title: 'DIY Microscopy & Optical Lens Aberration Reduction Principles', url: '#' },
-          { title: 'Smartphone Macro Photomicrography Setup Guide', url: '#' }
-        ]
+        references: []
       }
     },
     {
@@ -249,10 +242,7 @@ const portfolioData = {
 <p><strong>Components:</strong> I don't remember.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
-        references: [
-          { title: 'Beat Frequency Oscillator (BFO) Metal Detection Principles & LC Resonance', url: '#' },
-          { title: 'Heterodyne Signal Mixing & Inductive Search Coil Physics', url: '#' }
-        ]
+        references: []
       }
     },
     {
@@ -262,7 +252,7 @@ const portfolioData = {
       detail: {
         image: 'images/project_pathfinder_robot_cover.jpeg',
         name: 'Autonomous Pathfinder Robot',
-        introduction: `An autonomous navigating robot made with simple components capable of detecting obstacles in its path, scanning for a clear corridor, and adjusting its trajectory accordingly.<br><br>I made this project when I first got my hands on IoT microcontrollers. It was really fun playing with and tuning this robot until I eventually needed the parts for another project and had to dismantle it. R.I.P!`,
+        introduction: `An autonomous navigating robot made with simple components capable of detecting obstacles in its path, scanning for a clear corridor, and adjusting its trajectory accordingly.<br><br>I made this project when I first got my hands on IoT microcontrollers. It was really fun playing with and tuning this robot until I eventually needed the parts for another project and had to dismantle it. R.I.P`,
         moreText: `<p><strong>Navigation &amp; Obstacle Avoidance Logic:</strong><br>The robot is designed as a differential drive platform with two 5V DC BO geared motors on 65mm rubber wheels and a front caster ball wheel for smooth pivoting. Real-time spatial perception is provided by an HC-SR04 ultrasonic distance sensor mounted directly atop a TowerPro SG90 micro servo.</p>
 <p>While rolling forward, the sensor continuously measures clearance ahead by timing ultrasonic echo reflections:</p>
 <ul class="detail-list">
@@ -277,10 +267,7 @@ const portfolioData = {
 <p><strong>Components:</strong> L298N Dual H-Bridge Motor Driver, 2&times; BO Motor 5V, 2&times; BO wheels (65mm), 1&times; Free / Caster Wheel, TowerPro SG90 Micro Servo, NodeMCU ESP8266 / ESP32 microcontroller, HC-SR04 Ultrasonic Distance Sensor, battery pack, chassis plate, and hardware connectors.</p>
 
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
-        references: [
-          { title: 'Ultrasonic Ranging & Autonomous Obstacle Avoidance Control Algorithms', url: '#' },
-          { title: 'Differential Drive Kinematics & Dual H-Bridge Motor Control', url: '#' }
-        ]
+        references: []
       }
     },
     {
@@ -296,11 +283,11 @@ const portfolioData = {
 <div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; justify-items: center; text-align: center;">
   <div>
     <img src="images/project_inclinometer_screenshot1.jpeg" alt="Inclinometer App UI - Measuring surface tilt" style="max-height: 480px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Figure: Two-axis digital bubble level display with large degree readout.</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">screenshot 1</p>
   </div>
   <div>
     <img src="images/project_inclinometer_screenshot2.jpeg" alt="Inclinometer App UI - Level alignment" style="max-height: 480px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Figure: Visual green alignment indicator when within 0.5&deg; of level, with zero calibration.</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">screenshot 2</p>
   </div>
 </div>
 
@@ -312,12 +299,9 @@ const portfolioData = {
   <li><strong>Zero Offset Calibration:</strong> Laying the phone on a surface and tapping &ldquo;Calibrate zero&rdquo; zeroes out the current position—especially handy for compensating for camera bumps or phone protective cases.</li>
 </ul>
 
-<p><strong>Automated CI/CD APK Generation:</strong><br>The project repository includes a GitHub Actions workflow that automatically compiles and signs a debug APK on GitHub runners, allowing instant downloads and installation without requiring local Android Studio setups.</p>
-
 <p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
         references: [
-          { title: 'Inclinometer App Source Code & APK Releases (GitHub)', url: 'https://github.com/Nitin0098/inclinometer-app' },
-          { title: 'MEMS Accelerometer Gravity Vector Decomposition & Low-Pass Filtering', url: '#' }
+          { title: 'Inclinometer App Source Code & APK Releases (GitHub)', url: 'https://github.com/Nitin0098/inclinometer-app' }
         ]
       }
     }
@@ -932,6 +916,7 @@ function renderProjectDetail(projectId) {
     </div>
 
     <!-- 5. References and links -->
+    ${d.references && d.references.length > 0 ? `
     <div class="detail-references-section">
       <h2 class="section-subheading">References &amp; Links</h2>
       <ul class="references-list">
@@ -943,6 +928,7 @@ function renderProjectDetail(projectId) {
         `).join('')}
       </ul>
     </div>
+    ` : ''}
   `;
 }
 

@@ -802,6 +802,12 @@ img {
   color: var(--text-muted);
 }
 
+.detail-intro-section .detail-text,
+.detail-intro-section .detail-intro-text,
+.detail-intro-section p {
+  color: var(--text-white);
+}
+
 .inspiration-image-container {
   width: 100%;
   border-radius: var(--radius-md);
