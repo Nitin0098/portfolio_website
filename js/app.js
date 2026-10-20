@@ -223,6 +223,37 @@ const portfolioData = {
           { title: 'Smartphone Macro Photomicrography Setup Guide', url: '#' }
         ]
       }
+    },
+    {
+      id: 'bfo-metal-detector',
+      name: 'Beat Frequency Oscillator (BFO) Metal Detector',
+      cardImage: 'images/project_metal_detector_cover.jpeg',
+      detail: {
+        image: 'images/project_metal_detector_cover.jpeg',
+        name: 'Beat Frequency Oscillator (BFO) Metal Detector',
+        introduction: `This is a Beat Frequency Oscillation (BFO) metal detector that detects the presence of metals.`,
+        moreText: `<p><strong>How It Works:</strong><br>It uses two internal oscillation circuits: one has a fixed resonance frequency (reference oscillator), and the other oscillator has a detector coil which changes frequency when metal is nearby. Initially, both oscillators are adjusted to the exact same resonance frequency.</p>
+<p>When a metal object comes close to the detector coil, its inductance changes slightly:</p>
+<ul class="detail-list">
+  <li><strong>Ferrous metals</strong> (like iron or steel) increase the coil's inductance due to high magnetic permeability, which causes the search oscillator's frequency to decrease.</li>
+  <li><strong>Non-ferrous conductive metals</strong> (like copper or aluminum) generate opposing eddy currents that reduce the effective magnetic field, causing the coil's inductance to decrease and the frequency to increase.</li>
+</ul>
+<p>That change in inductance causes a shift in frequency. Because both oscillators operate at high radio frequencies, the difference between their frequencies becomes an audible <strong>beat frequency</strong> (&Delta;<em>f</em> = |<em>f</em><sub>1</sub> &minus; <em>f</em><sub>2</sub>|).</p>
+<p>This difference frequency falls squarely in the human audible range, which is then amplified by an NPN transistor and sent to a buzzer—that buzzing noise is the sound we hear whenever metal is detected.</p>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <img src="images/project_metal_detector_circuit.jpeg" alt="Beat Frequency Oscillator Metal Detector Circuit Schematic" style="width: 100%; max-width: 820px; height: auto; object-fit: contain; margin: 0 auto; display: block; background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: Complete Circuit Schematic &mdash; showing dual LC tank oscillators, search coil detector, heterodyne mixer, NPN transistor audio amplification stage, and buzzer output.</p>
+</div>
+
+<p><strong>Components:</strong> I don't remember.</p>
+
+<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+        references: [
+          { title: 'Beat Frequency Oscillator (BFO) Metal Detection Principles & LC Resonance', url: '#' },
+          { title: 'Heterodyne Signal Mixing & Inductive Search Coil Physics', url: '#' }
+        ]
+      }
     }
   ],
 
