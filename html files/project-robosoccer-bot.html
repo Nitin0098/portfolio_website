@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robosoccer Bot - Nitin Vishwakarma</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.youtube.com; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/svg+xml" href="../images/logo.svg?v=2">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+</head>
+<body>
+
+  <!-- Persistent Navigation Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-btn" aria-label="Nitin Vishwakarma Home">
+        <img src="../images/logo.svg?v=2" alt="Logo" class="site-logo">
+        <span>Nitin Vishwakarma</span>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="nav-buttons">
+        <a href="../index.html" class="nav-btn">home</a>
+        <a href="projects.html" class="nav-btn active">projects</a>
+        <a href="concepts.html" class="nav-btn">theoretical projects</a>
+        <a href="contact.html" class="nav-btn">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="detail-view">
+      
+      <div class="detail-back-bar">
+        <a href="projects.html" class="back-btn">&larr; Back to Projects</a>
+      </div>
+
+      <!-- 1. Image of the project -->
+      <div class="detail-main-image-container">
+        <img src="../images/project_robosoccer_cover.jpeg" alt="Robosoccer Bot Hardware" class="detail-main-image">
+      </div>
+
+      <!-- 2. Name of the project in large text -->
+      <h1 class="detail-title">Robosoccer Bot</h1>
+
+      <!-- 3. Introduction -->
+      <div class="detail-intro-section">
+        <h2 class="section-subheading">Introduction</h2>
+        <p class="detail-text">
+          This is a Robosoccer bot I made with my college team for robosoccer compedition.
+        </p>
+        <p class="detail-text" style="margin-top: 1rem;">
+          its body is made from aluminium to meet weight limits(5 Kg), its has a curved metal plate to catch ball and guide it to goal, we specifically used only 2 Wheels for on spot turning and better control.
+        </p>
+      </div>
+
+      <!-- 4. Technical Details & Approach -->
+      <div class="detail-more-text-section">
+        <h2 class="section-subheading">Technical Details &amp; Approach</h2>
+        <div class="detail-more-text">
+          <p>
+            <strong>Architecture:</strong>
+          </p>
+          <ul class="detail-list">
+            <li><strong>1. Lightweight Aluminium Chassis:</strong> considering the lightweight and agility requirements of a robosoccer bot, we used lightweight aluminium for its frame giving the bot more than enough structural strength and agility for the compedition while keeping strictly within the 5 Kg weight limit.</li>
+            <li><strong>2. 2-Wheel Differential Drive:</strong> We designed this bot as 2 wheel drive instead of 4 wheel drive, 2 wheels allows the bot to turn on spot hence improving maneuverability.</li>
+            <li><strong>3. High-Torque Gear Motors:</strong> high torque gear motor with sufficient RPM rate balancing speed and power.</li>
+            <li><strong>4. Curved Ball Catcher:</strong> Front curved metal scoop designed to trap and guide the ball under aggressive pitch maneuvers.</li>
+          </ul>
+
+          <div style="margin: 2rem 0; text-align: center;">
+            <video controls playsinline style="max-width: 100%; max-height: 440px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #000;" src="../videos/project_robosoccer_pwm_test.mp4"></video>
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: PWM Motor Control &amp; Speed Regulation Test on the Bench.</p>
+          </div>
+
+          <p>
+            <strong>Components:</strong> 2x 300 RPM Jhonson Gear Motor, 3 mm Aluminium L profiles for lightweight durable chasis, ESP32 Devkit V1, BTS7960 H-Bridge Motor Drivers, 3S LiPo battery, FlySky Remote Controller, etc.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Nitin Vishwakarma</p>
+  </footer>
+
+  <script src="../js/nav.js?v=3"></script>
+</body>
+</html>

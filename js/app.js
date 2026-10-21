@@ -158,6 +158,31 @@ const portfolioData = {
       }
     },
     {
+      id: 'robosoccer-bot',
+      name: 'Robosoccer Bot',
+      cardImage: 'images/project_robosoccer_cover.jpeg',
+      detail: {
+        image: 'images/project_robosoccer_cover.jpeg',
+        name: 'Robosoccer Bot',
+        introduction: `This is a Robosoccer bot I made with my college team for robosoccer compedition.<br><br>its body is made from aluminium to meet weight limits(5 Kg), its has a curved metal plate to catch ball and guide it to goal, we specifically used only 2 Wheels for on spot turning and better control.`,
+        moreText: `<p><strong>Architecture:</strong></p>
+<ul class="detail-list">
+  <li><strong>1. Lightweight Aluminium Chassis:</strong> considering the lightweight and agility requirements of a robosoccer bot, we used lightweight aluminium for its frame giving the bot more than enough structural strength and agility for the compedition while keeping strictly within the 5 Kg weight limit.</li>
+  <li><strong>2. 2-Wheel Differential Drive:</strong> We designed this bot as 2 wheel drive instead of 4 wheel drive, 2 wheels allows the bot to turn on spot hence improving maneuverability.</li>
+  <li><strong>3. High-Torque Gear Motors:</strong> high torque gear motor with sufficient RPM rate balancing speed and power.</li>
+  <li><strong>4. Curved Ball Catcher:</strong> Front curved metal scoop designed to trap and guide the ball under aggressive pitch maneuvers.</li>
+</ul>
+
+<div style="margin: 2rem 0; text-align: center;">
+  <video controls playsinline style="max-width: 100%; max-height: 440px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: #000;" src="videos/project_robosoccer_pwm_test.mp4"></video>
+  <p style="font-size: 0.88rem; color: var(--text-dim); margin-top: 0.5rem;">Figure: PWM Motor Control &amp; Speed Regulation Test on the Bench.</p>
+</div>
+
+<p><strong>Components:</strong> 2x 300 RPM Jhonson Gear Motor, 3 mm Aluminium L profiles for lightweight durable chasis, ESP32 Devkit V1, BTS7960 H-Bridge Motor Drivers, 3S LiPo battery, FlySky Remote Controller, etc.</p>`,
+        references: []
+      }
+    },
+    {
       id: 'diy-microscope',
       name: 'DIY Smartphone Microscope',
       cardImage: 'images/project_microscope_cover.jpeg',
@@ -273,9 +298,9 @@ const portfolioData = {
     {
       id: 'inclinometer-app',
       name: 'Smartphone Inclinometer & Digital Level',
-      cardImage: 'images/project_inclinometer_cover.jpeg',
+      cardImage: 'images/project_inclinometer_cover.png',
       detail: {
-        image: 'images/project_inclinometer_cover.jpeg',
+        image: 'images/project_inclinometer_cover.png',
         name: 'Smartphone Inclinometer & Digital Level',
         introduction: `As an engineer I can never have enough tools, and having tools available 24/7 is a daydream. One of the tools I frequently need is an inclinometer to measure the inclination angle of any surface.<br><br>So like a normal person I asked ChatGPT about the options available to me and learned that almost every modern smartphone has built-in IMUs including an accelerometer which can be used for inclinometers, so I headed to the Play Store. Soon enough I was frustrated with the apps available on the Play Store: they all had lots of annoying, intrusive ads for a simple utility tool like an inclinometer. These ads irritated me, I had plenty of AI credits and time, so I built my own clean, ad-free app.`,
         moreText: `<p><strong>How It Works &amp; Gravitational Reference Anchor:</strong><br>Every smartphone has a built-in IMU unit (accelerometer, gyroscope, and magnetometer). I leveraged the built-in accelerometer for this project. At rest, the 3-axis accelerometer measures the reaction force to Earth's gravitational field, providing a 3D gravity vector <strong>g</strong> = (<em>g<sub>x</sub></em>, <em>g<sub>y</sub></em>, <em>g<sub>z</sub></em>) in the phone's own local coordinate frame. This acceleration due to gravity serves as a stable, absolute anchor for measuring planar tilt.</p>
