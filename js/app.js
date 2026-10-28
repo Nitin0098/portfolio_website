@@ -346,6 +346,48 @@ const portfolioData = {
           { title: 'Inclinometer App Source Code & APK Releases (GitHub)', url: 'https://github.com/Nitin0098/inclinometer-app' }
         ]
       }
+    },
+    {
+      id: 'exoplanet-finder',
+      name: 'Exoplanet Finder: Box Least Squares Transit Detection',
+      cardImage: 'images/project_exoplanet_cover.png',
+      detail: {
+        image: 'images/project_exoplanet_cover.png',
+        name: 'Exoplanet Finder: Box Least Squares Transit Detection',
+        introduction: `Because a host star typically outshines an orbiting exoplanet by a factor of 10<sup>6</sup> to 10<sup>9</sup>, direct optical imaging is nearly impossible for the vast majority of stellar systems. Instead, astronomers rely on transit photometry: measuring the tiny, periodic drop in starlight as an exoplanet passes directly across the face of its host star.<br><br>While modern data science frequently defaults to complex, opaque machine learning models, the foundational workhorses of astronomy are deterministic statistical and signal-processing techniques. Long before deep neural networks, transiting exoplanets were reliably discovered using Box Least Squares (BLS).<br><br>I built <strong>Exoplanet Finder</strong>, a desktop GUI application and algorithmic transit pipeline that extracts exoplanetary orbital periods, transit durations, and depths from raw photometric time series without any machine learning. It handles multi-format datasets from NASA space missions (Kepler, K2, TESS) or local observatories, detrends low-frequency stellar drift, executes BLS period optimization, and produces publication-ready phase-folded diagnostic plots.`,
+        moreText: `<p><strong>The 4-Stage Detection Pipeline:</strong></p>
+<ul class="detail-list">
+  <li><strong>1. Multi-Format Data Ingestion &amp; Normalization:</strong> The pipeline ingests time-series photometry across diverse formats including CSV, TSV, TXT, DAT, and astronomical FITS files. It features automated header detection for time (BJD, JD, UTC) and flux (PDCSAP_FLUX, SAP_FLUX, raw magnitude) columns. It filters non-finite values and outliers, automatically dividing raw counts by the median baseline so flux is normalized to 1.0. It also integrates directly with NASA's MAST archive via Lightkurve to download stitched mission quarters for named targets.</li>
+  <li><strong>2. Non-Parametric Rolling Median Detrending:</strong> Stellar light curves exhibit slow baseline drift caused by starspot rotation, spacecraft pointing jitter, and thermal cycles. If left uncorrected, these low-frequency trends swamp shallow transit signals. Rather than fitting high-order polynomials that risk distorting transit geometry, the pipeline applies a rolling median filter (using <code>scipy.ndimage.median_filter</code>) over a 1.5-day window. Because transits last only a few hours, the median ignores short dips, tracking only the slow background drift. Dividing the raw light curve by this baseline yields a perfectly flattened flux profile.</li>
+  <li><strong>3. Box Least Squares (BLS) Period Optimization:</strong> BLS models the periodic transit as a top-hat box function defined by period <em>P</em>, duration &tau;, depth &delta;, and reference epoch <em>t</em><sub>0</sub>. The algorithm scans an exhaustive grid of trial periods (up to 10,000 trial values) and transit durations. For each trial period, the time series is phase-folded, and BLS calculates an analytical power score quantifying how much better a periodic box dip fits the folded data compared to a flat baseline. The true orbital period emerges as a sharp, dominant peak on the periodogram.</li>
+  <li><strong>4. Diagnostic Phase Folding &amp; Multi-Panel Visualization:</strong> Once the optimal period is resolved, the pipeline phase-folds the entire multi-month dataset onto a single normalized phase window (-0.5 to +0.5). Folding aligns dozens of individual transit events directly on top of each other, drastically improving signal-to-noise ratio. Overlaid phase-binned averages reveal the characteristic U/V transit morphology, allowing immediate visual confirmation of true exoplanet candidates versus false positives.</li>
+</ul>
+
+<div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: center;">
+  <div>
+    <img src="images/project_exoplanet_ui_before.png" alt="Exoplanet Finder GUI - Input parameter setup" style="max-height: 380px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">GUI Setup: Target file selection, column configuration &amp; period search bounds</p>
+  </div>
+  <div>
+    <img src="images/project_exoplanet_cover.png" alt="Exoplanet Finder GUI - Output diagnostic results" style="max-height: 380px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Output Diagnostics: Detrended light curve, BLS periodogram peak &amp; phase-folded transit profile</p>
+  </div>
+</div>
+
+<p><strong>Software Stack &amp; Libraries:</strong> Python 3, PyQt6 (Desktop GUI), NumPy, SciPy (Signal processing &amp; rolling median filter), Pandas (Tabular time-series parsing), Astropy (FITS I/O &amp; BoxLeastSquares algorithm), Lightkurve (NASA MAST archive data retrieval), Matplotlib (Astrophysical visualization &amp; plotting).</p>
+
+<h3 class="detail-subheading" style="margin-top: 2rem;">Demo Video</h3>
+<div style="margin: 1.5rem auto; max-width: 680px;">
+  <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); background: #000;">
+    <iframe src="https://www.youtube.com/embed/K3naPWUlEGs" title="Exoplanet Finder Demo Video" style="width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>`,
+        references: [
+          { title: 'Projects Source Code & Repositories (GitHub)', url: 'https://github.com/Nitin0098/Projects' },
+          { title: 'NASA Mikulski Archive for Space Telescopes (MAST)', url: 'https://archive.stsci.edu/' },
+          { title: 'Kovács, Zucker & Mazeh (2002) - Box-fitting algorithm for periodic transits (A&A)', url: 'https://ui.adsabs.harvard.edu/abs/2002A%26A...391..369K/abstract' }
+        ]
+      }
     }
   ],
 
@@ -547,7 +589,7 @@ const portfolioData = {
   <li><strong>Dynamic Programmable Matter:</strong> Reconfigurable tools and rapid prototyping where material geometry adapts in real time to mechanical demands.</li>
 </ul>`,
         references: [
-          { title: 'https://doi.org/10.13140/RG.2.2.32520.58885', url: 'https://doi.org/10.13140/RG.2.2.32520.58885' }
+          { title: 'https://www.researchgate.net/publication/415562447_Microbots_Design_Electromagnetic_Latching_and_Energy_Architecture_of_Reconfigurable_Modular_Micro-Robotic_Units', url: 'https://www.researchgate.net/publication/415562447_Microbots_Design_Electromagnetic_Latching_and_Energy_Architecture_of_Reconfigurable_Modular_Micro-Robotic_Units' }
         ]
       }
     },
