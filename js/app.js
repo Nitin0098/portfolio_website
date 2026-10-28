@@ -111,7 +111,12 @@ const portfolioData = {
 
 <p><strong>Economic &amp; Safety Viability:</strong><br>Traditional monitoring options like borehole extensometers, automated total stations, or periodic satellite InSAR surveys cost tens of crores of rupees while failing to deliver continuous, real-time seconds-ahead warnings on the ground. Deploying an autonomous, solar-powered LoRa mesh network across an entire high-risk coalfield for &#8377;36&ndash;&#8377;68 Lakh offers an unprecedented level of disaster prevention at a fraction of standard industrial geotechnical monitoring budgets.</p>
 
-<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+<h3 class="detail-subheading" style="margin-top: 2rem;">Demo Video</h3>
+<div style="margin: 1.5rem auto; max-width: 680px;">
+  <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); background: #000;">
+    <iframe src="https://www.youtube.com/embed/ieHo6PdjVIc" title="Land Subsidence Predictor Demo Video" style="width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>`,
         references: [
           { title: 'Subsidence Prediction Network Documentation & Whitepaper (Google Drive)', url: 'https://drive.google.com/drive/folders/1TVip5XRRRrXL2fhHxnLk9Urh_kY9lxim?usp=sharing' }
         ]
@@ -175,7 +180,12 @@ const portfolioData = {
 
 <p><strong>Components:</strong> 2x 300 RPM Jhonson Gear Motor, 3 mm Aluminium L profiles for lightweight durable chasis, ESP32 Devkit V1, BTS7960 H-Bridge Motor Drivers, 3S LiPo battery, FlySky Remote Controller, etc.</p>
 
-<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+<h3 class="detail-subheading" style="margin-top: 2rem;">Demo Video</h3>
+<div style="margin: 1.5rem auto; max-width: 340px;">
+  <div style="position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); background: #000;">
+    <iframe src="https://www.youtube.com/embed/s_hEp0GK1Yo" title="Robosoccer Bot Demo Video" style="width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>`,
         references: []
       }
     },
@@ -263,7 +273,12 @@ const portfolioData = {
 
 <p><strong>Components:</strong> I don't remember.</p>
 
-<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+<h3 class="detail-subheading" style="margin-top: 2rem;">Demo Video</h3>
+<div style="margin: 1.5rem auto; max-width: 340px;">
+  <div style="position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); background: #000;">
+    <iframe src="https://www.youtube.com/embed/amTkK5EUbTw" title="Beat Frequency Oscillator Metal Detector Demo Video" style="width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>`,
         references: []
       }
     },
@@ -288,7 +303,12 @@ const portfolioData = {
 
 <p><strong>Components:</strong> L298N Dual H-Bridge Motor Driver, 2&times; BO Motor 5V, 2&times; BO wheels (65mm), 1&times; Free / Caster Wheel, TowerPro SG90 Micro Servo, NodeMCU ESP8266 / ESP32 microcontroller, HC-SR04 Ultrasonic Distance Sensor, battery pack, chassis plate, and hardware connectors.</p>
 
-<p style="margin-top: 1.5rem; font-style: italic; color: var(--accent-cyan);">Note: Demo video will be uploaded on YouTube and linked here soon.</p>`,
+<h3 class="detail-subheading" style="margin-top: 2rem;">Demo Video</h3>
+<div style="margin: 1.5rem auto; max-width: 680px;">
+  <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); background: #000;">
+    <iframe src="https://www.youtube.com/embed/OugIfeMSCZ8" title="Autonomous Pathfinder Robot Demo Video" style="width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</div>`,
         references: []
       }
     },
