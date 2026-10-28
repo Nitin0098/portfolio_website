@@ -385,7 +385,7 @@ const portfolioData = {
         references: [
           { title: 'Projects Source Code & Repositories (GitHub)', url: 'https://github.com/Nitin0098/Projects' },
           { title: 'NASA Mikulski Archive for Space Telescopes (MAST)', url: 'https://archive.stsci.edu/' },
-          { title: 'Kovács, Zucker & Mazeh (2002) - Box-fitting algorithm for periodic transits (A&A)', url: 'https://ui.adsabs.harvard.edu/abs/2002A%26A...391..369K/abstract' }
+          { title: 'https://doi.org/10.13140/RG.2.2.36587.50723', url: 'https://doi.org/10.13140/RG.2.2.36587.50723' }
         ]
       }
     }
