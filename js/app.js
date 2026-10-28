@@ -350,9 +350,9 @@ const portfolioData = {
     {
       id: 'exoplanet-finder',
       name: 'Exoplanet Finder: Box Least Squares Transit Detection',
-      cardImage: 'images/project_exoplanet_cover.png',
+      cardImage: 'images/project_exoplanet_cover.jpg',
       detail: {
-        image: 'images/project_exoplanet_cover.png',
+        image: 'images/project_exoplanet_cover.jpg',
         name: 'Exoplanet Finder: Box Least Squares Transit Detection',
         introduction: `Because a host star typically outshines an orbiting exoplanet by a factor of 10<sup>6</sup> to 10<sup>9</sup>, direct optical imaging is nearly impossible for the vast majority of stellar systems. Instead, astronomers rely on transit photometry: measuring the tiny, periodic drop in starlight as an exoplanet passes directly across the face of its host star.<br><br>While modern data science frequently defaults to complex, opaque machine learning models, the foundational workhorses of astronomy are deterministic statistical and signal-processing techniques. Long before deep neural networks, transiting exoplanets were reliably discovered using Box Least Squares (BLS).<br><br>I built <strong>Exoplanet Finder</strong>, a desktop GUI application and algorithmic transit pipeline that extracts exoplanetary orbital periods, transit durations, and depths from raw photometric time series without any machine learning. It handles multi-format datasets from NASA space missions (Kepler, K2, TESS) or local observatories, detrends low-frequency stellar drift, executes BLS period optimization, and produces publication-ready phase-folded diagnostic plots.`,
         moreText: `<p><strong>The 4-Stage Detection Pipeline:</strong></p>
@@ -363,14 +363,14 @@ const portfolioData = {
   <li><strong>4. Diagnostic Phase Folding &amp; Multi-Panel Visualization:</strong> Once the optimal period is resolved, the pipeline phase-folds the entire multi-month dataset onto a single normalized phase window (-0.5 to +0.5). Folding aligns dozens of individual transit events directly on top of each other, drastically improving signal-to-noise ratio. Overlaid phase-binned averages reveal the characteristic U/V transit morphology, allowing immediate visual confirmation of true exoplanet candidates versus false positives.</li>
 </ul>
 
-<div style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: center;">
+<div style="margin: 2.5rem 0; display: flex; flex-direction: column; gap: 2rem; text-align: center;">
   <div>
-    <img src="images/project_exoplanet_ui_before.png" alt="Exoplanet Finder GUI - Input parameter setup" style="max-height: 380px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">GUI Setup: Target file selection, column configuration &amp; period search bounds</p>
+    <img src="images/project_exoplanet_ui_before.png" alt="Exoplanet Finder GUI - Input parameter setup" style="width: 100%; height: auto; display: block; margin: 0 auto; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+    <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.6rem;">Figure 1: Exoplanet Finder GUI &mdash; Target selection, column configuration, and period search bounds.</p>
   </div>
   <div>
-    <img src="images/project_exoplanet_cover.png" alt="Exoplanet Finder GUI - Output diagnostic results" style="max-height: 380px; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Output Diagnostics: Detrended light curve, BLS periodogram peak &amp; phase-folded transit profile</p>
+    <img src="images/project_exoplanet_ui_output.png" alt="Exoplanet Finder GUI - Output diagnostic results" style="width: 100%; height: auto; display: block; margin: 0 auto; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+    <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.6rem;">Figure 2: Exoplanet Finder Diagnostic Output &mdash; Detrended light curve, BLS periodogram peak, and phase-folded transit profile.</p>
   </div>
 </div>
 
