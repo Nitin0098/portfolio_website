@@ -374,18 +374,12 @@ const portfolioData = {
   </div>
 </div>
 
-<p><strong>Software Stack &amp; Libraries:</strong> Python 3, PyQt6 (Desktop GUI), NumPy, SciPy (Signal processing &amp; rolling median filter), Pandas (Tabular time-series parsing), Astropy (FITS I/O &amp; BoxLeastSquares algorithm), Lightkurve (NASA MAST archive data retrieval), Matplotlib (Astrophysical visualization &amp; plotting).</p>
-
-<h3 class="detail-subheading" style="margin-top: 2rem;">Demo Video</h3>
-<div style="margin: 1.5rem auto; max-width: 680px;">
-  <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); background: #000;">
-    <iframe src="https://www.youtube.com/embed/K3naPWUlEGs" title="Exoplanet Finder Demo Video" style="width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-</div>`,
+<p><strong>Software Stack &amp; Libraries:</strong> Python 3, PyQt6 (Desktop GUI), NumPy, SciPy (Signal processing &amp; rolling median filter), Pandas (Tabular time-series parsing), Astropy (FITS I/O &amp; BoxLeastSquares algorithm), Lightkurve (NASA MAST archive data retrieval), Matplotlib (Astrophysical visualization &amp; plotting).</p>`,
         references: [
           { title: 'Projects Source Code & Repositories (GitHub)', url: 'https://github.com/Nitin0098/Projects' },
           { title: 'NASA Mikulski Archive for Space Telescopes (MAST)', url: 'https://archive.stsci.edu/' },
-          { title: 'https://doi.org/10.13140/RG.2.2.36587.50723', url: 'https://doi.org/10.13140/RG.2.2.36587.50723' }
+          { title: 'https://doi.org/10.13140/RG.2.2.36587.50723', url: 'https://doi.org/10.13140/RG.2.2.36587.50723' },
+          { title: 'Demo Video (YouTube)', url: 'https://youtu.be/K3naPWUlEGs' }
         ]
       }
     }
